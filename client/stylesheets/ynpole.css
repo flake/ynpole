@@ -1,0 +1,128 @@
+.register-input{
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.38),0 1px 3px rgba(0, 0, 0, 0.32);
+	padding: 10px;
+	display: block;
+	height: 38px;
+	width: 100%;
+	font-weight: bold;
+	color: #333;
+	font-size: 14px;
+}
+
+.form-field{
+	width: 310px;
+	list-style: none;
+}
+
+.form-field li{
+	padding: 5px 0px;
+	text-align: center;
+}
+
+.form-submit{
+	width:100%;
+	padding: 10px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #E31E1E;
+	color:#fff;
+	background-image:linear-gradient(#ED2B2B,#E31E1E); /*linear-gradient(#BD1717,#A60D0D); #2953ad, #234ca2*/
+	font-weight: bold;
+	font-size: 14px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+}
+
+.fb-login-btn{
+	width:100%;
+	padding: 10px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #234ca2;
+	color:#fff;
+	background-image: linear-gradient(#2953ad, #234ca2);
+	font-weight: bold;
+	font-size: 14px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+}
+
+.my-brand{
+	font-weight: bold;
+	color: #fff;
+}
+.navbar{
+	font-weight: bold;
+	border-radius: 0 0 3px 3px;
+	border-bottom: 1px solid #E31E1E;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+	background-image: linear-gradient(#ED2B2B,#E31E1E);
+	font-size: 13px;
+	padding: 0 40px;
+	min-height: 32px !important;
+	height: 42px;
+}
+
+.navbar-brand{
+	font-size:23px;
+}
+
+.row{
+	margin: 0 40px;
+}
+
+.signup-grid{
+	background-color: #f1f1f1;
+	padding: 40px 140px 20px 100px;
+	margin-left: 20px;
+	border: 1px solid #BBB;
+	border-radius: 3px;
+	display: inline-block;
+}
+
+.signup-left{
+	float: left;
+	border-right: 1px solid #BBB;
+	padding-right: 30px;
+}
+.signup-right{
+	float: left;
+}
+
+.form-group .form-control{
+	height:24px;
+}
+
+.navbar-nav > li > a{
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+
+.post{
+	display: block;
+	background-color: #fff;
+	margin: 8px;
+	padding: 9px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.38),0 1px 3px rgba(0, 0, 0, 0.32);
+	border-radius: 5px;
+}
+.post-content{
+	border: 1px solid #E0DEDE;
+	padding: 5px;
+	min-height: 60px !important;
+}
+
+#new-question{
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.38),0 1px 3px rgba(0, 0, 0, 0.32);
+	padding: 10px;
+	display: block;
+	font-weight: bold;
+	color: #333;
+	font-size: 14px;
+}

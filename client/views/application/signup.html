@@ -1,0 +1,30 @@
+<template name="signup">
+	<form>
+	  <div class="signup-grid">
+	  	<ul class="form-field">
+	  		<li>
+	  			<input type="email" id="register-email" placeholder="Email" class="register-input">
+	  		</li>
+	  		<li>
+	  			<input type="password" id="register-password" placeholder="Password" class="register-input">
+	  		</li>
+	  		<li>
+	  			<input type="text" id="register-fullname" placeholder="First & Last name" class="register-input">
+	  		</li>
+	  		<li>
+	  			<input type="text" id="register-town" placeholder="City / Town" class="register-input">
+	  		</li>
+	  		<li>
+	  			<input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="register-dob" placeholder="Date of Birth" class="register-input">
+	  		</li>
+	  		<li>
+	  			<label><input type="radio" id="gender-m" name="reg-gender" value="Male"> Male&nbsp;&nbsp;&nbsp;&nbsp;</label>
+	  			<label><input type="radio" id="gender-f" name="reg-gender" value="Female"> Female</label>
+	  		</li>
+	  		<li>
+	  			<input type="submit" value="Sign up" class="form-submit">
+	  		</li>
+	  	</ul>
+	  </div>
+	</form>
+</template>
