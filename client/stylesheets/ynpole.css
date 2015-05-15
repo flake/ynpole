@@ -65,6 +65,10 @@
 	padding: 0 40px;
 	min-height: 32px !important;
 	height: 42px;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 2000;
 }
 
 .navbar-brand{
@@ -72,7 +76,7 @@
 }
 
 .row{
-	margin: 0 40px;
+	margin: 40px 40px 0;
 }
 
 .signup-grid{

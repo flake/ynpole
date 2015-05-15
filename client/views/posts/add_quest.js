@@ -6,13 +6,15 @@ Template.addQuest.events({
 		var questTopic = template.find('#quest-topic').value;
 
 		var post = {
-			source_id: Meteor.userId(),
 			question: newQuestion,
-			topic: questTopic,
-			polarity: '0'
+			topic: questTopic
 		}
 
-		Posts.insert(post);
-		Router.go('/');
+		Meteor.call('post', post, function(error, id){
+			if(error)
+				return alert(error.reason);
+
+			Router.go('/');
+		});
 	}
 });
