@@ -1,0 +1,11 @@
+<template name="profile">
+	{{#with user}}
+	<h3>{{profile.name}}</h3>
+	{{/with}}
+	<div class="user-activity">
+		<h4>Activity</h4>
+		<div class="row-fluid">
+			{{> postsList}}
+		</div>
+	</div>
+</template>
