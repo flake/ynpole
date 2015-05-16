@@ -3,5 +3,5 @@ Meteor.publish('posts', function(){
 });
 
 Meteor.publish('userInfo', function(userId){
-	return Users.find(userId);
+	return Meteor.users.find(userId);
 });
