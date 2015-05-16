@@ -1,12 +1,11 @@
 .register-input{
-	border: none;
+	border: 1px solid;
 	border-radius: 3px;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.38),0 1px 3px rgba(0, 0, 0, 0.32);
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 	padding: 10px;
 	display: block;
 	height: 38px;
 	width: 100%;
-	font-weight: bold;
 	color: #333;
 	font-size: 14px;
 }
@@ -36,19 +35,38 @@
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
 }
 
-.fb-login-btn{
+.oauth-btn{
 	width:100%;
 	padding: 10px;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 3px;
-	border-color: #234ca2;
 	color:#fff;
-	background-image: linear-gradient(#2953ad, #234ca2);
 	font-weight: bold;
 	font-size: 14px;
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+	text-align: left;
+}
+
+#facebook-login{
+	border-color: #234ca2;
+	background-image: linear-gradient(#2953ad, #234ca2);
+}
+
+#twitter-login{
+	background-color: #55acee;
+	border: 1px solid #3b88c3;
+}
+
+#google-login{
+	background-color: #dd4b39;
+	border: 1px solid #CC3B29;
+}
+
+#email-signup{
+	background-image:linear-gradient(#ED2B2B,#E31E1E);
+	border: 1px solid #E31E1E;
 }
 
 .my-brand{
@@ -111,8 +129,9 @@
 	background-color: #fff;
 	margin: 8px;
 	padding: 9px;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.38),0 1px 3px rgba(0, 0, 0, 0.32);
-	border-radius: 5px;
+	border-radius: 3px;
+	border: 1px solid;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 }
 .post-content{
 	border: 1px solid #E0DEDE;
@@ -130,12 +149,43 @@
 }
 
 #new-question{
-	border: none;
+	border: 1px solid;
 	border-radius: 3px;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.38),0 1px 3px rgba(0, 0, 0, 0.32);
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 	padding: 10px;
 	display: block;
 	font-weight: bold;
 	color: #333;
 	font-size: 14px;
+}
+
+.post-source{
+	text-decoration: none;
+	color: #777;
+}
+
+.post-actions{
+	margin-top: 5px;
+}
+
+.post-actions a{
+	text-decoration: none;
+}
+
+.vote-button{
+	font-family: verdana;
+	margin: 0;
+}
+
+.vote-yes{
+	color: #18BA18;
+}
+
+.vote-no{
+	color: #E31E1E;
+}
+
+.vote-count{
+	font-size: 10px;
+	color: #777;
 }

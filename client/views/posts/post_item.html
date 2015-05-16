@@ -7,13 +7,15 @@
 					{{question}}
 				</li>
 				<li class="post-source">
-					<a href="{{pathFor 'profile' _id=source_id}}"><span class="post-auth">{{asked_by}}</span></a>
+					<a href="{{pathFor 'profile' _id=source_id}}" class="post-author"><span>{{asked_by}}</span></a>
 				</li>
 			</ul>
 		</div>
 		<div class="post-actions">
-			<a href="#" role="button" class="vote-yes"><span> Yes </span></a>
-			<a href="#" role="button" class="vote-no"><span> No </span></a>
+			<a href="#" role="button" class="vote-button"><span class="vote-yes"><i class="fa fa-thumbs-up"></i> Yes </span></a>
+			<span class="vote-count">(&nbsp;{{yes_votes}}&nbsp;)</span>&nbsp;&nbsp;&nbsp;
+			<a href="#" role="button" class="vote-button"><span class="vote-no"><i class="fa fa-thumbs-down"></i> No </span></a>
+			<span class="vote-count">(&nbsp;{{no_votes}}&nbsp;)</span>
 		</div>
 	</div>
 </template>
