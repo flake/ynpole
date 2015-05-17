@@ -150,6 +150,7 @@
 	display: block;
 	background-color: #fff;
 	margin: 8px;
+	margin-bottom: 0;
 	padding: 9px 9px 0;
 	border-radius: 3px;
 	border: 1px solid;
@@ -182,13 +183,68 @@
 
 .post-source a{
 	text-decoration: none;
-	color: #888;
+/*	color: #337ab7; */
 }
 
 .post-footer{
 	padding: 3px 0 5px;
 	border-top: 1px solid #DFE0E4;
 	font-family: verdana;
+	font-size: 14px;
+	color: #777;
+}
+
+.post-comments{
+	display: block;
+	background-color: #f8f8f8;
+	margin: 8px;
+	margin-top: 0;
+	padding: 9px 9px 0;
+	border-radius: 0 0 3px 3px;
+	border: 1px solid;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	font-size: 13px;
+}
+
+.pcom-avatar{
+	display: inline-block;
+	float: left;
+	clear: both;
+}
+
+.pcom-inputs{
+	display: inline-block;
+	float: right;
+	clear: both;
+}
+
+.pcom-input-text{
+	border: none;
+	width: 100%;
+}
+
+.pcom-input-write{
+	display: inline-block;
+	float: left;
+	clear: both;
+}
+
+.pcom-input-res{
+	display: inline-block;
+	float: right;
+	clear: both;
+	color: #CCC;
+}
+
+.pcom-input-image{
+	display: inline-block;
+	float: left;
+	clear: both;
+}
+.pcom-input-emoticon{
+	display: inline-block;
+	float: right;
+	clear: both;
 }
 
 .post-actions{
@@ -209,13 +265,22 @@
 .voted-no{ color: #E31E1E;}
 
 .vote-count{
-	font-size: 10px;
-	color: #777;
+	font-size: 12px;
+}
+
+.comments{
+	display: inline-block;
+	margin-left: 50px;
 }
 
 .polarity{
 	display: inline-block;
 	float: right;
 	clear: both;
-	color: #888;
+	font-size: 12px;
+}
+
+.avatar{
+	float:left;
+	clear:both;
 }

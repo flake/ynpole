@@ -13,12 +13,31 @@
 		</div>
 		<div class="post-footer">
 			<div class="post-actions">
-				<a href="#" role="button" class="vote-yes-btn {{voteyClass}}"><span class=""><i class="fa fa-thumbs-up"></i> Yes </span></a>
-				<span class="vote-count">(&nbsp;{{yes_votes}}&nbsp;)</span>&nbsp;&nbsp;&nbsp;
-				<a href="#" role="button" class="vote-no-btn {{votenClass}}"><span class=""><i class="fa fa-thumbs-down"></i> No </span></a>
-				<span class="vote-count">(&nbsp;{{no_votes}}&nbsp;)</span>
+				<a role="button" class="vote-yes-btn {{voteyClass}}"><span class=""><i class="fa fa-thumbs-up"></i> Yes </span></a>
+				<span class="vote-count">&nbsp;{{yes_votes}}&nbsp;</span>&nbsp;&nbsp;&nbsp;
+				<a role="button" class="vote-no-btn {{votenClass}}"><span class=""><i class="fa fa-thumbs-down"></i> No </span></a>
+				<span class="vote-count">&nbsp;{{no_votes}}&nbsp;</span>
 			</div>
-			<div class="polarity">Polarity {{polarity}}</div>
+			<div class="comments"><a role="button" class="comments-icon"><span><i class="fa fa-comments"></i></span></a></div>
+			<div class="polarity"><i class="fa fa-signal"></i>&nbsp;{{polarity}}</div>
+		</div>
+	</div>
+	<div class="post-comments">
+		<div class="pcom-block">
+			<div class="pcom-avatar">{{> avatar user=this shape="rounded" size="small"}}</div>
+			<div class="pcom-inputs">
+				<div class="pcom-input-write">
+					<input type="text" placeholder="Write a review..." class="pcom-input-text">
+				</div>
+				<div class="pcom-input-res">
+					<div class="pcom-input-image">
+						<i class="fa fa-camera"></i>
+					</div>
+					<div class="pcom-input-emoticon">
+						<i class="fa fa-smile-o"></i>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
