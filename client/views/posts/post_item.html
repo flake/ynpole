@@ -11,11 +11,14 @@
 				</li>
 			</ul>
 		</div>
-		<div class="post-actions">
-			<a href="#" role="button" class="vote-button"><span class="vote-yes"><i class="fa fa-thumbs-up"></i> Yes </span></a>
-			<span class="vote-count">(&nbsp;{{yes_votes}}&nbsp;)</span>&nbsp;&nbsp;&nbsp;
-			<a href="#" role="button" class="vote-button"><span class="vote-no"><i class="fa fa-thumbs-down"></i> No </span></a>
-			<span class="vote-count">(&nbsp;{{no_votes}}&nbsp;)</span>
+		<div class="post-footer">
+			<div class="post-actions">
+				<a href="#" role="button" class="vote-yes-btn {{voteyClass}}"><span class=""><i class="fa fa-thumbs-up"></i> Yes </span></a>
+				<span class="vote-count">(&nbsp;{{yes_votes}}&nbsp;)</span>&nbsp;&nbsp;&nbsp;
+				<a href="#" role="button" class="vote-no-btn {{votenClass}}"><span class=""><i class="fa fa-thumbs-down"></i> No </span></a>
+				<span class="vote-count">(&nbsp;{{no_votes}}&nbsp;)</span>
+			</div>
+			<div class="polarity">Polarity {{polarity}}</div>
 		</div>
 	</div>
 </template>

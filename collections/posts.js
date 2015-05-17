@@ -20,11 +20,63 @@ Meteor.methods({
 			source_id: user._id,
 			asked_by: user.profile.name,
 			polarity: 0,
+			yes_voters: [],
+			no_voters: [],
+			yes_votes: 0,
+			no_votes: 0,
 			created_at: new Date().getTime()
 		});
 
 		var postId = Posts.insert(post);
 
 		return postId;
-	}
+	},
+
+	yesvote: function(postId){
+		var user = Meteor.user();
+		var inc_no = 0;
+
+		if(!user)
+			throw new Meteor.Error(401, "You need to login to review");
+
+		var post = Posts.findOne(postId);
+		if(!post)
+			throw new Meteor.Error(422, "Invalid Post");
+
+		if(Posts.find({$and: [{_id: postId}, {"yes_voters.voter_id":user._id}]}).count())
+			throw new Meteor.Error(422, "Already reviewed 'Yes' to this question");
+
+		if(Posts.find({$and: [{_id: postId}, {"no_voters.voter_id":user._id}]}).count())
+			inc_no = -1;
+
+		Posts.update(post._id, {
+			$addToSet: {yes_voters: { voter_id: user._id, voter_name: user.profile.name}},
+			$inc: {yes_votes: 1, no_votes: inc_no},
+			$pull: {no_voters: {voter_id: user._id}}
+		});
+	},
+
+	novote: function(postId){
+		var user = Meteor.user();
+		var inc_yes = 0;
+
+		if(!user)
+			throw new Meteor.Error(401, "You need to login to review");
+
+		var post = Posts.findOne(postId);
+		if(!post)
+			throw new Meteor.Error(422, "Invalid Post");
+
+		if(Posts.find({$and: [{_id: postId}, {"no_voters.voter_id":user._id}]}).count())
+			throw new Meteor.Error(422, "Already reviewed 'No' to this question");
+
+		if(Posts.find({$and: [{_id: postId}, {"yes_voters.voter_id":user._id}]}).count())
+			inc_yes = -1;
+
+		Posts.update(post._id, {
+			$addToSet: {no_voters: { voter_id: user._id, voter_name: user.profile.name}},
+			$inc: {no_votes: 1, yes_votes: inc_yes},
+			$pull: {yes_voters: {voter_id: user._id}}
+		});
+	}	
 });

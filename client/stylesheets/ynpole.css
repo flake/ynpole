@@ -117,6 +117,8 @@
 
 .form-group .form-control{
 	height:24px;
+	font-weight: normal;
+	width: 400px;
 }
 
 .navbar-nav > li > a{
@@ -128,24 +130,24 @@
 	display: block;
 	background-color: #fff;
 	margin: 8px;
-	padding: 9px;
+	padding: 9px 9px 0;
 	border-radius: 3px;
 	border: 1px solid;
 	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 }
-.post-content{
-	border: 1px solid #E0DEDE;
-	padding: 5px;
-	min-height: 60px !important;
-}
 .post-content ul{
 	list-style: none;
 	padding: 0;
+	margin: 0;
+}
+.post-quest{
+	padding: 0 0 0 5px;
+	min-height: 40px !important;
 }
 .post-source{
 	text-align: right;
 	font-size: 11px;
-	margin-bottom: 0;
+	margin: 0;
 }
 
 #new-question{
@@ -154,38 +156,46 @@
 	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 	padding: 10px;
 	display: block;
-	font-weight: bold;
 	color: #333;
 	font-size: 14px;
 }
 
-.post-source{
+.post-source a{
 	text-decoration: none;
-	color: #777;
+	color: #888;
+}
+
+.post-footer{
+	padding: 3px 0 5px;
+	border-top: 1px solid #DFE0E4;
+	font-family: verdana;
 }
 
 .post-actions{
-	margin-top: 5px;
+	display: inline-block;
 }
 
 .post-actions a{
 	text-decoration: none;
-}
-
-.vote-button{
-	font-family: verdana;
 	margin: 0;
 }
+.vote-yes{ 	color: #888; }
+.vote-yes-btn :hover{ color: #18BA18; }
 
-.vote-yes{
-	color: #18BA18;
-}
+.vote-no{ color: #888; }
+.vote-no-btn :hover{ color: #E31E1E; }
 
-.vote-no{
-	color: #E31E1E;
-}
+.voted-yes{ color: #18BA18;}
+.voted-no{ color: #E31E1E;}
 
 .vote-count{
 	font-size: 10px;
 	color: #777;
+}
+
+.polarity{
+	display: inline-block;
+	float: right;
+	clear: both;
+	color: #888;
 }
