@@ -24,7 +24,7 @@ if (Posts.find().count() == 0){
 		no_votes: 0,
 		created_at: now - 3 * 3600 * 1000
 	});
-/*
+
 	Comments.insert({
 		postId: questId,
 		userId: ram._id,
@@ -40,7 +40,7 @@ if (Posts.find().count() == 0){
 		comment: 'helps to make healthy decisions',
 		created_at: now - 1 * 3600 * 1000
 	});
-*/
+
 	Posts.insert({
 		question: 'Does it look good?',
 		topic: 'design',
