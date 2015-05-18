@@ -1,3 +1,15 @@
+.box-size{
+	box-sizing: border-box; /* css3 rec */
+    -moz-box-sizing: border-box; /* ff2 */
+    -ms-box-sizing: border-box; /* ie8 */
+    -webkit-box-sizing: border-box; /* safari3 */
+    -khtml-box-sizing: border-box; /* konqueror */
+}
+
+textarea:focus, input:focus{
+	outline: 0;
+}
+
 .register-input{
 	border: 1px solid;
 	border-radius: 3px;
@@ -206,45 +218,54 @@
 	font-size: 13px;
 }
 
+.pcom-block{
+	margin-bottom: 6px;
+}
+
 .pcom-avatar{
 	display: inline-block;
 	float: left;
-	clear: both;
+	overflow: hidden;
 }
 
 .pcom-inputs{
 	display: inline-block;
-	float: right;
-	clear: both;
-}
-
-.pcom-input-text{
-	border: none;
-	width: 100%;
+	background-color: #fff;
+	padding: 0px;
+	border: 1px solid #DFE0E4;
+	border-radius: 2px;
+	margin-left: 6px;
+	overflow: hidden;
+	width: 93%;
 }
 
 .pcom-input-write{
 	display: inline-block;
-	float: left;
-	clear: both;
+	font-size: 13px;
+	width: 89%
+}
+.pcom-input-text{
+	border: none;
+	width: 100%;
+	resize: none;
+	overflow: none;
 }
 
 .pcom-input-res{
 	display: inline-block;
-	float: right;
-	clear: both;
 	color: #CCC;
+	font-size: 16px;
 }
 
 .pcom-input-image{
 	display: inline-block;
-	float: left;
-	clear: both;
+	margin: 0 4px;
+	cursor: pointer;
 }
 .pcom-input-emoticon{
 	display: inline-block;
-	float: right;
-	clear: both;
+	margin-right: 4px;
+	cursor: pointer;
 }
 
 .post-actions{

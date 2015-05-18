@@ -31,3 +31,7 @@ Template.postItem.events({
 		Meteor.call('novote', this._id);
 	}
 });
+
+Template.postItem.rendered = function(){
+    $('textarea').autosize();
+}
