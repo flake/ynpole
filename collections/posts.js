@@ -54,6 +54,9 @@ Meteor.methods({
 			$inc: {yes_votes: 1, no_votes: inc_no},
 			$pull: {no_voters: {voter_id: user._id}}
 		});
+
+		if(inc_no == -1)
+			Comments.remove({userId: user._id, postId: postId});
 	},
 
 	novote: function(postId){
@@ -78,5 +81,8 @@ Meteor.methods({
 			$inc: {no_votes: 1, yes_votes: inc_yes},
 			$pull: {yes_voters: {voter_id: user._id}}
 		});
-	}	
+
+		if(inc_yes == -1)
+			Comments.remove({userId: user._id, postId: postId});
+	}
 });
