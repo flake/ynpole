@@ -29,7 +29,8 @@ if (Posts.find().count() == 0){
 		postId: questId,
 		userId: ram._id,
 		author: ram.profile.name,
-		comment: 'this clears the confusion and makes assertive',
+		review: 'this clears the confusion and makes assertive',
+		vote: 'y',
 		created_at: now - 2 * 3600 * 1000
 	});
 
@@ -37,7 +38,8 @@ if (Posts.find().count() == 0){
 		postId: questId,
 		userId: sam._id,
 		author: sam.profile.name,
-		comment: 'helps to make healthy decisions',
+		review: 'not much!',
+		vote: 'n',
 		created_at: now - 1 * 3600 * 1000
 	});
 

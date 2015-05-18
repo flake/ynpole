@@ -19,20 +19,29 @@ Template.postItem.helpers({
 	},
 
 	comments: function(){
-		return Commnets.find({postId: this._id});
+		return Comments.find({postId: this._id}, {sort: {created_at: -1}});
+	},
+
+	commentsCount: function(){
+		return Comments.find({postId: this._id}).count();
 	}
 });
 
 Template.postItem.events({
-	'click .vote-yes-btn': function(e){
-		e.preventDefault();
-		console.log("post id: "+this._id);
+	'click .vote-yes-btn': function(event, template){
+		event.preventDefault();
 		Meteor.call('yesvote', this._id);
+		template.$('.post-comments').show();
 	},
 
-	'click .vote-no-btn': function(e){
-		e.preventDefault();
+	'click .vote-no-btn': function(event, template){
+		event.preventDefault();
 		Meteor.call('novote', this._id);
+		template.$('.post-comments').show();
+	},
+
+	'click .comments-icon': function(event, template){
+		template.$('.post-comments').toggle();
 	}
 });
 

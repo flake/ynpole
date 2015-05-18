@@ -10,6 +10,10 @@ textarea:focus, input:focus{
 	outline: 0;
 }
 
+a :hover{
+	color: #337ab7;
+}
+
 .register-input{
 	border: 1px solid;
 	border-radius: 3px;
@@ -217,7 +221,7 @@ textarea:focus, input:focus{
 }
 
 .post-comments{
-	display: block;
+	display: none;
 	background-color: #f8f8f8;
 	margin: 8px;
 	margin-top: 0;
@@ -226,6 +230,13 @@ textarea:focus, input:focus{
 	border: 1px solid;
 	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 	font-size: 13px;
+}
+
+.pcom-disabled{
+	pointer-events: none;
+
+	opacity: 0.5;
+	background-color: #CCC;
 }
 
 .pcom-block{
@@ -273,15 +284,23 @@ textarea:focus, input:focus{
 	margin: 0 4px;
 	cursor: pointer;
 }
+
 .pcom-input-emoticon{
 	display: inline-block;
 	margin-right: 4px;
 	cursor: pointer;
 }
 
-.post-actions{
-	display: inline-block;
-}
+.pcom-item{	margin-bottom: 5px; }
+
+.pcom-review{ margin-left: 36px; }
+
+.pcom-review p{	margin-bottom: 0px; }
+
+.pcom-body a{ text-decoration: none; }
+.pcom-body a:hover{ color: #337ab7; }
+
+.post-actions{ display: inline-block; }
 
 .post-actions a{
 	text-decoration: none;
@@ -296,9 +315,8 @@ textarea:focus, input:focus{
 .voted-yes{ color: #18BA18;}
 .voted-no{ color: #E31E1E;}
 
-.vote-count{
-	font-size: 12px;
-}
+.vote-count{ font-size: 12px; }
+.com-count{	font-size: 12px; }
 
 .comments{
 	display: inline-block;
@@ -315,4 +333,9 @@ textarea:focus, input:focus{
 .avatar{
 	float:left;
 	clear:both;
+}
+
+.comment-date{
+	font-size: 11px;
+	color: #777;
 }
