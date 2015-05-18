@@ -16,6 +16,10 @@ Template.postItem.helpers({
 			return "voted-no";
 		else
 			return "vote-no";
+	},
+
+	comments: function(){
+		return Commnets.find({postId: this._id});
 	}
 });
 
