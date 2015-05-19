@@ -19,11 +19,11 @@ Template.postItem.helpers({
 	},
 
 	comments: function(){
-		return Comments.find({postId: this._id}, {sort: {created_at: -1}});
+		return Comments.find({postId: this._id, expired: false}, {sort: {created_at: -1}});
 	},
 
 	commentsCount: function(){
-		return Comments.find({postId: this._id}).count();
+		return Comments.find({postId: this._id, expired: false}).count();
 	}
 });
 

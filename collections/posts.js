@@ -55,8 +55,10 @@ Meteor.methods({
 			$pull: {no_voters: {voter_id: user._id}}
 		});
 
+		Comments.update({userId: user._id, postId: postId, vote: 'y'}, {$set: {expired: false}}, {multi: true});
+
 		if(inc_no == -1)
-			Comments.remove({userId: user._id, postId: postId});
+			Comments.update({userId: user._id, postId: postId, vote: 'n'}, {$set: {expired: true}}, {multi: true});
 	},
 
 	novote: function(postId){
@@ -82,7 +84,9 @@ Meteor.methods({
 			$pull: {yes_voters: {voter_id: user._id}}
 		});
 
+		Comments.update({userId: user._id, postId: postId, vote: 'n'}, {$set: {expired: false}}, {multi: true});
+
 		if(inc_yes == -1)
-			Comments.remove({userId: user._id, postId: postId});
+			Comments.update({userId: user._id, postId: postId, vote: 'y'}, {$set: {expired: true}}, {multi: true});
 	}
 });

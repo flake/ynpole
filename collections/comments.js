@@ -21,6 +21,7 @@ Meteor.methods({
 		comment = _.extend(_.pick(commentAttr, 'postId', 'review', 'vote'), {
 			userId: user._id,
 			author: user.profile.name,
+			expired: false,
 			created_at: new Date().getTime()
 		});
 

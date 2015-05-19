@@ -31,6 +31,7 @@ if (Posts.find().count() == 0){
 		author: ram.profile.name,
 		review: 'this clears the confusion and makes assertive',
 		vote: 'y',
+		expired: false,
 		created_at: now - 2 * 3600 * 1000
 	});
 
@@ -40,6 +41,7 @@ if (Posts.find().count() == 0){
 		author: sam.profile.name,
 		review: 'not much!',
 		vote: 'n',
+		expired: false,
 		created_at: now - 1 * 3600 * 1000
 	});
 

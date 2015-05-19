@@ -27,7 +27,7 @@ Template.commentNew.events({
 					throwError(error.reason);
 				else
 					template.find('.pcom-input-text').value = '';
-			})
+			});
 		}
 	}
 });
