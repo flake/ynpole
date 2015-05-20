@@ -24,12 +24,12 @@
       <ul class="nav navbar-nav navbar-right">
         {{#if currentUser}}
         <li><a href="/"><i class="fa fa-home fa-fw"></i>&nbsp;Home</a></li>
-        <li><a href="{{pathFor 'addQuest'}}"><i class="fa fa-question fa-fw"></i>&nbsp;Add question</a></li>
+      <!--  <li><a href="{{pathFor 'addQuest'}}"><i class="fa fa-question fa-fw"></i>&nbsp;Add question</a></li> -->
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{> avatar user=this size="extra-small"}}&nbsp;{{currentUser.profile.name}}&nbsp;<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="{{pathFor 'profile' data=currentUser }}"><i class="fa fa-user fa-fw"></i>&nbsp;Profile</a></li>
-            <li><a href="#">Messages</a></li>
+            <li><a href="#"><i class="fa fa-envelope fa-fw"></i>&nbsp;Messages</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
             <li><a href="/logout" class="logout"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</a></li>
@@ -44,9 +44,11 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="row">
-  <div class="col-sm-3">left col</div>
+  <div class="col-sm-2">
+    {{> yield 'leftTemplate'}}
+  </div>
 
-  <div class="col-sm-6">
+  <div class="col-sm-7">
     {{> yield}}
   </div>
 

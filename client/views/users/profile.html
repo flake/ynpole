@@ -1,9 +1,12 @@
 <template name="profile">
-	{{#with user}}
-	<h3>{{profile.name}}</h3>
-	{{/with}}
+	<div class="post profile-info">
+		{{#with user}}
+			<h3>{{profile.name}}</h3>
+		{{/with}}
+	</div>
+
 	<div class="user-activity">
-		<h4>Activity</h4>
+		<div class="post side-menu-title"><span>Activity</span></div>
 		<div class="row-fluid">
 			{{> postsList}}
 		</div>
