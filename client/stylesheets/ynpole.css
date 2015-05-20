@@ -187,8 +187,7 @@ a :hover{
 .post{
 	display: block;
 	background-color: #fff;
-	margin: 8px;
-	margin-bottom: 0;
+	margin: 4px 8px 0;
 	padding: 9px 9px 0;
 	border-radius: 3px;
 	border: 1px solid;
@@ -310,10 +309,10 @@ a :hover{
 .vote-yes-btn :hover{ color: #18BA18; }
 
 .vote-no{ color: #999; }
-.vote-no-btn :hover{ color: #E31E1E; }
+.vote-no-btn :hover{ color: #ED2B2B; }
 
 .voted-yes{ color: #18BA18;}
-.voted-no{ color: #E31E1E;}
+.voted-no{ color: #ED2B2B;}
 
 .vote-count{ font-size: 12px; }
 .com-count{	font-size: 12px; }
@@ -448,4 +447,8 @@ a :hover{
 	font-weight: bold;
 	padding-bottom: 8px;
 	border-bottom: 1px solid #e2e2e2;
+}
+
+.user-activity{
+	margin-top: 15px;
 }
