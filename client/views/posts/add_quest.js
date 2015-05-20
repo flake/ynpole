@@ -12,9 +12,11 @@ Template.addQuest.events({
 
 		Meteor.call('post', post, function(error, id){
 			if(error)
-				return alert(error.reason);
-
-			Router.go('/');
+				throwError(error.reason);
+			else{
+				template.find('#new-question').value = '';
+				template.find('#quest-topic').value = '';
+			}
 		});
 	}
 });

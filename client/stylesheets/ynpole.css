@@ -38,7 +38,7 @@ a :hover{
 }
 
 .form-submit{
-	width:34%;
+	width: 100%;
 	padding: 10px;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
 	border-style: solid;
@@ -50,8 +50,6 @@ a :hover{
 	font-weight: bold;
 	font-size: 14px;
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
-	float:right;
-	clear: both;
 }
 
 .signup-field{
@@ -172,6 +170,10 @@ a :hover{
 	padding-bottom: 10px !important;
 }
 
+.home-posts{
+	margin-top: 110px;
+}
+
 .post{
 	display: block;
 	background-color: #fff;
@@ -195,16 +197,6 @@ a :hover{
 	text-align: right;
 	font-size: 11px;
 	margin: 0;
-}
-
-#new-question{
-	border: 1px solid;
-	border-radius: 3px;
-	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
-	padding: 10px;
-	display: block;
-	color: #333;
-	font-size: 14px;
 }
 
 .post-source a{
@@ -304,10 +296,10 @@ a :hover{
 	text-decoration: none;
 	margin: 0;
 }
-.vote-yes{ 	color: #888; }
+.vote-yes{ 	color: #999; }
 .vote-yes-btn :hover{ color: #18BA18; }
 
-.vote-no{ color: #888; }
+.vote-no{ color: #999; }
 .vote-no-btn :hover{ color: #E31E1E; }
 
 .voted-yes{ color: #18BA18;}
@@ -336,4 +328,54 @@ a :hover{
 .comment-date{
 	font-size: 11px;
 	color: #777;
+}
+
+.add-question{
+	display: block;
+	position: fixed;
+	width: 43.3%;
+	top: 38px;
+	z-index: 200;
+}
+.quest-topic{
+	display: inline-block;
+	width: 45%;
+}
+
+.qtopic-input{
+	border: 1px solid;
+	border-radius: 3px;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	padding: 4px 10px;
+	display: block;
+	height: 28px;
+	width: 100%;
+	color: #333;
+	font-size: 14px;
+}
+.quest-input-res{
+	display: inline-block;
+	color: #CCC;
+	font-size: 16px;
+	margin-left: 24%;
+}
+.quest-submit-div{
+	display: inline-block;
+	width: 16%;
+	float: right;
+	clear: both;
+}
+.quest-submit{
+	width: 100%;
+	padding: 4px 10px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #E31E1E;
+	color:#fff;
+	background-image:linear-gradient(#ED2B2B,#E31E1E); /*linear-gradient(#BD1717,#A60D0D); #2953ad, #234ca2*/
+	font-weight: bold;
+	font-size: 14px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
 }

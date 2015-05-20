@@ -1,17 +1,26 @@
 <template name="addQuest">
-	<div id="add-question">
+	<div class="post add-question">
 		<form>
-	  		<ul class="form-field">
-	  			<li>
-	  				<textarea id="new-question" placeholder="Write your question here" rows="3" cols="50"></textarea>
-	  			</li>
-	  			<li>
-	  				<input type="text" id="quest-topic" placeholder="Topic" class="register-input">
-	  			</li>
-	  			<li>
-	  				<input type="submit" value="Add" class="form-submit">
-	  			</li>
-	  		</ul>
+			<div class="post-content">
+				<ul>
+					<li class="post-res"></li>
+					<li class="post-quest">
+						<textarea name="rbody" id="new-question" placeholder="Ask a question..." class="pcom-input-text box-size" rows="2"></textarea>
+					</li>
+				</ul>
+			</div>
+			<div class="post-footer">
+				<div class="quest-topic"><input type="text" id="quest-topic" placeholder="Topics" class="qtopic-input" /></div>
+				<div class="quest-input-res">
+					<div class="pcom-input-image">
+						<i class="fa fa-camera"></i>
+					</div>
+					<div class="pcom-input-emoticon">
+						<i class="fa fa-smile-o"></i>
+					</div>
+				</div>
+				<div class="quest-submit-div"><input type="submit" value="Ask" class="quest-submit"></div>
+			</div>
 		</form>
 	</div>
 </template>
