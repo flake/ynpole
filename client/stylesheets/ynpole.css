@@ -175,9 +175,8 @@ a :hover{
 	width: 400px;
 }
 
-.navbar-nav > li > a{
-	padding-top: 10px !important;
-	padding-bottom: 10px !important;
+.nav > li > a{
+	padding: 10px 8px;
 }
 
 .home-posts{
