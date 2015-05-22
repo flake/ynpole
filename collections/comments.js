@@ -25,6 +25,10 @@ Meteor.methods({
 			created_at: new Date().getTime()
 		});
 
-		return Comments.insert(comment);
+		var comId = Comments.insert(comment);
+
+		createActivity({'type': "comment", 'sourceId': post._id});
+
+		return comId;
 	}
 })

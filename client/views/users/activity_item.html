@@ -1,0 +1,8 @@
+<template name="activityItem">
+	<div class="activity-item">
+		<div class="activity-info">
+			<a href="/{{userId}}" class="post-author">{{userName}}</a><span class="activity-type">&nbsp;{{type}}ed on </span><span class="comment-date">{{createdAt}}</span>
+		</div>
+		{{> postItem post}}
+	</div>
+</template>

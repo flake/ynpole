@@ -25,6 +25,14 @@ if (Posts.find().count() == 0){
 		created_at: now - 3 * 3600 * 1000
 	});
 
+	Activities.insert({
+		userId: sam._id,
+		userName: sam.profile.name,
+		type: "ask",
+		sourceId: questId,
+		created_at: new Date().getTime()
+	});
+
 	Comments.insert({
 		postId: questId,
 		userId: ram._id,
@@ -33,6 +41,14 @@ if (Posts.find().count() == 0){
 		vote: 'y',
 		expired: false,
 		created_at: now - 2 * 3600 * 1000
+	});
+
+	Activities.insert({
+		userId: ram._id,
+		userName: ram.profile.name,
+		type: "comment",
+		sourceId: questId,
+		created_at: new Date().getTime()
 	});
 
 	Comments.insert({
@@ -45,7 +61,15 @@ if (Posts.find().count() == 0){
 		created_at: now - 1 * 3600 * 1000
 	});
 
-	Posts.insert({
+	Activities.insert({
+		userId: sam._id,
+		userName: sam.profile.name,
+		type: "comment",
+		sourceId: questId,
+		created_at: new Date().getTime()
+	});
+
+	var pid1 = Posts.insert({
 		question: 'Does it look good?',
 		topic: 'design',
 		source_id: ram._id,
@@ -58,7 +82,15 @@ if (Posts.find().count() == 0){
 		created_at: now - 5 * 3600 * 1000
 	});
 
-	Posts.insert({
+	Activities.insert({
+		userId: ram._id,
+		userName: ram.profile.name,
+		type: "ask",
+		sourceId: pid1,
+		created_at: new Date().getTime()
+	});
+
+	var pid2 = Posts.insert({
 		question: 'Is it helpful?',
 		topic: 'service',
 		source_id: sam._id,
@@ -71,7 +103,15 @@ if (Posts.find().count() == 0){
 		created_at: now - 6 * 3600 * 1000
 	});
 
-	Posts.insert({
+	Activities.insert({
+		userId: sam._id,
+		userName: sam.profile.name,
+		type: "ask",
+		sourceId: pid2,
+		created_at: new Date().getTime()
+	});
+
+	var pid3 = Posts.insert({
 		question: 'I believe this is gonna rock, what say you?',
 		topic: 'opinion',
 		source_id: ram._id,
@@ -82,5 +122,13 @@ if (Posts.find().count() == 0){
 		yes_votes: 0,
 		no_votes: 0,
 		created_at: now - 7 * 3600 * 1000
+	});
+
+	Activities.insert({
+		userId: ram._id,
+		userName: ram.profile.name,
+		type: "ask",
+		sourceId: pid3,
+		created_at: new Date().getTime()
 	});
 }

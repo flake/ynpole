@@ -29,6 +29,8 @@ Meteor.methods({
 
 		var postId = Posts.insert(post);
 
+		createActivity({'type':"ask", 'sourceId': postId});
+
 		return postId;
 	},
 
@@ -59,6 +61,8 @@ Meteor.methods({
 
 		if(inc_no == -1)
 			Comments.update({userId: user._id, postId: postId, vote: 'n'}, {$set: {expired: true}}, {multi: true});
+
+		createActivity({'type': "review", 'sourceId': postId});
 	},
 
 	novote: function(postId){
@@ -88,5 +92,7 @@ Meteor.methods({
 
 		if(inc_yes == -1)
 			Comments.update({userId: user._id, postId: postId, vote: 'y'}, {$set: {expired: true}}, {multi: true});
+
+		createActivity({'type': "review", 'sourceId': postId})
 	}
 });
