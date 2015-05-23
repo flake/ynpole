@@ -421,6 +421,11 @@ a :hover{
 	height: 140px;
 }
 
+.avatar-mini{
+	width: 14px;
+	height: 14px;
+}
+
 .profile-info{
 	margin-top: 20px;
 	min-height: 150px;

@@ -28,7 +28,7 @@ if (Posts.find().count() == 0){
 	Activities.insert({
 		userId: sam._id,
 		userName: sam.profile.name,
-		type: "ask",
+		type: "asked",
 		sourceId: questId,
 		created_at: new Date().getTime()
 	});
@@ -46,7 +46,7 @@ if (Posts.find().count() == 0){
 	Activities.insert({
 		userId: ram._id,
 		userName: ram.profile.name,
-		type: "comment",
+		type: "commented",
 		sourceId: questId,
 		created_at: new Date().getTime()
 	});
@@ -64,7 +64,7 @@ if (Posts.find().count() == 0){
 	Activities.insert({
 		userId: sam._id,
 		userName: sam.profile.name,
-		type: "comment",
+		type: "commented",
 		sourceId: questId,
 		created_at: new Date().getTime()
 	});
@@ -85,7 +85,7 @@ if (Posts.find().count() == 0){
 	Activities.insert({
 		userId: ram._id,
 		userName: ram.profile.name,
-		type: "ask",
+		type: "asked",
 		sourceId: pid1,
 		created_at: new Date().getTime()
 	});
@@ -106,7 +106,7 @@ if (Posts.find().count() == 0){
 	Activities.insert({
 		userId: sam._id,
 		userName: sam.profile.name,
-		type: "ask",
+		type: "asked",
 		sourceId: pid2,
 		created_at: new Date().getTime()
 	});
@@ -127,7 +127,7 @@ if (Posts.find().count() == 0){
 	Activities.insert({
 		userId: ram._id,
 		userName: ram.profile.name,
-		type: "ask",
+		type: "asked",
 		sourceId: pid3,
 		created_at: new Date().getTime()
 	});

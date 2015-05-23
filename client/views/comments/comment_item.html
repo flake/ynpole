@@ -1,6 +1,6 @@
 <template name="commentItem">
 	<div class="pcom-item">
-		<div class="pcom-avatar">{{> avatar user=this size="small"}}</div>
+		<div class="pcom-avatar">{{> avatar userId=userId size="small"}}</div>
 		<div class="pcom-review">
 			<p class="pcom-body">
 				<a href="/{{userId}}">{{author}}</a>&nbsp;<i class="fa {{votedIcon}}"></i>&nbsp;{{review}}
