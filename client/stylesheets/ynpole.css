@@ -225,6 +225,8 @@ a :hover{
 	font-size: 11px;
 	text-decoration: none;
 	color: #337ab7;
+	vertical-align: super;
+	margin-left: 4px;
 }
 
 .post-footer{
@@ -478,7 +480,14 @@ a :hover{
 }
 
 .activity-info{
+	padding-top: 9px;
 	padding-left: 9px;
+	border: 1px solid;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	border-bottom: none;
+	margin: 0 9px;
+	margin-bottom: -4px;
+	background-color: #f8f8f8;
 }
 
 .activity-type{

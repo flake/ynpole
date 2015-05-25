@@ -1,7 +1,9 @@
 <template name="activityItem">
 	<div class="activity-item">
 		<div class="activity-info">
-			<a href="/{{userId}}" class="post-author">{{> avatar userId=userId class="avatar-mini"}}&nbsp;{{userName}}</a><span class="activity-type">&nbsp;{{type}} on </span><span class="comment-date">{{createdAt}}</span>
+				<a href="/{{userId}}">{{> avatar userId=userId size="extra-small" class="avatar-mini"}}</a>
+				<a href="/{{userId}}" class="post-author">{{userName}}</a>
+				<span class="activity-type">&nbsp;{{type}} on </span><span class="comment-date">{{createdAt}}</span>
 		</div>
 		{{> postItem post}}
 	</div>
