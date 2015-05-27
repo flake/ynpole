@@ -401,6 +401,7 @@ textarea:focus, input:focus{
 	font-weight: bold;
 	font-size: 13px;
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+	text-decoration: none;
 }
 
 .ynpole-btn :hover{ color: #fff; }
