@@ -23,9 +23,9 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         {{#if currentUser}}
-        <li><a role="button"><i class="fa fa-bell fa-fw"></i></a></li>
+        <li><a href="{{pathFor 'addQuest'}}"><i class="fa fa-question fa-fw"></i>&nbsp;Add question</a></li>
+        <li><a role="button"><i class="fa fa-bell fa-fw"></i>&nbsp; Notifications</a></li>
         <li><a href="/"><i class="fa fa-home fa-fw"></i>&nbsp;Home</a></li>
-      <!--  <li><a href="{{pathFor 'addQuest'}}"><i class="fa fa-question fa-fw"></i>&nbsp;Add question</a></li> -->
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{> avatar user=currentUser size="extra-small"}}&nbsp;{{currentUser.profile.name}}&nbsp;<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">

@@ -10,9 +10,7 @@ textarea:focus, input:focus{
 	outline: 0;
 }
 
-a :hover{
-	color: #337ab7;
-}
+/*a :hover{ color: #337ab7; } */
 
 .register-input{
 	border: 1px solid;
@@ -82,9 +80,7 @@ a :hover{
 	text-align: left;
 }
 
-.oauth-btn :hover{
-	color: #fff;
-}
+.oauth-btn :hover{ color: #fff; }
 
 .oauth-text{
 	vertical-align: middle;
@@ -188,10 +184,10 @@ a :hover{
 .nav > li > a :hover{
 	color: #fff;
 }
-
+/*
 .home-posts{
 	margin-top: 110px;
-}
+} */
 
 .post{
 	display: block;
@@ -355,13 +351,15 @@ a :hover{
 	color: #777;
 }
 
+/*
 .add-question{
 	display: block;
 	position: fixed;
 	width: 47.3%;
 	top: 38px;
 	z-index: 200;
-}
+} */
+
 .quest-topic{
 	display: inline-block;
 	width: 45%;
@@ -391,19 +389,32 @@ a :hover{
 	float: right;
 	clear: both;
 }
-.quest-submit{
+
+.ynpole-btn{
 	width: 100%;
 	padding: 4px 10px;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
-	border-style: solid;
-	border-width: 1px;
 	border-radius: 3px;
-	border-color: #E31E1E;
-	color:#fff;
+	border: 1px solid #E31E1E;
+	color: #fff;
 	background-image:linear-gradient(#ED2B2B,#E31E1E); /*linear-gradient(#BD1717,#A60D0D); #2953ad, #234ca2*/
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 13px;
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+}
+
+.ynpole-btn :hover{ color: #fff; }
+
+.disabled-btn{
+	width: 100%;
+	padding: 4px 10px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
+	border-radius: 3px;
+	border: 1px solid #E31E1E;
+	color: #ED2B2B;
+	font-weight: normal;
+	font-size: 13px;
+	background-color: #EEE;
 }
 
 /* profile CSS */
@@ -433,6 +444,37 @@ a :hover{
 	min-height: 150px;
 }
 
+.profile-info ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.profile-name{
+	font-size: 23px;
+}
+
+.profile-bio{
+	color: #666;
+	min-height: 75px;
+}
+
+.profile-actions a{
+	text-decoration: none;
+	margin-right: 6px;
+}
+
+.profile-actions{
+	text-align: right;
+}
+
+.profile-link{
+	font-size: 13px;
+	color: #666;
+}
+
+.vertical-sep{ border-left: 1px solid; }
+
 .user-left-menu ul{
 	list-style: none;
 	margin: 0;
@@ -448,9 +490,7 @@ a :hover{
 	color: #666;
 	padding: 4px 2px;
 }
-.user-left-menu > ul > li > a:hover{
-	color: #337ab7;
-}
+.user-left-menu > ul > li > a:hover{ color: #337ab7; }
 
 .user-left-menu{
 	margin: 10px 0;

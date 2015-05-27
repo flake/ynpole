@@ -1,6 +1,19 @@
 <template name="profile">
 	<div class="post profile-info">
-		<h3>{{profile.name}}</h3>
+		<ul>
+			<li class="profile-name">{{profile.name}}</li>
+			<li>
+				<div class="profile-bio"><span>About me</span></div>
+			</li>
+			<li class="profile-actions">
+				<a role="button" class="profile-link">Message</a>
+				{{#if isOwner}}
+				<span class="disabled-btn">Followers&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;0</span>
+				{{else}}
+				<a role="button" id="follow-user" class="ynpole-btn">Follow&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;0</a>
+				{{/if}}
+			</li>
+		</ul>
 	</div>
 
 	<div class="user-activity">
