@@ -400,7 +400,7 @@ textarea:focus, input:focus{
 	background-image:linear-gradient(#ED2B2B,#E31E1E); /*linear-gradient(#BD1717,#A60D0D); #2953ad, #234ca2*/
 	font-weight: bold;
 	font-size: 13px;
-	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+/*	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32); */
 	text-decoration: none;
 }
 
@@ -469,9 +469,21 @@ textarea:focus, input:focus{
 	text-align: right;
 }
 
-.profile-link{
+.profile-actions a:hover{
+	color: #fff;
+}
+
+.profile-links{
+	display: inline-block;
+}
+
+.profile-links a{
 	font-size: 13px;
 	color: #666;
+}
+
+.profile-links a:hover{
+	color: #337ab7;
 }
 
 .vertical-sep{ border-left: 1px solid; }
@@ -488,9 +500,10 @@ textarea:focus, input:focus{
 }
 .user-left-menu > ul > li > a{
 	text-decoration: none;
-	color: #666;
 	padding: 4px 2px;
+	color: #666;
 }
+
 .user-left-menu > ul > li > a:hover{ color: #337ab7; }
 
 .user-left-menu{
@@ -500,6 +513,11 @@ textarea:focus, input:focus{
 	color: #666;
 	font-size: 13px;
 }
+
+#user-follow-menu{ margin-top: 25px; }
+
+#user-follow-menu li > a{ color: #999; }
+#user-follow-menu li > a:hover{ color: #337ab7; }
 
 .side-menu-title{
 	font-size: 11px;

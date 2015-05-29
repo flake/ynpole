@@ -3,7 +3,7 @@
 		<div class="activity-info">
 				<a href="/{{userId}}">{{> avatar userId=userId size="extra-small" class="avatar-mini"}}</a>
 				<a href="/{{userId}}" class="post-author">{{userName}}</a>
-				<span class="activity-type">&nbsp;{{type}} {{#if typeText}} <i class="{{typeText}}"></i> {{/if}} on </span><span class="comment-date">{{createdAt}}</span>
+				<span class="activity-type">&nbsp;{{type}} {{#if typeText}} <i class="{{typeText}}"></i> {{/if}} on </span><span class="comment-date">{{formatTime created_at}}</span>
 		</div>
 		{{> postItem post}}
 	</div>

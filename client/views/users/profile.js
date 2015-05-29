@@ -18,6 +18,10 @@ Template.profile.helpers({
 			return "Questions";
 		if(act == "r")
 			return "Reviewed";
+		if(act == "fr")
+			return "Followers";
+		if(act == "fg")
+			return "Following";
 	},
 
 	isOwner: function(){
@@ -26,11 +30,33 @@ Template.profile.helpers({
 			return true;
 		else
 			return false;
+	},
+
+	followBtn: function(){
+		var user = Meteor.user();
+		if(Follows.find({'following_id': this._id, 'follower_id': user._id}).count())
+			return {id: 'unfollow-user', value: 'Unfollow'};
+		else
+			return {id: 'follow-user', value: 'Follow'};
 	}
 });
 
 Template.profile.events({
 	'click #follow-user': function(event, template){
-		alert('follow me!');
+		follow = { following_id: template.data._id };
+
+		Meteor.call('follow', follow, function(error, followId){
+			if(error)
+				throwError(error.reason);
+		});
+	},
+
+	'click #unfollow-user': function(event, template){
+		follow = { following_id: template.data._id };
+
+		Meteor.call('unfollow', follow, function(error){
+			if(error)
+				throwError(error.reason);
+		})
 	}
 })

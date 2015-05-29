@@ -1,7 +1,7 @@
 Template.commentItem.helpers({
-	createdAt: function(){
+/*	createdAt: function(){
 		return new Date(this.created_at).toString();
-	},
+	}, */
 
 	votedIcon: function(){
 		var vote = this.vote;

@@ -6,11 +6,13 @@
 				<div class="profile-bio"><span>About me</span></div>
 			</li>
 			<li class="profile-actions">
-				<a role="button" class="profile-link">Message</a>
+				<div class="profile-links">
+					<a role="button">Message</a>
+				</div>
 				{{#if isOwner}}
 				<span class="disabled-btn">Followers&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;0</span>
 				{{else}}
-				<a role="button" id="follow-user" class="ynpole-btn">Follow&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;0</a>
+				<a role="button" id="{{followBtn.id}}" class="ynpole-btn">{{followBtn.value}}&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</a>
 				{{/if}}
 			</li>
 		</ul>

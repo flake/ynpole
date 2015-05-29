@@ -100,7 +100,7 @@ Meteor.methods({
 findReview = function(postId, userId){
 	if(Posts.find({$and: [{_id: postId}, {"no_voters.voter_id":userId}]}).count())
 		return "N";
-	if(Posts.find({$and: [{_id: postId}, {"no_voters.voter_id":userId}]}).count())
+	if(Posts.find({$and: [{_id: postId}, {"yes_voters.voter_id":userId}]}).count())
 		return "Y";
 	else
 		return 0;

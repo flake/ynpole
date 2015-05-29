@@ -14,6 +14,10 @@ Meteor.publish('activities', function(){
 	return Activities.find();
 });
 
+Meteor.publish('follows', function(){
+	return Follows.find();
+});
+
 /*
 Meteor.publish('userInfo', function(userId){
 	Meteor.publishWithRelations({
