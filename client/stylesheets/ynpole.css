@@ -449,15 +449,25 @@ textarea:focus, input:focus{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	margin-bottom: 13px;
 }
 
 .profile-name{
 	font-size: 23px;
+	font-weight: bold;
+	color: #444;
 }
 
-.profile-bio{
+.profile-title{
 	color: #666;
-	min-height: 75px;
+	font-size: 13px;
+}
+
+.profile-about{
+	color: #666;
+	min-height: 47px;
+	font-size: 13px;
+	margin-top: 9px;
 }
 
 .profile-actions a{
@@ -552,4 +562,24 @@ textarea:focus, input:focus{
 .activity-type{
 	font-size:13px;
 	font-weight:bold;
+}
+
+#add-title{
+	border: 1px solid;
+	border-radius: 3px;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	padding: 4px;
+	display: block;
+	width: 100%;
+	color: #333;
+	font-size: 13px;
+}
+
+#add-about{
+	border: 1px solid;
+	border-radius: 3px;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	width: 100%;
+	resize: none;
+	overflow: hidden;
 }

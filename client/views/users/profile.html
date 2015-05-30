@@ -3,7 +3,30 @@
 		<ul>
 			<li class="profile-name">{{profile.name}}</li>
 			<li>
-				<div class="profile-bio"><span>About me</span></div>
+				<div class="profile-title">
+					{{#if isOwner}}
+						{{#if editTitle}}
+							<input type="text" placeholder="{{profileBars.title}}" id="add-title" name="add_title" />
+						{{else}}
+							<span id="editable-title">{{profileBars.title}}</span>
+						{{/if}}
+					{{else}}
+						{{profile.title}}
+					{{/if}}
+				</div>
+			</li>
+			<li>
+				<div class="profile-about">
+					{{#if isOwner}}
+						{{#if editAbout}}
+							<textarea name="add_about" id="add-about" placeholder="{{profileBars.about}}" class="box-size" rows="2"></textarea>
+						{{else}}
+							<span id="editable-about">{{profileBars.about}}</span>
+						{{/if}}
+					{{else}}
+						{{profile.about}}
+					{{/if}}
+				</div>
 			</li>
 			<li class="profile-actions">
 				<div class="profile-links">

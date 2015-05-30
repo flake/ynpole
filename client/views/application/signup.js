@@ -15,7 +15,10 @@ Template.signup.events({
 				name: nameVar,
 				town: townVar,
 				dob: dobVar,
-				gender: genderVar
+				gender: genderVar,
+				title: '',
+				about: '',
+				education: ''
 			}
 		});
 	}
