@@ -24,7 +24,7 @@ Template.profile.helpers({
 			return "Following";
 	},
 
-	isOwner: function(){
+/*	isOwner: function(){
 		var user = Meteor.user();
 		if(user._id === this._id)
 			return true;
@@ -38,7 +38,7 @@ Template.profile.helpers({
 			return {id: 'unfollow-user', value: 'Unfollow'};
 		else
 			return {id: 'follow-user', value: 'Follow'};
-	},
+	}, */
 
 	profileBars: function(){
 		var user = Meteor.user();
@@ -74,7 +74,7 @@ Template.profile.helpers({
 });
 
 Template.profile.events({
-	'click #follow-user': function(event, template){
+	'click #Follow-user': function(event, template){
 		follow = { following_id: template.data._id };
 
 		Meteor.call('follow', follow, function(error, followId){
@@ -83,7 +83,7 @@ Template.profile.events({
 		});
 	},
 
-	'click #unfollow-user': function(event, template){
+	'click #Unfollow-user': function(event, template){
 		follow = { following_id: template.data._id };
 
 		Meteor.call('unfollow', follow, function(error){
@@ -144,7 +144,5 @@ Template.profile.events({
 });
 
 Template.profile.rendered = function(){
-    this.$('textarea').autosize();
-    this.$('input').focus();
-    this.$('textarea').focus();
+    $('textarea').autosize();
 }

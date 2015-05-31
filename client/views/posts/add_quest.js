@@ -20,3 +20,7 @@ Template.addQuest.events({
 		});
 	}
 });
+
+Template.addQuest.rendered = function(){
+    $('textarea').autosize();
+}

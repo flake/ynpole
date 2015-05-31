@@ -1,0 +1,21 @@
+<template name="userCard">
+	<div class="user-card">
+		<div class="user-head">
+			<div class="user-avatar">{{> avatar user=this size="small"}}</div>
+			<div class="user-info">
+				<ul>
+					<li>{{profile.name}}</li>
+					<li>{{profile.title}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="user-followers"></div>
+		<div class="user-follow-link">
+			{{#if isOwner _id}}
+				<span class="disabled-btn">Followers&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</span>
+			{{else}}
+				<a role="button" id="{{followBtn _id}}-user" class="ynpole-btn">{{followBtn _id}}&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</a>
+			{{/if}}
+		</div>
+	</div>
+</template>

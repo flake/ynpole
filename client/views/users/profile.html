@@ -4,9 +4,9 @@
 			<li class="profile-name">{{profile.name}}</li>
 			<li>
 				<div class="profile-title">
-					{{#if isOwner}}
+					{{#if isOwner _id}}
 						{{#if editTitle}}
-							<input type="text" placeholder="{{profileBars.title}}" id="add-title" name="add_title" />
+							<input type="text" placeholder="{{profileBars.title}}" id="add-title" name="add_title" autofocus />
 						{{else}}
 							<span id="editable-title">{{profileBars.title}}</span>
 						{{/if}}
@@ -17,9 +17,9 @@
 			</li>
 			<li>
 				<div class="profile-about">
-					{{#if isOwner}}
+					{{#if isOwner _id}}
 						{{#if editAbout}}
-							<textarea name="add_about" id="add-about" placeholder="{{profileBars.about}}" class="box-size" rows="2"></textarea>
+							<textarea name="add_about" id="add-about" placeholder="{{profileBars.about}}" class="box-size" rows="2" autofocus></textarea>
 						{{else}}
 							<span id="editable-about">{{profileBars.about}}</span>
 						{{/if}}
@@ -32,10 +32,10 @@
 				<div class="profile-links">
 					<a role="button">Message</a>
 				</div>
-				{{#if isOwner}}
-				<span class="disabled-btn">Followers&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;0</span>
+				{{#if isOwner _id}}
+					<span class="disabled-btn">Followers&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</span>
 				{{else}}
-				<a role="button" id="{{followBtn.id}}" class="ynpole-btn">{{followBtn.value}}&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</a>
+					<a role="button" id="{{followBtn _id}}-user" class="ynpole-btn">{{followBtn _id}}&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</a>
 				{{/if}}
 			</li>
 		</ul>

@@ -10,6 +10,9 @@ textarea:focus, input:focus{
 	outline: 0;
 }
 
+.col-sm-3{
+	padding: 0;
+}
 /*a :hover{ color: #337ab7; } */
 
 .register-input{
@@ -281,7 +284,6 @@ textarea:focus, input:focus{
 	border: none;
 	width: 100%;
 	resize: none;
-	overflow: none;
 }
 
 .pcom-input-res{
@@ -582,4 +584,10 @@ textarea:focus, input:focus{
 	width: 100%;
 	resize: none;
 	overflow: hidden;
+}
+
+.user-details{
+	margin-top: 20px;
+	width: 105%;
+	min-height: 600px;
 }
