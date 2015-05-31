@@ -10,8 +10,9 @@ Meteor.methods({
 		if(!followAttr.following_id)
 			throw new Meteor.Error(422, "Invalid following user");
 
-		var follow = _.extend(_.pick(followAttr, 'following_id'), {
+		var follow = _.extend(_.pick(followAttr, 'following_id', 'following_name'), {
 			follower_id: user._id,
+			follower_name: user.profile.name,
 			created_at: new Date().getTime()
 		});
 

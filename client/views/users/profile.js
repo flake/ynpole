@@ -24,6 +24,26 @@ Template.profile.helpers({
 			return "Following";
 	},
 
+	isPost: function(){
+		var act = Session.get('activity_show');
+
+		if(act == 'all' || act == 'q' || act == 'r')
+			return true;
+		if(act == 'fr' || act == 'fg')
+			return false;
+	},
+
+	followUsers: function(){
+		var act = Session.get('activity_show');
+
+		if(act == 'fr'){
+			var followers = Follows.find({'following_id': this._id}, {sort: {created_at: -1}});
+		}
+		if(act == 'fg'){
+			var following = Follows.find({'follower_id': this._id}, {sort: {created_at: -1}});
+		}
+	},
+
 /*	isOwner: function(){
 		var user = Meteor.user();
 		if(user._id === this._id)
@@ -75,7 +95,7 @@ Template.profile.helpers({
 
 Template.profile.events({
 	'click #Follow-user': function(event, template){
-		follow = { following_id: template.data._id };
+		follow = { following_id: template.data._id, following_name: template.data.profile.name };
 
 		Meteor.call('follow', follow, function(error, followId){
 			if(error)

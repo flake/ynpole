@@ -43,8 +43,16 @@
 
 	<div class="user-activity">
 		<div class="side-menu-title post"><span>{{activityTitle}}</span></div>
-		{{#each activities}}
-			{{> activityItem}}
-		{{/each}}
+		{{#if isPost}}
+			{{#each activities}}
+				{{> activityItem}}
+			{{/each}}
+		{{else}}
+
+				{{> userCard}}
+				{{> userCard}}
+				{{> userCard}}
+			
+		{{/if}}
 	</div>
 </template>

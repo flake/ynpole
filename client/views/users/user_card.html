@@ -1,11 +1,11 @@
 <template name="userCard">
-	<div class="user-card">
+	<div class="post user-card">
 		<div class="user-head">
 			<div class="user-avatar">{{> avatar user=this size="small"}}</div>
 			<div class="user-info">
 				<ul>
-					<li>{{profile.name}}</li>
-					<li>{{profile.title}}</li>
+					<li class="user-card-name">{{profile.name}}</li>
+					<li class="user-card-title">{{profile.title}}</li>
 				</ul>
 			</div>
 		</div>

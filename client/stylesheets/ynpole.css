@@ -591,3 +591,33 @@ textarea:focus, input:focus{
 	width: 105%;
 	min-height: 600px;
 }
+
+.user-card ul{
+	list-style-type: none;
+}
+
+.user-card{
+	float: left;
+	margin-right: 0;
+	width: 48%;
+}
+
+.user-card-name{
+	color: #444;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.user-card-title{
+	color: #666;
+	font-size: 11px;
+}
+
+.user-followers{
+	min-height: 27px;
+}
+
+.user-follow-link{
+	margin: 9px 0;
+	float: right;
+}
