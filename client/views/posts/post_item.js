@@ -46,12 +46,22 @@ Template.postItem.events({
 
 	'click .comments-icon': function(event, template){
 		template.$('.post-comments').toggle();
+	},
+
+	'click .post-view': function(event, template){
+		Router.go('question', this._id);
 	}
+
+/*	'mouseenter .post-author': function(event, template){
+		bootbox.dialog({
+			message: "<div id='popNode'></div>",
+			onEscape: function(){}
+		});
+
+		Blaze.renderWithData(Template.userCard, Meteor.users.findOne({_id: this.source_id}), $('#popNode')[0]);
+	} */
 });
 
 Template.postItem.rendered = function(){
     $('textarea').autosize();
-    $('.post-author').popover({
-    	content: Blaze.renderWithData(Template.userCard, Template.postItem.author, $('.popover').get(0))
-    });
 }

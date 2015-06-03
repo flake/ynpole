@@ -210,6 +210,8 @@ textarea:focus, input:focus{
 	padding: 0 0 0 5px;
 	min-height: 40px !important;
 }
+.post-view{ cursor: pointer; }
+
 .post-source{
 	text-align: right;
 	margin: 0;
@@ -463,11 +465,12 @@ textarea:focus, input:focus{
 .profile-title{
 	color: #666;
 	font-size: 13px;
+	height: 18px;
 }
 
 .profile-about{
 	color: #666;
-	min-height: 47px;
+	height: 47px;
 	font-size: 13px;
 	margin-top: 9px;
 }
@@ -599,8 +602,11 @@ textarea:focus, input:focus{
 .user-card{
 	float: left;
 	margin-right: 0;
-	width: 48%;
+	width: 296px;
+	height: 120px;
 }
+
+.user-info{ margin-left: 45px; }
 
 .user-card-name a{
 	color: #444;
@@ -615,10 +621,11 @@ textarea:focus, input:focus{
 .user-card-title{
 	color: #666;
 	font-size: 11px;
+	height: 14px;
 }
 
 .user-followers{
-	min-height: 27px;
+	height: 27px;
 }
 
 .user-follow-link{
@@ -627,3 +634,16 @@ textarea:focus, input:focus{
 }
 
 .user-follow-link a:hover{ color: #fff; }
+
+.pop-user-card{
+	display: block;
+	visibility: none;
+	padding-bottom: 2px;
+	border: none;
+	background: transparent;
+	z-index: 200;
+}
+
+.pop-user-card :hover{
+	visibility: visible;
+}

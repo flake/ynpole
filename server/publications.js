@@ -11,7 +11,7 @@ Meteor.publish('userInfo', function(userId){
 });
 
 Meteor.publish('profiles', function(){
-	return Meteor.users.find({}, {fields: {profile: 1, emails: 1}});
+	return Meteor.users.find(); //{}, {fields: {profile: 1, emails: 1}}
 });
 
 Meteor.publish('activities', function(){

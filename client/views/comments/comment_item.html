@@ -3,7 +3,7 @@
 		<div class="pcom-avatar">{{> avatar userId=userId size="small"}}</div>
 		<div class="pcom-review">
 			<p class="pcom-body">
-				<a href="/{{userId}}">{{author}}</a>&nbsp;<i class="fa {{votedIcon}}"></i>&nbsp;{{review}}
+				<a href="/{{userId}}" class="pop-user" uid="{{userId}}">{{author}}</a>&nbsp;<i class="fa {{votedIcon}}"></i>&nbsp;{{review}}
 			</p>
 			<span class="comment-date">{{formatTime created_at}}</span>
 		</div>
