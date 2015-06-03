@@ -602,6 +602,10 @@ textarea:focus, input:focus{
 	width: 48%;
 }
 
+.user-card-name a{
+	color: #444;
+}
+
 .user-card-name{
 	color: #444;
 	font-weight: bold;
@@ -621,3 +625,5 @@ textarea:focus, input:focus{
 	margin: 9px 0;
 	float: right;
 }
+
+.user-follow-link a:hover{ color: #fff; }

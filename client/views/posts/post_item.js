@@ -18,6 +18,10 @@ Template.postItem.helpers({
 			return "vote-no";
 	},
 
+	author: function(){
+		return Meteor.users.findOne({_id: this.source_id});
+	},
+
 	comments: function(){
 		return Comments.find({postId: this._id, expired: false}, {sort: {created_at: -1}});
 	},
@@ -47,4 +51,7 @@ Template.postItem.events({
 
 Template.postItem.rendered = function(){
     $('textarea').autosize();
+    $('.post-author').popover({
+    	content: Blaze.renderWithData(Template.userCard, Template.postItem.author, $('.popover').get(0))
+    });
 }

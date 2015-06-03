@@ -48,11 +48,9 @@
 				{{> activityItem}}
 			{{/each}}
 		{{else}}
-
+			{{#each followUsers}}
 				{{> userCard}}
-				{{> userCard}}
-				{{> userCard}}
-			
+			{{/each}}
 		{{/if}}
 	</div>
 </template>

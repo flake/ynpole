@@ -35,13 +35,18 @@ Template.profile.helpers({
 
 	followUsers: function(){
 		var act = Session.get('activity_show');
+		var userIds = [];
 
 		if(act == 'fr'){
 			var followers = Follows.find({'following_id': this._id}, {sort: {created_at: -1}});
+			userIds = followers.map(function(doc){ return doc.follower_id });
 		}
 		if(act == 'fg'){
 			var following = Follows.find({'follower_id': this._id}, {sort: {created_at: -1}});
+			userIds = following.map(function(doc){ return doc.following_id });
 		}
+
+		return Meteor.users.find({_id: {$in: userIds}});
 	},
 
 /*	isOwner: function(){

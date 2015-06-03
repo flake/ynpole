@@ -4,7 +4,7 @@
 			<div class="user-avatar">{{> avatar user=this size="small"}}</div>
 			<div class="user-info">
 				<ul>
-					<li class="user-card-name">{{profile.name}}</li>
+					<li class="user-card-name"><a href="{{pathFor 'profile' _id=_id}}">{{profile.name}}</a></li>
 					<li class="user-card-title">{{profile.title}}</li>
 				</ul>
 			</div>

@@ -1,6 +1,6 @@
 UI.registerHelper('formatTime', function(context, options) {
   if(context)
-    return moment(context).format('MM/DD/YYYY, hh:mm');
+    return moment(context).format('DD MMM, YYYY, hh:mm');
 });
 
 UI.registerHelper('followersCount', function(followingId, options){
