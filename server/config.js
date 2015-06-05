@@ -22,3 +22,9 @@ AccountsMeld.configure({
     askBeforeMeld: true,
     meldDBCallback: meldDBCallback
 }); */
+
+/*Cloudinary.config({
+	cloud_name: 'rajcynosure',
+	api_key: '889142399553133',
+	api_secret: 'cZOO4IPki_X2y4Gr83s4-yAqAS0'
+});*/

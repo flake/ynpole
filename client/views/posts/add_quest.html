@@ -3,7 +3,11 @@
 		<form>
 			<div class="post-content">
 				<ul>
-					<li class="post-res"></li>
+					<li class="post-res">
+						{{#if imgSrc}}
+							<img src="{{imgSrc}}" id="post-img" style="max-width:100%;">
+						{{/if}}
+					</li>
 					<li class="post-quest">
 						<textarea name="rbody" id="new-question" placeholder="Ask a question..." class="pcom-input-text box-size" rows="2"></textarea>
 					</li>
@@ -22,5 +26,6 @@
 				<div class="quest-submit-div"><input type="submit" value="Ask" class="ynpole-btn"></div>
 			</div>
 		</form>
+			<input type="file" name="qupload" id="qupload" accept="image/*" class="hidden-upload">
 	</div>
 </template>

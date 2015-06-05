@@ -2,7 +2,13 @@
 	<div class="post">
 		<div class="post-content">
 			<ul>
-				<li class="post-res post-view"></li>
+				<li class="post-res post-view">
+					{{#if img_fsid}}
+					{{#with image}}
+						<img src="{{this.url}}" class="post-res-img">
+					{{/with}}
+					{{/if}}
+				</li>
 				<li class="post-quest post-view">
 					{{question}}
 				</li>

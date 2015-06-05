@@ -28,6 +28,11 @@ Template.postItem.helpers({
 
 	commentsCount: function(){
 		return Comments.find({postId: this._id, expired: false}).count();
+	},
+
+	image: function(){
+		var image = Images.findOne({_id: this.img_fsid});
+		return image;
 	}
 });
 
@@ -49,7 +54,7 @@ Template.postItem.events({
 	},
 
 	'click .post-view': function(event, template){
-		Router.go('question', this._id);
+		Router.go('question', {_id: this._id});
 	}
 
 /*	'mouseenter .post-author': function(event, template){

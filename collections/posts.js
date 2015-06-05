@@ -16,7 +16,7 @@ Meteor.methods({
 		if(!postAttr.question)
 			throw new Meteor.Error(422, "Please add a question");
 
-		var post = _.extend(_.pick(postAttr, 'question', 'topic'), {
+		var post = _.extend(_.pick(postAttr, 'question', 'topic', 'img_fsid'), {
 			source_id: user._id,
 			asked_by: user.profile.name,
 			polarity: 0,

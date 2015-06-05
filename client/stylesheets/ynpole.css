@@ -195,7 +195,7 @@ textarea:focus, input:focus{
 .post{
 	display: block;
 	background-color: #fff;
-	margin: 4px 8px 0;
+	margin: 6px 8px 0;
 	padding: 9px 9px 0;
 	border-radius: 3px;
 	border: 1px solid;
@@ -205,6 +205,13 @@ textarea:focus, input:focus{
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+.post-res{
+	text-align: center;
+}
+.post-res-img{
+	max-width:100%;
+	margin-bottom: 4px;
 }
 .post-quest{
 	padding: 0 0 0 5px;
@@ -298,12 +305,21 @@ textarea:focus, input:focus{
 	display: inline-block;
 	margin: 0 4px;
 	cursor: pointer;
+	color: #aaa;
 }
 
 .pcom-input-emoticon{
 	display: inline-block;
 	margin-right: 4px;
 	cursor: pointer;
+	color: #bbb;
+}
+
+.hidden-upload{
+	display: none;
+	visibility: hidden;
+	width: 0;
+	height: 0;
 }
 
 .pcom-item{	margin-bottom: 5px; }
