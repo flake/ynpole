@@ -1,5 +1,5 @@
 Images = new FS.Collection("images", {
-	stores: [new FS.Store.FileSystem("images", {path: '~/fsuploads'})],
+	stores: [new FS.Store.FileSystem("images")],
 	filter: {
 		maxSize: 1048576,
 		allow: {

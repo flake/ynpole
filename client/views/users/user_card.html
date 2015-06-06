@@ -14,7 +14,7 @@
 			{{#if isOwner _id}}
 				<span class="disabled-btn">Followers&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</span>
 			{{else}}
-				<a role="button" id="{{followBtn _id}}-user" class="ynpole-btn">{{followBtn _id}}&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</a>
+				<a role="button" class="ynpole-btn {{followBtn _id}}-user">{{followBtn _id}}&nbsp;&nbsp;<span class="vertical-sep"></span>&nbsp;&nbsp;{{followersCount _id}}</a>
 			{{/if}}
 		</div>
 	</div>

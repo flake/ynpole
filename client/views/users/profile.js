@@ -99,7 +99,7 @@ Template.profile.helpers({
 });
 
 Template.profile.events({
-	'click #Follow-user': function(event, template){
+	'click #Follow-profile': function(event, template){
 		follow = { following_id: template.data._id, following_name: template.data.profile.name };
 
 		Meteor.call('follow', follow, function(error, followId){
@@ -108,7 +108,7 @@ Template.profile.events({
 		});
 	},
 
-	'click #Unfollow-user': function(event, template){
+	'click #Unfollow-profile': function(event, template){
 		follow = { following_id: template.data._id };
 
 		Meteor.call('unfollow', follow, function(error){
