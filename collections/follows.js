@@ -18,7 +18,7 @@ Meteor.methods({
 
 		var followId = Follows.insert(follow);
 
-		createActivity({'type':"followed", 'sourceId': followId});
+		createActivity({'type':"followed", 'sourceId': followAttr.following_id});
 
 		return followId;
 	},

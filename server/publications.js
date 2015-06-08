@@ -24,7 +24,11 @@ Meteor.publish('follows', function(){
 
 Meteor.publish('images', function(options){
 	return Images.find({}, options);
-})
+});
+
+Meteor.publish('notifications', function(){
+	return Notifications.find({userId: this.userId});
+});
 
 /*
 Meteor.publish('userInfo', function(userId){

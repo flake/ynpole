@@ -12,6 +12,7 @@ createCommentNotification = function(comment){
 			userId: post.userId,
 			postId: post._id,
 			commentId: comment._id,
+			commenterId: comment.userId,
 			commenterName: comment.author,
 			read: false,
 			created_at: new Date().getTime()

@@ -4,10 +4,16 @@ Template.activityItem.helpers({
 	}, */
 
 	post: function(){
-		return Posts.findOne({_id: this.sourceId});
+		if(this.type == "asked" || this.type == "reviewed")
+			return Posts.findOne({_id: this.sourceId});
 	},
 
-	typeText: function(){
+	user: function(){
+		if(this.type == "followed")
+			return Meteor.users.findOne(this.sourceId);
+	},
+
+	revIcon: function(){
 		if(this.type == "reviewed"){
 			var rev = findReview(this.sourceId, this.userId);
 			
@@ -18,5 +24,20 @@ Template.activityItem.helpers({
 			else
 				return '';
 		}
+	},
+
+	isAsked: function(){
+		if(this.type == "asked")
+			return true;
+	},
+
+	isReviewed: function(){
+		if(this.type == "reviewed")
+			return true;
+	},
+
+	isFollowed: function(){
+		if(this.type == "followed")
+			return true;
 	}
 })
