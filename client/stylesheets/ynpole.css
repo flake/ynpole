@@ -701,11 +701,6 @@ textarea:focus, input:focus{
 	z-index: 201;
 }
 
-.notification-list a:hover{
-	background-color: #fff;
-	color: #333;
-}
-
 .notification-div ul{
 	list-style-type: none;
 	margin: 0;
