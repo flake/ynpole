@@ -7,6 +7,8 @@ Meteor.subscribe('profiles');
 
 Meteor.subscribe('images');
 
+Meteor.subscribe('notifications');
+
 //cloudinary config
 /*
 $.cloudinary.config({

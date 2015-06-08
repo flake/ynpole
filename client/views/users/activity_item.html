@@ -15,6 +15,9 @@
 							{{#if isFollowed}}
 								followed <a href="/{{user._id}}" class="activity-user">{{user.profile.name}}</a>
 							{{/if}}
+							{{#if isCommented}}
+								commented on a <a href="{{pathFor 'question' _id=sourceId}}">question</a>
+							{{/if}}
 							</span>
 						</li>
 						<li>

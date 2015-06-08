@@ -1,7 +1,17 @@
 <template name="notification">
-	<li>
-		<a href="{{notificationPostPath}}">
-			<strong>{{commenterName}}</strong> commented on your post
+	<li class="notification-list">
+		<a href="{{notificationPath}}">
+			<div>{{> avatar userId=sourceId size="small"}}</div>
+			<div class="notification-div">
+				<ul>
+					<li>
+						<span class="notification-str"><strong>{{sourceName}}</strong> {{verb}} {{verbTag}}</span>
+					</li>
+					<li>
+						<span class="comment-date">{{formatTime created_at}}</span>
+					</li>
+				</ul>
+			</div>
 		</a>
 	</li>
 </template>

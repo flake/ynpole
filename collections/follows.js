@@ -20,6 +20,8 @@ Meteor.methods({
 
 		createActivity({'type':"followed", 'sourceId': followAttr.following_id});
 
+		createFollowNotification({userId: followAttr.following_id});
+
 		return followId;
 	},
 

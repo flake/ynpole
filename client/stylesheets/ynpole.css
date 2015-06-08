@@ -683,3 +683,38 @@ textarea:focus, input:focus{
 .pop-user-card :hover{
 	visibility: visible;
 }
+
+.count-badge{
+	display: inline-block;
+	padding: 3px 3px;
+	font-size: 10px;
+	font-weight: normal;
+	color: #fff;
+	line-height: 1;
+	white-space: nowrap;
+	text-align: center;
+	background-color: #337ab7;
+	border-radius: 3px;
+	position: absolute;
+	left:17px;
+	top: 3px;
+	z-index: 201;
+}
+
+.notification-list a:hover{
+	background-color: #fff;
+	color: #333;
+}
+
+.notification-div ul{
+	list-style-type: none;
+	margin: 0;
+}
+
+.notification-div ul li{
+	line-height: 1;
+}
+
+.notification-str{
+	font-size: 13px;
+}

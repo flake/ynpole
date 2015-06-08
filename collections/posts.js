@@ -30,6 +30,7 @@ Meteor.methods({
 		var postId = Posts.insert(post);
 
 		createActivity({'type':"asked", 'sourceId': postId});
+		createPostNotification({objId: postId});
 
 		return postId;
 	},
@@ -63,6 +64,8 @@ Meteor.methods({
 			Comments.update({userId: user._id, postId: postId, vote: 'n'}, {$set: {expired: true}}, {multi: true});
 
 		createActivity({'type': "reviewed", 'sourceId': postId});
+
+		createReviewNotification({userId: post.source_id, objId: postId});
 	},
 
 	novote: function(postId){
@@ -94,6 +97,8 @@ Meteor.methods({
 			Comments.update({userId: user._id, postId: postId, vote: 'y'}, {$set: {expired: true}}, {multi: true});
 
 		createActivity({'type': "reviewed", 'sourceId': postId});
+
+		createReviewNotification({userId: post.source_id, objId: postId});
 	}
 });
 

@@ -39,5 +39,10 @@ Template.activityItem.helpers({
 	isFollowed: function(){
 		if(this.type == "followed")
 			return true;
+	},
+
+	isCommented: function(){
+		if(this.type == "commented")
+			return true;
 	}
 })

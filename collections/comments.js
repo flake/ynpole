@@ -27,8 +27,9 @@ Meteor.methods({
 
 		comment._id = Comments.insert(comment);
 		
-		createCommentNotification(comment);
 		createActivity({'type': "commented", 'sourceId': post._id});
+
+		createCommentNotification({userId: post.source_id, objId: post._id});
 
 		return comment._id;
 	}
