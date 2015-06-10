@@ -6,25 +6,9 @@ Template.login.events({
 		Meteor.loginWithPassword(emailVar, passwordVar);
 	},
 
-	'click #facebook-login': function(event, template){
-		Meteor.loginWithFacebook({ requestPermissions: ['email', 'public_profile', 'user_friends']},
-			function(err){
-				if(err){
-					return console.log(err);
-				}
-			});
-	},
-
-	'click #google-login': function(event, template){
-		Meteor.loginWithGoogle({ requestPermissions: ['email', 'profile']},
-			function(err){
-				if(err)
-					return console.log(err);
-			});
-	},
-
-	'click #email-signup' : function(event, template){
-		Router.go("signup", this);
+	'click #remember-text': function(event, template){
+		var remember = $('#remember');
+		remember.prop("checked", !remember.prop("checked"));
 	}
 });
 

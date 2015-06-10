@@ -1,15 +1,28 @@
 <template name="login">
 	<div class="login-grid">
 		<form>
-	  		<ul class="form-field">
+	  		<ul class="signup-field">
 	  			<li>
 	  				<input type="email" id="login-email" placeholder="Email" class="register-input">
 	  			</li>
 	  			<li>
 	  				<input type="password" id="login-password" placeholder="Password" class="register-input">
 	  			</li>
-	  			<li class="button-right">
-	  				<input type="submit" value="Log In" class="form-submit">
+	  			<li>
+	  				<div class="login-links">
+	  					<ul>
+	  						<li>
+	  							<input type="checkbox" id="remember" name="remember" value="1" checked>
+	  							<span id="remember-text">Keep me logged in</span>
+	  						</li>
+	  						<li>
+	  							<span id="forgot-pwd"><i class="fa  fa-question-circle"></i>&nbsp;Forgot password?</span>
+	  						</li>
+	  					</ul>
+	  				</div>
+	  				<div style="float:right; margin-top:5px;">
+	  					<input type="submit" value="Log In" class="login-btn">
+	  				</div>
 	  			</li>
 	  		</ul>
 		</form>

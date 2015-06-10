@@ -1,10 +1,16 @@
 <head>
-	<title>Welcome to YnPole</title>
+	<title>Welcome to Ynpole</title>
 </head>
 
 <template name='landing'>
 	<div id="landing-body">
-		{{> yield }}
-		<!-- {{> yield 'loginTemplate'}} -->
+		<div class="ynpole-div">
+			<a href="/" class="ynpole-txt">Ynpole</a>
+		</div>
+		<div class="ynpole-desc">
+			<span>Get choices or decisions reviewed from your social network</span>
+		</div>
 	</div>
+	{{> yield }}
+	{{> yield 'loginTemplate'}}
 </template>

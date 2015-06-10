@@ -10,6 +10,11 @@ textarea:focus, input:focus{
 	outline: 0;
 }
 
+input[type="radio"], input[type="checkbox"]{
+	vertical-align: middle;
+	margin: 0px;
+}
+
 label{
 	color: #444;
 	margin-right: 10px;
@@ -18,19 +23,42 @@ label{
 .col-sm-3{
 	padding: 0;
 }
-/*a :hover{ color: #337ab7; } */
+
+.ynpole-txt{
+	font-size: 42px;
+	font-weight: bold;
+	color: #fff;
+	letter-spacing: 0.5px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+}
+
+.ynpole-div{
+	display: block;
+	padding: 10px 20px;
+	margin-left: 120px;
+}
+
+.ynpole-desc{
+	display: block;
+	font-size: 18px;
+	color: #fff;
+	margin-left: 140px;
+}
+
+.ynpole-div a:hover{
+	color: #fff;
+}
 
 #landing-body{
 	display: block;
 	width: 100%;
-	height: 275px;
+	height: 300px;
 	background-color: #ED2B2B;
 }
 
 .register-input{
-	border: 1px solid;
+	border: 1px solid #D0D1D5;
 	border-radius: 3px;
-	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 	padding: 10px;
 	display: block;
 	height: 38px;
@@ -39,22 +67,11 @@ label{
 	font-size: 14px;
 }
 
-.form-field{
-	width: 300px;
-	list-style: none;
-	padding: 0px;
-}
-
-.form-field li{
-	padding: 5px 0px;
-	text-align: center;
-}
-
 .form-submit{
 	width: 100%;
 	padding: 6px 24px;
-	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
-	border: solid 1px #E31E1E;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+	border: 1px solid #E31E1E;
 	border-radius: 3px;
 	color:#fff;
 	background-image:linear-gradient(#ED2B2B,#E31E1E); /*linear-gradient(#BD1717,#A60D0D); #2953ad, #234ca2*/
@@ -63,20 +80,60 @@ label{
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
 }
 
-.button-right{
-	width: 34%;
+.login-btn{
 	float: right;
 	clear: both;
+	width: 82px;
+	padding: 4px 18px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+	border: 1px solid #E31E1E;
+	border-radius: 3px;
+	color:#fff;
+	background-image:linear-gradient(#ED2B2B,#E31E1E);
+	font-weight: bold;
+	font-size: 14px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+}
+
+.login-links{
+	color: #777;
+	font-size: 12px;
+	display: inline-block;
+	float: left;
+	clear: both;
+}
+
+.login-links ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.login-links>ul>li{
+	width: 120px;
+	margin: 0;
+	margin-bottom: 4px;
+}
+
+.login-links span{
+	cursor: pointer;
+}
+
+#forgot-pwd :hover{
+	text-decoration: underline;
 }
 
 .signup-field{
 	list-style: none;
 	padding: 0px;
 }
+
 .signup-field li{
 	margin-bottom: 9px;
 	text-align: center;
+	width: 265px;
 }
+
 .signup-field a{
 	text-decoration: none;
 }
@@ -190,14 +247,28 @@ label{
 .signup-grid{
 	display: inline-block;
  	background-color: #f1f1f1;
-	padding: 20px;
+	padding: 18px;
 	border: 1px solid #D0D1D5;
 	border-radius: 3px;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-	position: fixed;
-	top: 50%;
+	z-index: 201;
+	position: absolute;
+	top: 190px;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, 0);
+}
+
+.login-grid{
+	display: inline-block;
+ 	background-color: #f1f1f1;
+	padding: 9px;
+	border: 1px solid #D0D1D5;
+	border-radius: 3px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	z-index: 201;
+	position: absolute;
+	top: 30px;
+	left: 68%;
 }
 
 .post.signup-post{

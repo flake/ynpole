@@ -9,9 +9,11 @@ Template.layout.events({
 			top = top+135;
 
 		var userId = $(event.currentTarget).attr("uid");
-		Blaze.renderWithData(Template.userCard, Meteor.users.findOne({_id: userId}), $('.pop-user-card')[0]);
-		$('.pop-user-card').css({'top':top,'left':left, 'position':'absolute'});
-		$('.pop-user-card').show();
+		if(userId){
+			Blaze.renderWithData(Template.userCard, Meteor.users.findOne({_id: userId}), $('.pop-user-card')[0]);
+			$('.pop-user-card').css({'top':top,'left':left, 'position':'absolute'});
+			$('.pop-user-card').show();
+		}
 	},
 
 	'mouseleave .pop-user': function(event, template){
