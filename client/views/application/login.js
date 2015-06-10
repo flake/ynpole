@@ -15,6 +15,14 @@ Template.login.events({
 			});
 	},
 
+	'click #google-login': function(event, template){
+		Meteor.loginWithGoogle({ requestPermissions: ['email', 'profile']},
+			function(err){
+				if(err)
+					return console.log(err);
+			});
+	},
+
 	'click #email-signup' : function(event, template){
 		Router.go("signup", this);
 	}

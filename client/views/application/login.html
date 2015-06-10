@@ -1,58 +1,6 @@
 <template name="login">
-	
-	<div class="signup-grid">
-		<div class="post signup-post">
-		<div class="post-content">
-			<ul>
-				<li class="post-res"></li>
-				<li class="post-quest">
-					YnPole - The decision review app
-				</li>
-				<li class="post-source">
-					<a href="{{pathFor 'profile' _id=source_id}}" class="post-author"><span></span></a>
-				</li>
-			</ul>
-		</div>
-		<div class="post-footer">
-			<div class="post-actions">
-				<a role="button" class="vote-yes-btn voted-yes"><span class=""><i class="fa fa-thumbs-up"></i> Yes </span></a>
-				<span class="vote-count"></span>&nbsp;&nbsp;&nbsp;
-				<a role="button" class="vote-no-btn voted-no"><span class=""><i class="fa fa-thumbs-down"></i> No </span></a>
-				<span class="vote-count"></span>
-			</div>
-			<div class="polarity">Polarity</div>
-		</div>
-	</div>
-	    <div class="signup-left">
-	      <ul class="signup-field">
-	      	<li>
-	  			<a role="button" id="google-login" class="oauth-btn">
-	  				<div class="oauth-idiv"><i class="fa fa-google-plus-square fa-2x"></i></div>
-	  				<div class="oauth-tdiv"><span class="oauth-text">&nbsp;&nbsp;Sign in with Google</span></div>
-	  			</a>
-	  		</li>
-			<li>
-	  			<a role="button" id="facebook-login" class="oauth-btn">
-	  				<div class="oauth-idiv"><i class="fa fa-facebook-official fa-2x"></i></div>
-	  				<div class="oauth-tdiv"><span class="oauth-text">&nbsp;&nbsp;Sign in with Facebook</span></div>
-	  			</a>
-	  		</li>
-	  		<li>
-	  			<a role="button" id="twitter-login" class="oauth-btn">
-	  				<div class="oauth-idiv"><i class="fa fa-twitter-square fa-2x"></i></div>
-	  				<div class="oauth-tdiv"><span class="oauth-text">&nbsp;&nbsp;Sign in with Twitter</span></div>
-	  			</a>
-	  		</li>
-	  		<li>
-	  			<a role="button" id="email-signup" class="oauth-btn">
-	  				<div class="oauth-idiv"><i class="fa fa-envelope fa-2x"></i></div>
-	  				<div class="oauth-tdiv"><span class="oauth-text">&nbsp;&nbsp;Sign Up with Email</span></div>
-	  			</a>
-	  		</li>
-		  </ul>
-	    </div>
-		<div class="signup-right">
-			<form>
+	<div class="login-grid">
+		<form>
 	  		<ul class="form-field">
 	  			<li>
 	  				<input type="email" id="login-email" placeholder="Email" class="register-input">
@@ -64,8 +12,6 @@
 	  				<input type="submit" value="Log In" class="form-submit">
 	  			</li>
 	  		</ul>
-			</form>
-	
-		</div>
+		</form>
 	</div>
 </template>

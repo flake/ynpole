@@ -20,3 +20,5 @@ momentjs:moment
 splendido:accounts-meld
 cfs:standard-packages
 cfs:filesystem
+mikael:accounts-merge
+accounts-google
