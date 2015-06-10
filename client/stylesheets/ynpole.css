@@ -751,7 +751,7 @@ label{
 	float: left;
 	margin-right: 0;
 	width: 296px;
-	height: 120px;
+	height: 100px;
 }
 
 .user-info{ margin-left: 45px; }
@@ -772,12 +772,8 @@ label{
 	height: 14px;
 }
 
-.user-followers{
-	height: 27px;
-}
-
 .user-follow-link{
-	margin: 9px 0;
+	margin: 12px 0 0 0;
 	float: right;
 }
 

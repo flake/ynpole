@@ -70,4 +70,5 @@ Template.addQuest.created = function(){
 Template.addQuest.rendered = function(){
     $('textarea').autosize();
    // Uploader.render.call(this);
+   //$('.pcom-input-image').tooltip();
 };
