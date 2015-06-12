@@ -15,14 +15,20 @@ input[type="radio"], input[type="checkbox"]{
 	margin: 0px;
 }
 
-label{
+.radio-label{
 	color: #444;
 	margin-right: 10px;
+	border: 1px solid #D0D1D5;
+	border-radius: 3px;
+	padding: 4px 10px;
+	margin-bottom: 0;
 }
 
-.col-sm-3{
-	padding: 0;
+.row{
+	margin: 40px 80px 0;
 }
+
+.col-sm-3{ padding: 0; }
 
 .ynpole-txt{
 	font-size: 42px;
@@ -219,6 +225,8 @@ label{
 .my-brand{
 	font-weight: bold;
 	color: #fff;
+	padding: 9px 15px;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
 }
 .navbar{
 	font-weight: bold;
@@ -240,8 +248,8 @@ label{
 	font-size:23px;
 }
 
-.row{
-	margin: 40px 80px 0;
+.navbar-right{
+	margin-right: 0;
 }
 
 .signup-grid{
@@ -290,6 +298,7 @@ label{
 	height:24px;
 	font-weight: normal;
 	width: 400px;
+	border-radius: 3px;
 }
 
 .nav > li > a{
@@ -750,7 +759,7 @@ label{
 .user-card{
 	float: left;
 	margin-right: 0;
-	width: 296px;
+	width: 295px;
 	height: 100px;
 }
 
@@ -825,4 +834,15 @@ label{
 
 .notification-str{
 	font-size: 12px;
+}
+
+.errspan{
+	float: right;
+    margin-right: 9px;
+    margin-top: -31px;
+    position: relative;
+    z-index: 2;
+    color: #CF4E4E;
+    font-size: 24px;
+    visibility: hidden;
 }

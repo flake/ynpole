@@ -89,6 +89,10 @@ Accounts.onCreateUser(function (options, user) {
         
         // see if any existing user has this email address, otherwise create new
         var existingUser = Meteor.users.findOne({'emails.address': email});
+
+        if(existingUser && service == "password")
+            throw new Meteor.Error("email", "Email address is already registered.");
+
         if (!existingUser) {
             // check for email also in other services
             var existingGitHubUser = Meteor.users.findOne({'services.github.email': email});

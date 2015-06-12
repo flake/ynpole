@@ -16,20 +16,25 @@
 	  		<li class="horizon-sep">or</li>
 	  	<form>
 	  		<li>
-	  			<input type="email" id="register-email" placeholder="Email" class="register-input">
+	  			<input type="email" id="register-email" placeholder="Email" class="register-input validate-input" validate="email">
+	  			<span class="fa fa-exclamation-circle errspan"></span>
 	  		</li>
 	  		<li>
-	  			<input type="password" id="register-password" placeholder="Create a password" class="register-input">
+	  			<input type="password" id="register-password" placeholder="Create a password" class="register-input validate-input" validate="password">
+	  			<span class="fa fa-exclamation-circle errspan"></span>
 	  		</li>
 	  		<li>
-	  			<input type="text" id="register-fullname" placeholder="First & Last name" class="register-input">
+	  			<input type="text" id="register-fullname" placeholder="First & Last name" class="register-input validate-input" validate="alpha">
+	  			<span class="fa fa-exclamation-circle errspan"></span>
 	  		</li>
 	  		<li>
-	  			<input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="register-dob" placeholder="Date of Birth" class="register-input">
+	  			<input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="register-dob" placeholder="Date of Birth" class="register-input validate-input" validate="dob">
+	  			<span class="fa fa-exclamation-circle errspan"></span>
 	  		</li>
 	  		<li>
-	  			<label><input type="radio" id="gender-m" name="reg-gender" value="Male"> Male</label>
-	  			<label><input type="radio" id="gender-f" name="reg-gender" value="Female"> Female</label>
+	  			<label class="radio-label"><input type="radio" id="gender-m" name="reg-gender" value="Male" validate="gender"> Male</label>
+	  			<label class="radio-label"><input type="radio" id="gender-f" name="reg-gender" value="Female" validate="gender"> Female</label>
+	  			<span class="fa fa-exclamation-circle errspan" style="margin-top: 2px;" id="errGen"></span>
 	  		</li>
 	  		<li style="">
 	  			<input type="submit" value="Sign Up" class="form-submit">
