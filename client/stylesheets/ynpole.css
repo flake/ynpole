@@ -276,7 +276,7 @@ input[type="radio"], input[type="checkbox"]{
 	z-index: 201;
 	position: absolute;
 	top: 30px;
-	left: 68%;
+	right: 9%;
 }
 
 .post.signup-post{
