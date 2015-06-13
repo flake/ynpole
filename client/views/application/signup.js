@@ -21,10 +21,10 @@ Template.signup.events({
 		validateForm(event.currentTarget);
 
 		if(isAllValid()){
-			var emailVar = template.find('#register-email').value;
-			var passwordVar = template.find('#register-password').value;
-			var nameVar = template.find('#register-fullname').value;
-			var dobVar = template.find('#register-dob').value;
+			var emailVar = template.find('#reg-email').value;
+			var passwordVar = template.find('#reg-password').value;
+			var nameVar = template.find('#reg-fullname').value;
+			var dobVar = template.find('#reg-dob').value;
 			var genderVar = template.find('input:radio[name=reg-gender]:checked').value;
 
 			Accounts.createUser({
@@ -41,8 +41,10 @@ Template.signup.events({
 				}
 			}, function(error){
 				if(error.error === "email"){
-					$('#register-email').css("border", "1px solid #CF4E4E");
-					$('#register-email').siblings(".errspan").css("visibility", "visible");
+					errorStates.set('reg-email', true);
+					errorStates.set('email-exist', true);
+					$('#reg-email').css("border", "1px solid #CF4E4E");
+					$('#reg-email').siblings(".errspan").css("visibility", "visible");
 				}
 			});
 		}
@@ -50,6 +52,7 @@ Template.signup.events({
 
 	'blur .validate-input': function(event, template){
 		event.preventDefault();
+		$('.err-arrow-box').css({"visibility": "hidden"});
 		validateInput(event.currentTarget);
 	},
 
@@ -58,6 +61,7 @@ Template.signup.events({
 		var formField = event.currentTarget;
 		var fieldId = $(formField).attr('id');
 		if(errorStates.get(fieldId)){
+			showError(fieldId, formField);
 			$(formField).css("border", "1px solid #D0D1D5");
 			$(formField).siblings(".errspan").css("visibility", "hidden");
 		}
@@ -65,6 +69,14 @@ Template.signup.events({
 
 	'click .radio-label': function(event, template){
 		if(validateGender()){
+			$('.radio-label').css("border", "1px solid #D0D1D5");
+			$('#errGen').css("visibility", "hidden");
+		}
+	},
+
+	'click #errGen': function(event, template){
+		if(errorStates.get('gender')){
+			showError('reg-gender', event.currentTarget);
 			$('.radio-label').css("border", "1px solid #D0D1D5");
 			$('#errGen').css("visibility", "hidden");
 		}
@@ -104,7 +116,7 @@ function validateInput(formField){
 }
 
 function validateGender(){
-	var genValid = true;
+	var genValid = false;
 	if(gender = $('input:radio[name=reg-gender]:checked').val()){
 		genValid = gender == "Male" || gender == "Female";
 	}
@@ -132,4 +144,31 @@ function isAllValid(){
 			return false;
 	}
 	return true;
+}
+
+function getErrMsg(field){
+	if(field == "reg-email"){
+		if(errorStates.get("email-exist")){
+			errorStates.set("email-exist", false);
+			return "An account already exists with this email address.";
+		}
+		return "Enter a valid email address.";
+	}
+	if(field == "reg-password")
+		return "Enter minimum 6 characters with atleast 1 uppercase, 1 lowercase and 1 number.";
+	if(field == "reg-fullname")
+		return "Enter fullname with only alphabets and a space between first and last name";
+	if(field == "reg-dob")
+		return "Enter a valid Date from past";
+	if(field == "reg-gender")
+		return "Select gender from Male or Female";
+}
+
+function showError(fieldId, formField){
+	var gridPos = $('.signup-grid').position();
+	var fieldPos = $(formField).position();
+	var top = gridPos.top + fieldPos.top;
+	var right = gridPos.left + 295;
+	$('.err-msg').text(getErrMsg(fieldId));
+	$('.err-arrow-box').css({'top':top, 'right':right, "visibility": "visible"});
 }
