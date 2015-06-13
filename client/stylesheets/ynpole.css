@@ -608,7 +608,7 @@ input[type="radio"], input[type="checkbox"]{
 
 .profile-about{
 	color: #666;
-	height: 47px;
+	min-height: 47px;
 	font-size: 13px;
 	margin-top: 9px;
 }
@@ -845,4 +845,11 @@ input[type="radio"], input[type="checkbox"]{
     color: #CF4E4E;
     font-size: 24px;
     visibility: hidden;
+}
+
+.txt-ellipsis{
+	max-width: 500px;
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis;
 }

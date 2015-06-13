@@ -6,9 +6,15 @@
 				<div class="profile-title">
 					{{#if isOwner _id}}
 						{{#if editTitle}}
-							<input type="text" placeholder="{{profileBars.title}}" id="add-title" name="add_title" autofocus />
+							<input type="text" placeholder="Add a title" id="add-title" name="add_title" value="{{profileBars.title}}" autofocus />
 						{{else}}
-							<span id="editable-title">{{profileBars.title}}</span>
+							<div id="editable-title" class="txt-ellipsis">
+								{{#if profileBars.title}}
+									{{profileBars.title}}
+								{{else}}
+								Add a title
+								{{/if}}
+							</div>
 						{{/if}}
 					{{else}}
 						{{profile.title}}
@@ -19,9 +25,15 @@
 				<div class="profile-about">
 					{{#if isOwner _id}}
 						{{#if editAbout}}
-							<textarea name="add_about" id="add-about" placeholder="{{profileBars.about}}" class="box-size" rows="2" autofocus></textarea>
+							<textarea name="add_about" id="add-about" placeholder="Write about yourself..." class="box-size" rows="2" autofocus>{{profileBars.about}}</textarea>
 						{{else}}
-							<span id="editable-about">{{profileBars.about}}</span>
+							<div id="editable-about">
+								{{#if profileBars.about}}
+									{{profileBars.about}}
+								{{else}}
+								Write about yourself...
+								{{/if}}
+							</div>
 						{{/if}}
 					{{else}}
 						{{profile.about}}

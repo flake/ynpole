@@ -71,8 +71,8 @@ Template.profile.helpers({
 		if(user._id != this._id)
 			return {};
 
-		var title = "Add title";
-		var about = "Write about yourself...";
+		var title = false;
+		var about = false;
 
 		if(user.profile.title && user.profile.title != '')
 			title = user.profile.title;
@@ -139,8 +139,7 @@ Template.profile.events({
 			event.preventDefault();
 			var titleVal = template.find('#add-title').value;
 
-			if(titleVal)
-				updateUser({'profile.title': titleVal});
+			updateUser({'profile.title': titleVal});
 
 			Session.set('edit_title', false);
 		}
@@ -156,8 +155,7 @@ Template.profile.events({
 
 			var aboutVal = template.find('#add-about').value;
 
-			if(aboutVal)
-				updateUser({'profile.about': aboutVal});
+			updateUser({'profile.about': aboutVal});
 
 			Session.set('edit_about', false);
 		}
