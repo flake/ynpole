@@ -1,5 +1,15 @@
+var postImages = new FS.Store.S3("posts", {
+  accessKeyId: "AKIAJ7635KVQWPPWGN3Q",
+  secretAccessKey: "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",
+  bucket: "ynpole",
+  transformWrite: function(fileObj, readStream, writeStream){
+    gm(readStream, fileObj.name()).resize('580>', '275>').stream().pipe(writeStream);
+  },
+  maxTries: 2
+});
+
 Images = new FS.Collection("images", {
-	stores: [new FS.Store.FileSystem("images")],
+	stores: [postImages],
 	filter: {
 		maxSize: 1048576,
 		allow: {

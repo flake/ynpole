@@ -24,3 +24,6 @@ mikael:accounts-merge
 accounts-google
 lookback:tooltips
 jagi:reactive-map
+cfs:graphicsmagick
+cfs:s3
+email

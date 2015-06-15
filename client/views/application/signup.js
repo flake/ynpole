@@ -40,11 +40,13 @@ Template.signup.events({
 					education: ''
 				}
 			}, function(error){
-				if(error.error === "email"){
-					errorStates.set('reg-email', true);
-					errorStates.set('email-exist', true);
-					$('#reg-email').css("border", "1px solid #CF4E4E");
-					$('#reg-email').siblings(".errspan").css("visibility", "visible");
+				if(error){
+					if(error.error === "email"){
+						errorStates.set('reg-email', true);
+						errorStates.set('email-exist', true);
+						$('#reg-email').css("border", "1px solid #CF4E4E");
+						$('#reg-email').siblings(".errspan").css("visibility", "visible");
+					}
 				}
 			});
 		}

@@ -1,8 +1,8 @@
-/*Accounts.onCreateUser(function(options, user) {
-	user.profile = options.profile ? options.profile : {};
-    if (options.services && options.profile) {
-        options.profile.picture = "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";
-        user.profile = options.profile;
-    }
-    return user;
-}); */
+Accounts.validateLoginAttempt(function(attempt){
+	if(attempt.user && attempt.user.registered_emails && !attempt.user.registered_emails[0].verified){
+		console.log('Email not verified!');
+
+		return false;
+	}
+	return true;
+});

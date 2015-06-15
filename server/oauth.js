@@ -35,13 +35,13 @@ if (isProdEnv()) {
     });
     ServiceConfiguration.configurations.insert({
         service: 'google',
-        appId: '00000',
-        secret: '00000'
+        appId: '688362045263-9a64jb9flkd753o704tkjjmcv87mlfpo.apps.googleusercontent.com',
+        secret: '951nSxbsNGFF-WelnaaRg1Ic'
     });
     ServiceConfiguration.configurations.insert({
         service: 'facebook',
-        appId: '00000',
-        secret: '00000'
+        appId: '1375718669423207',
+        secret: 'f50d75922a13885d1195b7957698ae3d'
     });
 } else {
     // dev environment
@@ -101,6 +101,12 @@ Accounts.onCreateUser(function (options, user) {
             var existingFacebookUser = Meteor.users.findOne({'services.facebook.email': email});
             var doesntExist = !existingGitHubUser && !existingGoogleUser && !existingTwitterUser && !existingFacebookUser;
             if (doesntExist) {
+                console.log("Email verification preparing... : "+user.profile.name);
+                Meteor.setTimeout(function(){
+                    console.log("Email verification sending... : "+user.profile.name);
+                    Accounts.sendVerificationEmail(user._id);
+                    console.log("Email verification sent to: "+user.profile.name);
+                }, 2 * 1000);
                 // return the user as it came, because there he doesn't exist in the DB yet
                 return user;
             } else {
