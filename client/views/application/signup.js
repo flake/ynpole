@@ -86,7 +86,6 @@ Template.signup.events({
 });
 
 Template.signup.created = function(){
-	verifyEmail();
 	errorStates = initErrorStates();
 }
 
@@ -178,7 +177,7 @@ function showError(fieldId, formField){
 
 function verifyEmail(){
 	if(Accounts._verifyEmailToken){
-		Accounts._verifyEmail(Accounts._verifyEmailToken, function(err){
+		Accounts.verifyEmail(Accounts._verifyEmailToken, function(err){
 			if(err != null){
 				if(err.message == 'Verify email link expired [403]'){
 					Accounts.sendVerificationEmail(Meteor.userId());
