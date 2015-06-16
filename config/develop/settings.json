@@ -1,0 +1,9 @@
+{
+    "s3":{
+	"accessKeyID": "AKIAJ7635KVQWPPWGN3Q",
+	"secretAccessKey": "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"
+    },
+    "public":{
+	"maxPostsPerPage": 10
+    }
+}
