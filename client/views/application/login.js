@@ -16,6 +16,10 @@ Template.login.events({
 						$('#login-password').css("border", "1px solid #CF4E4E");
 						$('#login-password').siblings(".errspan").css("visibility", "visible");
 					}
+					if(error.reason === "Email not verified"){
+						console.log("Email not verified from login attempt.");
+						//do something
+					}
 				}
 			});
 		}

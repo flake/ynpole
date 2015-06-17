@@ -1,4 +1,4 @@
-fs = Npm.require('fs');
+/* fs = Npm.require('fs');
 
 Meteor.methods({
 	'file-upload': function(fileName, fileData){
@@ -10,4 +10,4 @@ Meteor.methods({
 		console.log("profile_id: "+response.profile_id);
 		console.log('Add '+response.upload_data+' to the id of '+response.context);
 	}
-});
+}); */
