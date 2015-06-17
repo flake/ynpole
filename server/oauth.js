@@ -35,7 +35,7 @@ if (isProdEnv()) {
     });
     ServiceConfiguration.configurations.insert({
         service: 'google',
-        appId: '864167858348-v656ur375b5iru3pqn30t4skkmhguavc.apps.googleusercontent.com',
+        clientId: '864167858348-v656ur375b5iru3pqn30t4skkmhguavc.apps.googleusercontent.com',
         secret: 'NRDbUt8TLzPdd0kLHvDhod7q'
     });
     ServiceConfiguration.configurations.insert({
