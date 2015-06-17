@@ -35,8 +35,8 @@ if (isProdEnv()) {
     });
     ServiceConfiguration.configurations.insert({
         service: 'google',
-        appId: '688362045263-9a64jb9flkd753o704tkjjmcv87mlfpo.apps.googleusercontent.com',
-        secret: '951nSxbsNGFF-WelnaaRg1Ic'
+        appId: '864167858348-v656ur375b5iru3pqn30t4skkmhguavc.apps.googleusercontent.com',
+        secret: 'NRDbUt8TLzPdd0kLHvDhod7q'
     });
     ServiceConfiguration.configurations.insert({
         service: 'facebook',
