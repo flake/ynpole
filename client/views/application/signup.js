@@ -47,6 +47,8 @@ Template.signup.events({
 						$('#reg-email').css("border", "1px solid #CF4E4E");
 						$('#reg-email').siblings(".errspan").css("visibility", "visible");
 					}
+				}else{
+					console.log("user created successfully");
 				}
 			});
 		}
