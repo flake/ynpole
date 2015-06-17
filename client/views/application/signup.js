@@ -41,6 +41,7 @@ Template.signup.events({
 				}
 			}, function(error){
 				if(error){
+					console.log("createUser error: "+error);
 					if(error.error === "email"){
 						errorStates.set('reg-email', true);
 						errorStates.set('email-exist', true);
