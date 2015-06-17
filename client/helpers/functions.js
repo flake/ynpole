@@ -76,14 +76,11 @@ toTitleCase = function(str){
     });
 }
 
-verifyEmail = function(userId){
+/*verifyEmail = function(userId){
 	if(Accounts._verifyEmailToken){
 		Accounts.verifyEmail(Accounts._verifyEmailToken, function(err){
 			if(err != null){
 				if(err.message == 'Verify email link expired [403]'){
-				/*	$('.modal-title').text('Email verification link expired!');
-					$('.modal-body p').html('Sorry! this verification link has expired. <a href="/">Click here</a> to resend the new link for Email verification.');
-					$('#verifyModal').modal('show'); */
 					Blaze.renderWithData(Template.bsmodal, {title: "Email verification link expired!", verifyEmailExpired: true, userId: userId}, $('.modal-dialog')[0]);
 					$('#verifyModal').modal('show');
 					console.log('Sorry this verification link has expired. Resend the new link for confirmation?');
@@ -93,4 +90,4 @@ verifyEmail = function(userId){
 			}
 		});
 	}
-}
+} */

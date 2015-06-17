@@ -86,7 +86,7 @@ Template.signup.events({
 });
 
 Template.signup.created = function(){
-	verifyEmail(Meteor.userId());
+	//verifyEmail(Meteor.userId());
 	errorStates = initErrorStates();
 }
 
