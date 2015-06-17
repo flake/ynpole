@@ -1,6 +1,6 @@
 Template.signup.events({
 	'click #facebook-login': function(event, template){
-		Meteor.loginWithFacebook({ requestPermissions: ['email', 'public_profile', 'user_friends']},
+		Meteor.loginWithFacebook({ requestPermissions: ['email', 'public_profile', 'user_friends', 'user_location', 'user_status', 'read_friendlists']},
 			function(err){
 				if(err){
 					return console.log(err);
@@ -9,7 +9,7 @@ Template.signup.events({
 	},
 
 	'click #google-login': function(event, template){
-		Meteor.loginWithGoogle({ requestPermissions: ['email', 'profile']},
+		Meteor.loginWithGoogle({ requestPermissions: ['email', 'profile'], requestOfflineToken: true},
 			function(err){
 				if(err)
 					return console.log(err);
@@ -41,7 +41,6 @@ Template.signup.events({
 				}
 			}, function(error){
 				if(error){
-					console.log("createUser error: "+error);
 					if(error.error === "email"){
 						errorStates.set('reg-email', true);
 						errorStates.set('email-exist', true);
