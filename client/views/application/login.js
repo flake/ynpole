@@ -17,9 +17,10 @@ Template.login.events({
 						$('#login-password').siblings(".errspan").css("visibility", "visible");
 					}
 					if(error.reason === "Email not verified"){
-						console.log("Email not verified from login attempt.");
-						$('.modal-title').text('Email not verified');
+						/*$('.modal-title').text('Email not verified');
 						$('.modal-body p').text('Please confirm your Email before you login from the verification email sent to you.');
+						$('#verifyModal').modal('show');*/
+						Blaze.renderWithData(Template.bsmodal, {title: "Email not verified", emailNotVerified: true, userId: error.error}, $('.modal-dialog')[0]);
 						$('#verifyModal').modal('show');
 					}
 				}
@@ -88,7 +89,7 @@ Template.layout.events({
 	}
 });
 
-Template.layout.created = function(){
+Template.login.created = function(){
 	Session.set('email-err', false);
 	Session.set('password', false);
 }

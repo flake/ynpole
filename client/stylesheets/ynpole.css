@@ -28,6 +28,11 @@
 	border-color: #CCC;
 }
 
+.btn-default :hover{
+	background-color: #ED2B2B;
+	color: #fff;
+}
+
 /* End Bootstrap Modal */
 
 textarea:focus, input:focus{

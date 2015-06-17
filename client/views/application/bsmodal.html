@@ -1,0 +1,25 @@
+<template name="bsmodal">
+	<!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{title}}}</h4>
+      </div>
+      <div class="modal-body">
+      	{{#if emailNotVerified}}
+      		<p>Please confirm your Email before you login from the verification email sent to you.<br>
+      			If you haven't recieved confirmation email, please <a role="button" class="send-verify-email">click here</a> to resend.
+      		</p>
+      	{{/if}}
+        {{#if verifyEmailExpired}}
+        	<p>Sorry this verification link has expired. <a role="button" class="send-verify-email">Resend</a> the new link for confirmation?</p>
+        {{/if}}
+        {{#if verifyEmailSent}}
+        	<p>Verification Email has been sent successfully! Please check your inbox to confirm email verification.</p>
+        {{/if}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+</template>
