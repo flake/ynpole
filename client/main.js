@@ -20,7 +20,7 @@ Accounts.onEmailVerificationLink(function(token, done){
 		Accounts.verifyEmail(token, function(err){
 			if(err != null){
 				if(err.message == 'Verify email link expired [403]'){
-					var user = Meteor.users.find({"services.email.verificationTokens": token});
+					var user = Meteor.users.find({"services.email.verificationTokens":{ $elemMatch: { token: token}}});
 					var userId = false;
 					if(user)
 						userId = user._id;
