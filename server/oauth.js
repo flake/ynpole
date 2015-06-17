@@ -40,8 +40,8 @@ if (isProdEnv()) {
     });
     ServiceConfiguration.configurations.insert({
         service: 'facebook',
-        appId: '1375718669423207',
-        secret: 'f50d75922a13885d1195b7957698ae3d'
+        appId: '865369800203057',
+        secret: 'c00497a3f74ee9dffd08699ed7602334'
     });
 } else {
     // dev environment
