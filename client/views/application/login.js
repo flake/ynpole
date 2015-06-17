@@ -20,6 +20,7 @@ Template.login.events({
 						/*$('.modal-title').text('Email not verified');
 						$('.modal-body p').text('Please confirm your Email before you login from the verification email sent to you.');
 						$('#verifyModal').modal('show');*/
+						$('.modal-dialog').empty();
 						Blaze.renderWithData(Template.bsmodal, {title: "Email not verified", emailNotVerified: true, userId: error.error}, $('.modal-dialog')[0]);
 						$('#verifyModal').modal('show');
 					}
