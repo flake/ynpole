@@ -114,6 +114,11 @@ Accounts.onCreateUser(function (options, user) {
                     if (user.emails) {
                         // user is signing in by email, we need to set it to the existing user
                         existingUser.emails = user.emails;
+                        if(service == "password"){
+                            Meteor.setTimeout(function(){
+                                Accounts.sendVerificationEmail(user._id);
+                            }, 2 * 1000);
+                        }
                     }
                 }
             }
