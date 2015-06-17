@@ -81,6 +81,9 @@ verifyEmail = function(){
 		Accounts.verifyEmail(Accounts._verifyEmailToken, function(err){
 			if(err != null){
 				if(err.message == 'Verify email link expired [403]'){
+					$('.modal-title').text('Email verification link expired!');
+					$('.modal-body p').text('Sorry! this verification link has expired. Click here to resend the new link for Email verification.');
+					$('#verifyModal').modal('show');
 					console.log('Sorry this verification link has expired. Resend the new link for confirmation?');
 				}
 			}else{

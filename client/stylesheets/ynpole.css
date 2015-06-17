@@ -6,6 +6,30 @@
     -khtml-box-sizing: border-box; /* konqueror */
 }
 
+/* Custom Bootstrap Modal */
+
+.modal-header{
+	padding: 10px 15px;
+	background-color: #ED2B2B;
+	color: #fff;
+}
+
+.modal-body{
+	min-height: 90px;
+}
+
+.modal-footer{
+	padding: 10px 15px;
+}
+
+.btn-default{
+	background-color: #ED2B2B;
+	color: #fff;
+	border-color: #CCC;
+}
+
+/* End Bootstrap Modal */
+
 textarea:focus, input:focus{
 	outline: 0;
 }

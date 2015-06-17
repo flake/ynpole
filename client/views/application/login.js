@@ -19,7 +19,7 @@ Template.login.events({
 					if(error.reason === "Email not verified"){
 						console.log("Email not verified from login attempt.");
 						$('.modal-title').text('Email not verified');
-						$('.modal-body p').text('Please verify your Email before you login');
+						$('.modal-body p').text('Please confirm your Email before you login from the verification email sent to you.');
 						$('#verifyModal').modal('show');
 					}
 				}
