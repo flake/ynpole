@@ -1,9 +1,9 @@
 <template name="commentNew">
 	<div class="pcom-block">
 		<div class="pcom-avatar">{{> avatar user=currentUser size="small"}}</div>
-		<div class="pcom-inputs {{pcomDisabled}}">
+		<div class="pcom-inputs {{pcomDisabled.className}}">
 			<div class="pcom-input-write">
-				<textarea name="rbody" placeholder="Write a comment..." class="pcom-input-text box-size" rows="1"></textarea>
+				<textarea name="rbody" placeholder="{{pcomDisabled.placeHolder}}" class="pcom-input-text box-size" rows="1"></textarea>
 			</div>
 			<div class="pcom-input-res">
 				<div class="pcom-input-image">

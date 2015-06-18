@@ -11,7 +11,7 @@ Template.postItem.helpers({
 
 	votenClass: function(){
 		var userId = Meteor.userId();
-		var vote = getVote(this, userId);
+		var vote = getReview(this, userId);
 
 		if(vote && vote === "YES")
 			return "voted";
@@ -70,13 +70,4 @@ Template.postItem.events({
 
 Template.postItem.rendered = function(){
     $('textarea').autosize();
-}
-
-function getVote(post, userId){
-	if(_.findWhere(post.yes_voters, { "voter_id": userId }))
-		return "YES";
-	if(_.findWhere(post.no_voters, { "voter_id": userId }))
-		return "NO";
-
-	return false;
 }

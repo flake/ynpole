@@ -13,6 +13,16 @@ readURL = function(input){
 	}
 }
 
+/* Review of User(_id) for a Post(object) */
+getReview = function(post, userId){
+	if(_.findWhere(post.yes_voters, { "voter_id": userId }))
+		return "YES";
+	if(_.findWhere(post.no_voters, { "voter_id": userId }))
+		return "NO";
+
+	return false;
+}
+
 validateEmail = function(email){
 	if(!email || email == '' || email == 'undefined')
 		return false;

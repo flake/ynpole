@@ -506,12 +506,29 @@ input[type="radio"], input[type="checkbox"]{
 .voted-yes{ color: #18BA18;}
 .voted-no{ color: #ED2B2B;}
 
-.vote-count{ font-size: 12px; }
+.vote-count{
+	display: inline-block;
+	width: 24px;
+	margin: 0 4px 0 2px;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	color: #666;
+}
 .com-count{	font-size: 12px; }
 
 .comments{
 	display: inline-block;
 	margin-left: 50px;
+}
+
+.comments a{
+	color: #666;
+}
+
+.comments span{
+	font-size:13px;
+	padding: 0 4px;
 }
 
 .polarity{

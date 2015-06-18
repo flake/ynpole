@@ -22,14 +22,14 @@
 		</div>
 		<div class="post-footer">
 			<div class="post-actions">
-				<a role="button" class="vote-yes-btn {{voteyClass}}"><span class=""><i class="fa fa-thumbs-up"></i> YES </span></a>
-				<span class="vote-count">&nbsp;{{yes_votes}}&nbsp;</span>&nbsp;&nbsp;&nbsp;
-				<a role="button" class="vote-no-btn {{votenClass}}"><span class=""><i class="fa fa-thumbs-down"></i> NO </span></a>
-				<span class="vote-count">&nbsp;{{no_votes}}&nbsp;</span>
+				<a role="button" class="vote-yes-btn {{voteyClass}}"><span><i class="fa fa-thumbs-up"></i> YES </span></a>
+				<div class="vote-count">{{yes_votes}}</div>
+				<a role="button" class="vote-no-btn {{votenClass}}"><span><i class="fa fa-thumbs-down"></i> NO </span></a>
+				<div class="vote-count">{{no_votes}}</div>
 			</div>
 			<div class="comments">
-				<a role="button" class="comments-icon"><span><i class="fa fa-comments-o"></i></span></a>
-				<span class="com-count">&nbsp;{{commentsCount}}&nbsp;</span>
+				<a role="button" class="comments-icon"><i class="fa fa-comments-o"></i><span>Comments</span></a>
+				<div class="vote-count">{{commentsCount}}</div>
 			</div>
 			<div class="polarity"><i class="fa fa-signal"></i>&nbsp;{{polarity}}</div>
 		</div>

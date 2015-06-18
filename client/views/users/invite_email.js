@@ -10,11 +10,18 @@ Template.inviteEmail.helpers({
 Template.inviteEmail.events({
 	'keyup #email-invite-input': function(event, template){
 		var email = $('#email-invite-input').val();
-		console.log("Invite email: "+email);
+
 		if(validateEmail(email))
 			Session.set('invite-email-valid', true);
 		else
 			Session.set('invite-email-valid', false);
+	},
+
+	'click #email-invite-btn': function(event, template){
+		var email = $('#email-invite-input').val();
+		if(validateEmail(email)){
+			Meteor.call('email-invitation', email, {});
+		}
 	}
 });
 

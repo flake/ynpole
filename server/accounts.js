@@ -10,5 +10,9 @@ Accounts.validateLoginAttempt(function(attempt){
 Meteor.methods({
 	'send-email-verification': function(userId){
 		Accounts.sendVerificationEmail(userId);
+	},
+
+	'email-invitation': function(email, profile){
+		// verify email for a user
 	}
 });

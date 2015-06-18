@@ -36,9 +36,9 @@ Template.commentNew.helpers({
 	pcomDisabled: function(){
 		var userId = Meteor.userId();
 
-		if(_.findWhere(this.yes_voters, { "voter_id": userId }) || _.findWhere(this.no_voters, { "voter_id": userId }))
-			return '';
+		if(getReview(this, userId))
+			return { 'className': '', 'placeHolder': 'Write a comment...' };
 		else
-			return 'pcom-disabled';
+			return { 'className': 'pcom-disabled', 'placeHolder': 'Please review to write a comment.' };
 	}
 });
