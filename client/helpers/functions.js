@@ -14,7 +14,7 @@ readURL = function(input){
 }
 
 validateEmail = function(email){
-	if(email == '')
+	if(!email || email == '' || email == 'undefined')
 		return false;
 
 	var emailRe = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;

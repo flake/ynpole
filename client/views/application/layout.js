@@ -2,8 +2,8 @@ Template.layout.events({
 	'mouseenter .pop-user': function(event, template){
 		$('.pop-content').empty();
 		var pos = $(event.currentTarget).position();
-		var left = pos.left +220; //event.pageX -45
-		var top = pos.top -80; //event.pageY -120
+		var left = pos.left +222; //event.pageX -45
+		var top = pos.top -72; //event.pageY -120
 
 		if(top < 10)
 			top = top+135;
@@ -32,3 +32,7 @@ Template.layout.events({
 		$('.pop-user-card').hide();
 	}
 });
+
+Template.layout.created = function(){
+	$('.pop-user-card').hide();
+}

@@ -1,21 +1,22 @@
 Template.postItem.helpers({
 	voteyClass: function(){
 		var userId = Meteor.userId();
+		var vote = getVote(this, userId);
 
-		if(_.findWhere(this.yes_voters, { "voter_id": userId }))
-			return "voted-yes";
-		else
-			return "vote-yes";
+		if(vote && vote === "NO")
+			return "voted";
+
+		return "";
 	},
 
 	votenClass: function(){
 		var userId = Meteor.userId();
-		var usr = Meteor.users.findOne(userId);
+		var vote = getVote(this, userId);
 
-		if(_.findWhere(this.no_voters, { "voter_id": userId }))
-			return "voted-no";
-		else
-			return "vote-no";
+		if(vote && vote === "YES")
+			return "voted";
+
+		return "";
 	},
 
 	author: function(){
@@ -69,4 +70,13 @@ Template.postItem.events({
 
 Template.postItem.rendered = function(){
     $('textarea').autosize();
+}
+
+function getVote(post, userId){
+	if(_.findWhere(post.yes_voters, { "voter_id": userId }))
+		return "YES";
+	if(_.findWhere(post.no_voters, { "voter_id": userId }))
+		return "NO";
+
+	return false;
 }

@@ -1,6 +1,6 @@
 Template.signup.events({
 	'click #facebook-login': function(event, template){
-		Meteor.loginWithFacebook({ requestPermissions: ['email', 'public_profile', 'user_friends', 'user_location', 'user_status']},
+		Meteor.loginWithFacebook({ requestPermissions: ['email', 'public_profile', 'user_friends']},
 			function(err){
 				if(err){
 					return console.log(err);

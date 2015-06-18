@@ -1,5 +1,5 @@
 <template name="postItem">
-	<div class="post">
+	<div class="post-item post">
 		<div class="post-content">
 			<ul>
 				<li class="post-res post-view">
@@ -22,9 +22,9 @@
 		</div>
 		<div class="post-footer">
 			<div class="post-actions">
-				<a role="button" class="vote-yes-btn {{voteyClass}}"><span class=""><i class="fa fa-thumbs-up"></i> Yes </span></a>
+				<a role="button" class="vote-yes-btn {{voteyClass}}"><span class=""><i class="fa fa-thumbs-up"></i> YES </span></a>
 				<span class="vote-count">&nbsp;{{yes_votes}}&nbsp;</span>&nbsp;&nbsp;&nbsp;
-				<a role="button" class="vote-no-btn {{votenClass}}"><span class=""><i class="fa fa-thumbs-down"></i> No </span></a>
+				<a role="button" class="vote-no-btn {{votenClass}}"><span class=""><i class="fa fa-thumbs-down"></i> NO </span></a>
 				<span class="vote-count">&nbsp;{{no_votes}}&nbsp;</span>
 			</div>
 			<div class="comments">
