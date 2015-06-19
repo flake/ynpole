@@ -19,6 +19,7 @@ Template.addQuest.events({
 			if(error)
 				throwError(error.reason);
 			else{
+				$('#verifyModal').hide();
 				Session.set('srv_img', '');
 				Session.set('img_src', '');
 				template.find('#new-question').value = '';
@@ -64,6 +65,7 @@ Template.addQuest.helpers({
 });
 
 Template.addQuest.created = function(){
+	Session.set('img_src', '');
 	//Uploader.init(this);
 };
 

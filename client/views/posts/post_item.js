@@ -1,7 +1,7 @@
 Template.postItem.helpers({
 	voteyClass: function(){
 		var userId = Meteor.userId();
-		var vote = getVote(this, userId);
+		var vote = getReview(this, userId);
 
 		if(vote && vote === "NO")
 			return "voted";

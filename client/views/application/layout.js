@@ -30,6 +30,12 @@ Template.layout.events({
 
 	'mouseleave .pop-user-card': function(event, template){
 		$('.pop-user-card').hide();
+	},
+
+	'click .ask-question': function(event, template){
+		$('.modal-dialog').empty();
+		Blaze.renderWithData(Template.bsmodal, {title: "Add a question for review", modalTemplate: "addQuest", noFooter: true}, $('.modal-dialog')[0]);
+		$('#verifyModal').modal('show');
 	}
 });
 

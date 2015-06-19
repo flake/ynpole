@@ -12,12 +12,12 @@
 				<li class="post-quest post-view">
 					{{question}}
 				</li>
-				<li class="post-source">
+			<!--	<li class="post-source">
 					<div style="display: inline-block;" class="pop-user" uid="{{source_id}}">
 						<a href="{{pathFor 'profile' _id=source_id}}">{{> avatar userId=source_id size="extra-small" class="avatar-mini"}}</a>
 						<a href="{{pathFor 'profile' _id=source_id}}" class="post-author"><span>{{asked_by}}</span></a>
 					</div>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 		<div class="post-footer">
@@ -31,7 +31,13 @@
 				<a role="button" class="comments-icon"><i class="fa fa-comments-o"></i><span>Comments</span></a>
 				<div class="vote-count">{{commentsCount}}</div>
 			</div>
-			<div class="polarity"><i class="fa fa-signal"></i>&nbsp;{{polarity}}</div>
+		<!--	<div class="polarity"><i class="fa fa-signal"></i>&nbsp;{{polarity}}</div> -->
+			<div class="post-source">
+				<div style="display: inline-block;" class="pop-user" uid="{{source_id}}">
+					<a href="{{pathFor 'profile' _id=source_id}}">{{> avatar userId=source_id size="extra-small" class="avatar-mini"}}</a>
+					<a href="{{pathFor 'profile' _id=source_id}}" class="post-author"><span>{{asked_by}}</span></a>
+				</div>
+			</div>
 		</div>
 	</div>
 	{{#if currentUser}}

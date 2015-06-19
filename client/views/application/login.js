@@ -1,11 +1,13 @@
 Template.login.events({
 	'submit form':function(event, template){
 		event.preventDefault();
+		Session.set('login-loading', false);
 		if(!Session.get('email-err')){
 			var emailVar = template.find('#login-email').value;
 			var passwordVar = template.find('#login-password').value;
 			Meteor.loginWithPassword(emailVar, passwordVar, function(error){
 				if(error){
+					console.log("login error: "+error);
 					if(error.reason === "User not found"){
 						Session.set('email-err', error.reason);
 						$('#login-email').css("border", "1px solid #CF4E4E");
@@ -18,9 +20,11 @@ Template.login.events({
 					}
 					if(error.reason === "Email not verified"){
 						$('.modal-dialog').empty();
-						Blaze.renderWithData(Template.bsmodal, {title: "Email not verified", emailNotVerified: true, userId: error.error}, $('.modal-dialog')[0]);
+						Blaze.renderWithData(Template.bsmodal, {title: "Email not verified", modalTemplate: "emailNotVerified", modalData: {userId: error.error}}, $('.modal-dialog')[0]);
 						$('#verifyModal').modal('show');
 					}
+				}else{
+					Session.set('login-loading', true);
 				}
 			});
 		}
@@ -90,4 +94,5 @@ Template.layout.events({
 Template.login.created = function(){
 	Session.set('email-err', false);
 	Session.set('password', false);
+	Session.set('login-loading', false);
 }

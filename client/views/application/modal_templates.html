@@ -1,0 +1,17 @@
+<template name="emailNotVerified">
+  <p>Please confirm your Email before you login from the verification email sent to you.<br>
+    If you haven't recieved confirmation email, please <a role="button" class="send-verify-email" uid="{{userId}}">click here</a> to resend.
+  </p>
+</template>
+
+<template name="verifyEmailExpired">
+  <p>Sorry this verification link has expired. <a role="button" class="send-verify-email" uid="{{userId}}">Resend</a> the new link for confirmation?</p>
+</template>
+
+<template name="verifyEmailSent">
+  <p>Verification Email has been sent successfully! Please check your inbox to confirm email verification.</p>
+</template>
+
+<template name="verifyEmailError">
+  <p>Error sending email verification: {{error}}</p>
+</template>

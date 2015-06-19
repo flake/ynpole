@@ -10,4 +10,11 @@ Meteor.startup(function(){
 	Accounts.emailTemplates.verifyEmail.text = function(user, url){
 		return 'click on the following link to verify your email address: ' + url;
 	};
+
+	Accounts.emailTemplates.enrollAccount.subject = function(user){
+		return "Join me on Ynpole";
+	}
+	Accounts.emailTemplates.enrollAccount.text = function(user, url){
+		return "Your friend has invited you to join him on Ynpole. To activate your account click the link below "+url;
+	}
 });

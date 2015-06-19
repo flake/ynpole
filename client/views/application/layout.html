@@ -25,7 +25,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         {{#if currentUser}}
-        <li><a href="{{pathFor 'addQuest'}}"><i class="fa fa-question fa-fw"></i>&nbsp;Add question</a></li>
+        <li><a role="button" class="ask-question"><i class="fa fa-question fa-fw"></i>Add question</a></li> <!-- href="{{pathFor 'addQuest'}}" -->
         <li class="dropdown">
           {{> notifications}}
         </li>
@@ -35,7 +35,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="{{pathFor 'profile' data=currentUser }}"><i class="fa fa-user fa-fw"></i>&nbsp;Profile</a></li>
             <li><a href="#"><i class="fa fa-envelope fa-fw"></i>&nbsp;Messages</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Something else</a></li>
             <li class="divider"></li>
             <li><a href="/logout" class="logout"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</a></li>
           </ul>
@@ -64,5 +64,10 @@
 {{> tooltips}}
 <div class="pop-user-card">
   <div class="pop-content arrow-box"></div>
+</div>
+<div id="verifyModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    
+  </div>
 </div>
 </template>

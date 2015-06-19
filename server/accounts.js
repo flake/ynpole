@@ -13,6 +13,17 @@ Meteor.methods({
 	},
 
 	'email-invitation': function(email, profile){
-		// verify email for a user
+		var userId;
+
+		if(!validateEmail(email))
+			throw new Error(403, "Email not valid");
+
+		userId = Accounts.createUser({
+			email: email,
+			password: '',
+			profile: profile
+		});
+
+		Accounts.sendEnrollmentEmail(userId);
 	}
 });

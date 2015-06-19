@@ -73,6 +73,7 @@ Accounts.onCreateUser(function (options, user) {
             user.profile = options.profile
         }
         var service = _.keys(user.services)[0];
+        console.log("oauth user service: "+service);
         var email = user.services[service].email;
         if (!email) {
             if (user.emails) {
