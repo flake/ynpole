@@ -57,7 +57,7 @@ input[type="radio"], input[type="checkbox"]{
 	margin-bottom: 0;
 }
 
-.row{
+#ynpole-body{
 	margin: 40px 80px 0;
 }
 
@@ -72,7 +72,7 @@ input[type="radio"], input[type="checkbox"]{
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
 }
 
-.ynpole-div{
+.ynpole-logo{
 	display: block;
 	padding: 10px 20px;
 	margin-left: 120px;
@@ -554,6 +554,27 @@ input[type="radio"], input[type="checkbox"]{
 	color: #777;
 }
 
+.question-plus{
+	display: block;
+	position: fixed;
+	top: 90%;
+	left: 90%;
+	background-color: #ed2b2b;
+	border: 1px solid #E31E1E;
+	border-radius: 27px;
+	width: 45px;
+	height: 45px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	color: #fff;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
+	cursor: pointer;
+}
+.question-plus i{
+	position: relative;
+	top: 45%;
+	left: 51%;
+	transform: translate(-50%, -50%);
+}
 
 .add-question{
 	margin: 9px 0;
@@ -861,7 +882,7 @@ input[type="radio"], input[type="checkbox"]{
 .user-follow-link a:hover{ color: #fff; }
 
 .pop-user-card{
-	display: inline-block;
+	display: none;
 	z-index: 2001;
 	padding-bottom: 12px;
 	border: 1px solid transparent;

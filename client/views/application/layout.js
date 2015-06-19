@@ -32,7 +32,7 @@ Template.layout.events({
 		$('.pop-user-card').hide();
 	},
 
-	'click .ask-question': function(event, template){
+	'click .question-plus': function(event, template){
 		$('.modal-dialog').empty();
 		Blaze.renderWithData(Template.bsmodal, {title: "Add a question for review", modalTemplate: "addQuest", noFooter: true}, $('.modal-dialog')[0]);
 		$('#verifyModal').modal('show');
@@ -41,4 +41,8 @@ Template.layout.events({
 
 Template.layout.created = function(){
 	$('.pop-user-card').hide();
+}
+
+Template.layout.rendered = function(){
+	Session.set('DocumentTitle', 'Ynpole - Decision Review App');
 }
