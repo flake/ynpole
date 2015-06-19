@@ -15,15 +15,16 @@ Template.addQuest.events({
 			img_fsid: imgId
 		}
 
-		Meteor.call('post', post, function(error, id){
+		Meteor.call('post', post, function(error, postId){
 			if(error)
 				throwError(error.reason);
 			else{
-				$('#verifyModal').hide();
+				$('#verifyModal').modal('hide');
 				Session.set('srv_img', '');
 				Session.set('img_src', '');
 				template.find('#new-question').value = '';
 				template.find('#quest-topic').value = '';
+				Router.go('/');
 			}
 		});
 	},

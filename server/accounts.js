@@ -20,8 +20,9 @@ Meteor.methods({
 
 		userId = Accounts.createUser({
 			email: email,
-			password: '',
-			profile: profile
+			password: 'something',
+			profile: profile,
+			services: {"password": {}}
 		});
 
 		Accounts.sendEnrollmentEmail(userId);

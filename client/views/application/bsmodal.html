@@ -9,10 +9,10 @@
         {{> UI.dynamic template=modalTemplate data=modalData}}
       </div>
 
-      {{#unless noFooter}}
       <div class="modal-footer">
+        {{#unless noFooter}}
         <button type="button" class="btn btn-default btn-ynpole" data-dismiss="modal">Okay</button>
+        {{/unless}}
       </div>
-      {{/unless}}
     </div>
 </template>
