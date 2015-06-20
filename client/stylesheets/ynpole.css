@@ -283,7 +283,7 @@ input[type="radio"], input[type="checkbox"]{
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
 	background-image: linear-gradient(#ED2B2B,#E31E1E);
 	font-size: 13px;
-	padding: 0 40px;
+	padding: 0 40px 0 100px;
 	min-height: 32px !important;
 	height: 42px;
 	top: 0;
