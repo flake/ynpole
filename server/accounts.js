@@ -12,7 +12,7 @@ Meteor.methods({
 		Accounts.sendVerificationEmail(userId);
 	},
 
-	'email-invitation': function(email, profile){
+	'email-invite': function(email, profile){
 		var userId;
 
 		if(!validateEmail(email))
@@ -21,10 +21,11 @@ Meteor.methods({
 		userId = Accounts.createUser({
 			email: email,
 			password: 'something',
-			profile: profile,
-			services: {"password": {}}
+			profile: profile
 		});
 
 		Accounts.sendEnrollmentEmail(userId);
+
+		return userId;
 	}
 });

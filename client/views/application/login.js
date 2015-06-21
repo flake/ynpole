@@ -83,14 +83,6 @@ Template.login.events({
 	}
 });
 
-Template.layout.events({
-	'click .logout': function(event){
-		event.preventDefault();
-		Meteor.logout();
-		Router.go('/');
-	}
-});
-
 Template.login.created = function(){
 	Session.set('email-err', false);
 	Session.set('password', false);

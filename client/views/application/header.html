@@ -1,41 +1,47 @@
-<template name="header">
-	<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a role="logo" class="navbar-brand my-brand" href="/">Ynpole</a>
+<template name="ynheader">
+  <nav class="yn-nav">
+    <div class="brand-bg">
+      <a role="logo" class="brand-name" href="/">Ynpole</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-      </form>
+    <div class="yn-search">
+      <input type="text" class="ynpole-input" id="search-input" placeholder="Search">
+      <span class="fa fa-search input-right-icon"></span>
+    </div>
 
-      <ul class="nav navbar-nav navbar-right">
+    <div class="yn-navbar">
+      <ul class="yn-menu">
         {{#if currentUser}}
-     <!--   <li><a href="{{pathFor 'addQuest'}}" class="ask-question"><i class="fa fa-question fa-fw"></i>Add question</a></li>  -->
-        <li class="dropdown">
-          {{> notifications}}
+        <li><a href="/"><i class="fa fa-home yn-fa-nav" style="font-size:21px;vertical-align:bottom;margin-top:-1px;"></i> Home</a></li>
+        <li style="margin-top:2px;">
+          <a role="button">
+            <i class="fa fa-bell yn-fa-nav" style="font-size:16px;margin-top:1px;"></i> Notifications
+            {{#if notificationCount}}
+              <span class="count-badge">{{notificationCount}}</span>
+            {{/if}}
+          </a>
         </li>
-        <li><a href="/"><i class="fa fa-home fa-fw"></i>&nbsp;Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{> avatar user=currentUser size="extra-small"}}&nbsp;{{currentUser.profile.name}}&nbsp;<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{pathFor 'profile' data=currentUser }}"><i class="fa fa-user fa-fw"></i>&nbsp;Profile</a></li>
-            <li><a href="#"><i class="fa fa-envelope fa-fw"></i>&nbsp;Messages</a></li>
-            <li><a href="#">Something else</a></li>
-            <li class="divider"></li>
-            <li><a href="/logout" class="logout"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</a></li>
-          </ul>
+        <li>
+          <a class="nav-current-user" role="button">{{> avatar user=currentUser size="extra-small"}} {{currentUser.profile.name}}</a>
         </li>
-        {{else}}
-        <li><a href="/singup">Sign up</a></li>
-        <li><a href="/login">Log In</a></li>
         {{/if}}
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </div>
+  </nav>
+
+<div class="pop-nav-dropdown">
+  <div class="nav-dropdown"></div>
+</div>
+</template>
+
+<template name="userMenu">
+  <div class="nav-menu-list">
+    <ul>
+      <li><a href="{{pathFor 'profile' _id=userId}}">Profile</a></li>
+      <li>Messages</li>
+      <li>Followers</li>
+      <li>Following</li>
+      <li class="logout">Logout</li>
+    </ul>
+  </div>
 </template>

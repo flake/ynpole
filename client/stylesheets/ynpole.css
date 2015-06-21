@@ -270,12 +270,155 @@ input[type="radio"], input[type="checkbox"]{
 	border: 1px solid #E31E1E;
 }
 
-.my-brand{
+.brand-bg{
+	float: left;
+	margin: 0;
+	margin-left: 1%;
+/*	background-color: #ED2B2B;
+	border: 1px solid #E31E1E; 
+	border-radius: 4px;*/
+}
+.brand-bg a:hover{
+	color: #F1F1F1;
+}
+.brand-name{
+	float: left;
+	font-size: 24px;
 	font-weight: bold;
-	color: #fff;
-	padding: 9px 15px;
+	color: #FFF;
+	padding: 3px 15px;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
 }
+
+.yn-nav{
+	font-weight: bold;
+	border-radius: 0 0 3px 3px;
+	border-bottom: 1px solid #E31E1E;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+	background-image: linear-gradient(#ED2B2B,#E31E1E);
+	font-size: 13px;
+	min-height: 32px !important;
+	height: 42px;
+	position: fixed;
+	top: 0;
+	left: 7%;
+	right: 4.5%;
+	z-index: 2001;
+}
+
+.yn-search{
+	float: left;
+	width: 36%;
+	margin: 6px 0 0 6.2%;
+	font-weight: normal;
+}
+#search-sinput{
+	padding: 3px 10px;
+}
+.input-right-icon{
+	float: right;
+    margin-right: 9px;
+    margin-top: -24px;
+    position: relative;
+    z-index: 2;
+    color: #ED2B2B;
+    font-size: 18px;
+    opacity: 0.5;
+}
+.yn-navbar{
+	float: right;
+	display: inline-block;
+	margin: 10px 23px 0 0;
+}
+.yn-menu{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.yn-menu > li{
+	float: left;
+	border-radius: 3px;
+	line-height: 1.5;
+	margin-left: 6px;
+}
+.yn-menu > li > a{
+	padding: 9px 4px;
+	color: #fff;
+	border-radius: 2px;
+}
+
+.yn-menu > li > a :hover{
+	background-color: #DB1D1D;
+	color: #fff;
+}
+.nav-current-user .avatar{
+	float: none;
+	clear: none;
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.pop-nav-dropdown{
+	display: none;
+	z-index: 2001;
+	border: 1px solid transparent;
+	background: transparent;
+	padding-top: 9px;
+}
+
+.nav-menu-list{
+	display: inline-block;
+}
+.nav-menu-list ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.nav-menu-list > ul > li{
+	border-bottom: 1px solid #D0D1D5;
+	width: 144px;
+	padding: 4px;
+}
+
+/* CSS arrow dropdown*/
+
+.nav-dropdown{
+	position: relative;
+	background: #f1f1f1;
+	border: 1px solid;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	border-radius: 3px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	padding: 6px;
+}
+.nav-dropdown:after, .nav-dropdown:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.nav-dropdown:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #f1f1f1;
+	border-width: 14px;
+	margin-left: -14px;
+}
+.nav-dropdown:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #E5E6E9;
+	border-width: 16px;
+	margin-left: -16px;
+}
+
+/* End of CSS arrow dropdown */
+
+
+/*
 .navbar{
 	font-weight: bold;
 	border-radius: 0 0 3px 3px;
@@ -299,7 +442,14 @@ input[type="radio"], input[type="checkbox"]{
 .navbar-right{
 	margin-right: 0;
 }
+.nav > li > a{
+	padding: 10px 8px;
+}
 
+.nav > li > a :hover{
+	color: #fff;
+}
+*/
 .login-grid{
 	display: inline-block;
  	background-color: #f1f1f1;
@@ -333,14 +483,6 @@ input[type="radio"], input[type="checkbox"]{
 	font-weight: normal;
 	width: 400px;
 	border-radius: 3px;
-}
-
-.nav > li > a{
-	padding: 10px 8px;
-}
-
-.nav > li > a :hover{
-	color: #fff;
 }
 /*
 .home-posts{
@@ -388,7 +530,7 @@ input[type="radio"], input[type="checkbox"]{
 .post-source{
 	display: inline-block;
 	float: right;
-	margin-top: 2px;
+	margin-top: 3px;
 	line-height: 1.2;
 }
 
@@ -400,8 +542,9 @@ input[type="radio"], input[type="checkbox"]{
 .post-author{
 	font-size: 11px;
 	text-decoration: none;
-	color: #444;
+	color: #666;
 	margin-left: 4px;
+	vertical-align: super;
 }
 
 .post-footer{
@@ -525,7 +668,7 @@ input[type="radio"], input[type="checkbox"]{
 
 .comments{
 	display: inline-block;
-	margin-left: 50px;
+	margin-left: 9%;
 }
 
 .comments a{
@@ -654,7 +797,8 @@ input[type="radio"], input[type="checkbox"]{
 	border: 1px solid;
 	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 	border-radius: 3px;
-	margin: 20px 0 0 35px;
+	margin: 20px 0;
+	float: right;
 }
 
 .avatar-extra-large{
@@ -884,9 +1028,9 @@ input[type="radio"], input[type="checkbox"]{
 .pop-user-card{
 	display: none;
 	z-index: 2001;
-	padding-bottom: 12px;
 	border: 1px solid transparent;
 	background: transparent;
+	padding-bottom: 12px;
 }
 
 .pop-user-card .user-card{

@@ -36,4 +36,8 @@ Accounts.onEmailVerificationLink(function(token, done){
 			}
 		});
 	}
-})
+});
+
+Meteor._reload.onMigrate(function() {
+    return [false];
+});
