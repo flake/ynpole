@@ -36,12 +36,16 @@ Template.layout.events({
 		$('.modal-dialog').empty();
 		Blaze.renderWithData(Template.bsmodal, {title: "Add a question for review", modalTemplate: "addQuest", noFooter: true}, $('.modal-dialog')[0]);
 		$('#verifyModal').modal('show');
-	}
+	},
 });
 
 Template.layout.created = function(){
 	$('.pop-user-card').hide();
 	$('[data-toggle="tooltip"]').tooltip();
+	$(window).on('click', function(){
+		$('.pop-nav-dropdown').hide();
+		$('.nav-dropdown').empty();
+	});
 }
 
 Template.layout.rendered = function(){

@@ -328,7 +328,7 @@ input[type="radio"], input[type="checkbox"]{
 .yn-navbar{
 	float: right;
 	display: inline-block;
-	margin: 10px 23px 0 0;
+	margin: 12px 23px 0 0;
 }
 .yn-menu{
 	margin: 0;
@@ -342,8 +342,12 @@ input[type="radio"], input[type="checkbox"]{
 	margin-left: 6px;
 }
 .yn-menu > li > a{
-	padding: 9px 4px;
 	color: #fff;
+	border-radius: 2px;
+}
+
+.nav-anchor{
+	padding: 4px;
 	border-radius: 2px;
 }
 
@@ -375,11 +379,29 @@ input[type="radio"], input[type="checkbox"]{
 	list-style-type: none;
 }
 .nav-menu-list > ul > li{
-	border-bottom: 1px solid #D0D1D5;
-	width: 144px;
+	background-color: #fff;
+	border: 1px solid;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 	padding: 4px;
+	color: #666;
 }
-
+.nav-menu-list > ul > li:hover{
+	cursor: pointer;
+	background-color: #f1f1f1;
+}
+.nav-user-menu{
+	width: 162px;
+}
+.nav-user-menu i{
+	color: #ED2B2B;
+}
+/*
+.nav-menu-list > ul > li > a{
+	color: #666;
+}
+.nav-menu-list > ul > li > a :hover{
+	color: #666;
+} */
 /* CSS arrow dropdown*/
 
 .nav-dropdown{
@@ -1044,24 +1066,38 @@ input[type="radio"], input[type="checkbox"]{
 
 .count-badge{
 	display: inline-block;
-	padding: 3px 3px;
+	padding: 6px 4px 4px;
 	font-size: 10px;
-	font-weight: normal;
-	color: #fff;
+	font-weight: bold;
+	color: #ED2B2B;
 	line-height: 1;
 	white-space: nowrap;
 	text-align: center;
-	background-color: #337ab7;
-	border-radius: 3px;
-	position: absolute;
-	left:17px;
-	top: 3px;
+	background-color: #fff;
+	border-radius: 27px;
+	position: relative;
+	left: 25.5%;
+	top: -20px;
 	z-index: 201;
 }
 
+.user-notifications{
+	min-width: 342px;
+}
+
+.notification-list a{
+	color: #666;
+}
+.notification-list a :hover{
+	color: #666;
+}
+.notification-div{
+	margin-left: 36px;
+}
 .notification-div ul{
 	list-style-type: none;
 	margin: 0;
+	padding: 0;
 }
 
 .notification-div ul li{

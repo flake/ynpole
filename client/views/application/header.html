@@ -12,20 +12,18 @@
     <div class="yn-navbar">
       <ul class="yn-menu">
         {{#if currentUser}}
-        <li><a href="/"><i class="fa fa-home yn-fa-nav" style="font-size:21px;vertical-align:bottom;margin-top:-1px;"></i> Home</a></li>
-        <li style="margin-top:2px;">
-          <a role="button">
-            <i class="fa fa-bell yn-fa-nav" style="font-size:16px;margin-top:1px;"></i> Notifications
-            {{#if notificationCount}}
-              <span class="count-badge">{{notificationCount}}</span>
-            {{/if}}
+        <li><a href="/"><span class="nav-anchor"><i class="fa fa-home yn-fa-nav" style="font-size:21px;vertical-align:bottom;margin-top:-1px;"></i> Home</span></a></li>
+        <li style="margin-top:1px;">
+          <a role="button" class="nav-notifications">
+            <span class="nav-anchor"><i class="fa fa-bell yn-fa-nav" style="font-size:16px;"></i> Notifications</span>
           </a>
         </li>
         <li>
-          <a class="nav-current-user" role="button">{{> avatar user=currentUser size="extra-small"}} {{currentUser.profile.name}}</a>
+          <a class="nav-current-user" role="button"><span class="nav-anchor">{{> avatar user=currentUser size="extra-small"}} {{currentUser.profile.name}}</span></a>
         </li>
         {{/if}}
       </ul>
+      {{#if notificationCount}}<span class="count-badge">{{notificationCount}}</span>{{/if}}
     </div>
   </nav>
 
@@ -36,12 +34,13 @@
 
 <template name="userMenu">
   <div class="nav-menu-list">
-    <ul>
-      <li><a href="{{pathFor 'profile' _id=userId}}">Profile</a></li>
-      <li>Messages</li>
-      <li>Followers</li>
-      <li>Following</li>
-      <li class="logout">Logout</li>
+    <ul class="nav-user-menu">
+      <li class="profile-view"><i class="fa fa-user fa-fw"></i>&nbsp;Profile</li>
+      <li><i class="fa fa-envelope fa-fw"></i>&nbsp;Messages</li>
+      <li><i class="fa fa-circle-o-notch fa-fw"></i>&nbsp;Circles</li>
+      <li><i class="fa fa-question-circle fa-fw"></i>&nbsp;My Questions</li>
+      <li><i class="fa fa-edit fa-fw"></i>&nbsp;Blogs</li>
+      <li class="logout"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logout</li>
     </ul>
   </div>
 </template>
