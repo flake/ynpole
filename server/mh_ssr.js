@@ -1,8 +1,10 @@
-/* SSR.compileTemplate('postItem', Assets.getText('post_item.html'));
+SSR.compileTemplate('welcomeTemplate', Assets.getText('welcome.html'));
 
-Template.postItem.helpers({
-	
-}); */
+Template.welcomeTemplate.helpers({
+	baseURL: function(){
+		return process.env.ROOT_URL;
+	}
+});
 
 SSR.compileTemplate('inviteTemplate', Assets.getText('invite.html'));
 

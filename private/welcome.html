@@ -1,0 +1,98 @@
+<html>
+<head>
+	<style type="text/css">
+	a{
+		text-decoration: none;
+	}
+	.brand-bg{
+		float: left;
+		margin: 0;
+		margin-top: 6px;
+		margin-left: 1%;
+	}
+	.brand-bg a:hover{
+		color: #F1F1F1;
+	}
+	.brand-name{
+		float: left;
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFF;
+		padding: 3px 15px;
+		text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+	}
+	.ynpole-btn{
+		width: 100%;
+		padding: 4px 10px;
+		text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
+		border-radius: 3px;
+		border: 1px solid #E31E1E;
+		color: #fff;
+		background-image:linear-gradient(#ED2B2B,#E31E1E);
+		font-weight: bold;
+		font-size: 13px;
+		text-decoration: none;
+	}
+	.email-brand{
+		font-weight: bold;
+		border-radius: 0 0 3px 3px;
+		border-bottom: 1px solid #E31E1E;
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+		background-image: linear-gradient(#ED2B2B,#E31E1E);
+		font-size: 13px;
+		min-height: 32px !important;
+		height: 42px;
+		position: relative;
+		top: 0;
+		z-index: 2001;
+	}
+	.email-template{
+		display: inline-block;
+		background-color: #e9e9e9;
+	}
+	.welcome-confirm{
+		display: inline-block;
+		padding: 20px;
+		background-color: #fff;
+		border: 1px solid;
+		border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+		border-radius: 3px;
+		margin: 30px 40px;
+		min-width: 504px;
+	}
+	.welcome-header h4{
+		margin: 0;
+		padding: 6px 0;
+		color: #444;
+	}
+	.confirm-message{
+		color: #444;
+		margin-bottom: 16px;
+	}
+	.confirm-message p{
+		margin: 0;
+		padding: 6px 0;
+		font-size: 14px;
+		color: #666;
+	}
+</style>
+</head>
+<body>
+	<div class="email-template">
+		<div class="email-brand">
+			<div class="brand-bg">
+		      <a role="logo" class="brand-name" href="{{baseURL}}">Ynpole - <span style="font-size:14px;">Decision review network</span></a>
+		    </div>
+		</div>
+		<div class="welcome-confirm">
+			<div class="welcome-header"><h4>Welcome to Ynpole - Get your choices or decisions reviewed from your social networks</h4></div>
+			<div class="welcome-body">
+				<div class="confirm-message">
+					<p>You have successfully signed up for Ynpole. Please confirm your Email address for moving forward with us.</p>
+				</div>
+				<div class="confirm-action"><a href="{{urlInvite}}" class="ynpole-btn">Confirm Email</a></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

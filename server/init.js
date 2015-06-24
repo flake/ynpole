@@ -7,8 +7,13 @@ Meteor.startup(function(){
 		return 'Welcome to Ynpole! - Confirm Your Email address';
 	};
 	//Note: if you need to return HTML instead, use Accounts.emailTemplates.verifyEmail.html
-	Accounts.emailTemplates.verifyEmail.text = function(user, url){
-		return 'click on the following link to verify your email address: ' + url;
+	Accounts.emailTemplates.verifyEmail.html = function(user, url){
+		var data = {
+			urlInvite: url
+		}
+		var html = SSR.render('welcomeTemplate', data);
+
+		return html;
 	};
 
 	Accounts.emailTemplates.enrollAccount.subject = function(user){
@@ -23,8 +28,8 @@ Meteor.startup(function(){
 			urlInvite: url,
 			avatarURL: userAvatar
 		};
-
 		var html = SSR.render('inviteTemplate', data);
+		
 		return html;
 	}
 });
