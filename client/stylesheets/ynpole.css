@@ -388,6 +388,7 @@ input[type="radio"], input[type="checkbox"]{
 .nav-menu-list > ul > li:hover{
 	cursor: pointer;
 	background-color: #f1f1f1;
+	border: 1px solid #f1f1f1;
 }
 .nav-user-menu{
 	width: 162px;
@@ -1082,7 +1083,7 @@ input[type="radio"], input[type="checkbox"]{
 }
 
 .user-notifications{
-	min-width: 342px;
+	min-width: 315px;
 }
 
 .notification-list a{

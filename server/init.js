@@ -14,7 +14,17 @@ Meteor.startup(function(){
 	Accounts.emailTemplates.enrollAccount.subject = function(user){
 		return "Join me on Ynpole";
 	}
-	Accounts.emailTemplates.enrollAccount.text = function(user, url){
+/*	Accounts.emailTemplates.enrollAccount.text = function(user, url){
 		return "Your friend has invited you to join him on Ynpole. To activate your account click the link below "+url;
+	} */
+
+	Accounts.emailTemplates.enrollAccount.html = function(user, url){
+		var data = {
+			urlInvite: url,
+			avatarURL: userAvatar
+		};
+
+		var html = SSR.render('inviteTemplate', data);
+		return html;
 	}
 });

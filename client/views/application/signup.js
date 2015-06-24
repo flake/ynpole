@@ -49,7 +49,8 @@ Template.signup.events({
 						$('#reg-email').siblings(".errspan").css("visibility", "visible");
 					}
 				}else{
-					console.log("user created successfully");
+					console.log("user created successfully: "+Meteor.userId());
+					Meteor.call('send-email-verification', Meteor.userId(), function(error, result){});
 				}
 			});
 		}

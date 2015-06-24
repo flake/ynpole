@@ -12,8 +12,9 @@ Meteor.methods({
 		Accounts.sendVerificationEmail(userId);
 	},
 
-	'email-invite': function(email, profile){
+	'email-invite': function(email, profile, sender){
 		var userId;
+		userAvatar = sender.avatarUrl;
 
 		if(!validateEmail(email))
 			throw new Error(403, "Email not valid");

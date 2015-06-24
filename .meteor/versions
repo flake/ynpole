@@ -70,6 +70,7 @@ logging@1.0.7
 lookback:tooltips@0.3.2
 meteor@1.1.6
 meteor-platform@1.2.2
+meteorhacks:ssr@2.1.2
 minifiers@1.1.5
 minimongo@1.0.8
 mobile-status-bar@1.0.3

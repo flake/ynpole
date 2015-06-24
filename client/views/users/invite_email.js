@@ -20,12 +20,14 @@ Template.inviteEmail.events({
 	'click #email-invite-btn': function(event, template){
 		var email = $('#email-invite-input').val();
 		var profile = {};
+		var sender = { avatarUrl: $('.avatar-image').attr('src') };
 		if(validateEmail(email)){
-			Meteor.call('email-invite', email, profile, function(error, userId){
+			Meteor.call('email-invite', email, profile, sender, function(error, userId){
 				if(error){
 					console.log("invite error: " + error);
 				}else{
 					console.log("user created: " + userId);
+					$('#email-invite-input').val('');
 				}
 			});
 		}

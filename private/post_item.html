@@ -1,0 +1,139 @@
+<head>
+<style type="text/css">
+.post{
+	display: block;
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	border: 1px solid;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+}
+.post-item{
+	margin-top: 6px;
+	padding: 9px 9px 0;
+}
+
+.post-content{
+	background-color: #fff;
+	padding: 4px 4px 2px;
+	border: 1px solid;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+}
+
+.post-content ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.post-res{
+	text-align: center;
+	background-color: #e1e1e1;
+}
+.post-res-img{
+	max-width:100%;
+	max-height: 275px;
+}
+.post-quest{
+	margin-top: 4px;
+	min-height: 60px !important;
+}
+.post-view{ cursor: pointer; }
+
+.post-source{
+	display: inline-block;
+	float: right;
+	margin-top: 3px;
+	line-height: 1.2;
+}
+.post-author{
+	font-size: 11px;
+	text-decoration: none;
+	color: #666;
+	margin-left: 4px;
+	vertical-align: super;
+}
+
+.post-footer{
+	padding: 3px 0 5px;
+	font-family: verdana;
+}
+.post-actions{ display: inline-block; }
+
+.post-actions a{
+	text-decoration: none;
+	margin: 0;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 0.2px;
+}
+.vote-yes-btn{ 	color: #18BA18; }
+.vote-yes-btn :hover{ color: #18BA18; }
+
+.vote-no-btn{ color: #ED2B2B; }
+.vote-no-btn :hover{ color: #ED2B2B; }
+.voted { color: #999; }
+.voted-yes{ color: #18BA18;}
+.voted-no{ color: #ED2B2B;}
+
+.vote-count{
+	display: inline-block;
+	width: 24px;
+	margin: 0 4px 0 2px;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	color: #666;
+}
+.com-count{	font-size: 12px; }
+
+.comments{
+	display: inline-block;
+	margin-left: 9%;
+}
+
+.comments a{
+	color: #666;
+}
+
+.comments span{
+	font-size:13px;
+	padding: 0 4px;
+}
+</style>
+</head>
+<body>
+	<div class="post-item post">
+		<div class="post-content">
+			<ul>
+				<li class="post-res post-view">
+					{{#if img_fsid}}
+					{{#with image}}
+						<img src="{{this.url}}" class="post-res-img">
+					{{/with}}
+					{{/if}}
+				</li>
+				<li class="post-quest post-view">
+					{{question}}
+				</li>
+			</ul>
+		</div>
+		<div class="post-footer">
+			<div class="post-actions">
+				<a role="button" class="vote-yes-btn {{voteyClass}}"><span><i class="fa fa-thumbs-up"></i> YES </span></a>
+				<div class="vote-count">{{yes_votes}}</div>
+				<a role="button" class="vote-no-btn {{votenClass}}"><span><i class="fa fa-thumbs-down"></i> NO </span></a>
+				<div class="vote-count">{{no_votes}}</div>
+			</div>
+			<div class="comments">
+				<a role="button" class="comments-icon"><i class="fa fa-comments-o"></i><span>Comments</span></a>
+				<div class="vote-count">{{commentsCount}}</div>
+			</div>
+		<!--	<div class="polarity"><i class="fa fa-signal"></i>&nbsp;{{polarity}}</div> -->
+			<div class="post-source">
+				<div style="display: inline-block;" class="pop-user" uid="{{source_id}}">
+					<a href="{{pathFor 'profile' _id=source_id}}"><img src="{{../avatarURL}}" width="14px" height="14px"></a>
+					<a href="{{pathFor 'profile' _id=source_id}}" class="post-author"><span>{{asked_by}}</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

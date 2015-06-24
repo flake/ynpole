@@ -1,0 +1,255 @@
+<html>
+<head>
+	<style type="text/css">
+	a{
+		text-decoration: none;
+	}
+	.brand-bg{
+		float: left;
+		margin: 0;
+		margin-top: 6px;
+		margin-left: 1%;
+	}
+	.brand-bg a:hover{
+		color: #F1F1F1;
+	}
+	.brand-name{
+		float: left;
+		font-size: 24px;
+		font-weight: bold;
+		color: #FFF;
+		padding: 3px 15px;
+		text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
+	}
+	.ynpole-btn{
+		width: 100%;
+		padding: 4px 10px;
+		text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
+		border-radius: 3px;
+		border: 1px solid #E31E1E;
+		color: #fff;
+		background-image:linear-gradient(#ED2B2B,#E31E1E);
+		font-weight: bold;
+		font-size: 13px;
+		text-decoration: none;
+	}
+	.email-brand{
+		font-weight: bold;
+		border-radius: 0 0 3px 3px;
+		border-bottom: 1px solid #E31E1E;
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+		background-image: linear-gradient(#ED2B2B,#E31E1E);
+		font-size: 13px;
+		min-height: 32px !important;
+		height: 42px;
+		position: relative;
+		top: 0;
+		z-index: 2001;
+	}
+	.email-template{
+		display: inline-block;
+		background-color: #e9e9e9;
+	}
+	.invite-enroll{
+		display: inline-block;
+		padding: 20px;
+		background-color: #fff;
+		border: 1px solid;
+		border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+		border-radius: 3px;
+		margin: 30px 40px;
+		min-width: 504px;
+	}
+	.invite-avatar{
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		background-color: #f1f1f1;
+		float: left;
+		margin-right: 9px;
+		border: 1px solid #D0D1D5;
+	}
+	.invite-header h4{
+		margin: 0;
+		padding: 6px 0;
+		color: #444;
+	}
+	.invite-message{
+		color: #444;
+		margin-bottom: 16px;
+	}
+	.invite-message span{
+		font-weight: bold;
+		font-size: 18px;
+	}
+	.invite-message p{
+		margin: 0;
+		padding: 6px 0;
+		font-size: 14px;
+		color: #666;
+	}
+
+	/* post -item */
+	.post{
+		display: block;
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		border: 1px solid;
+		border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+		margin: 0 40px;
+		width: 504px;
+	}
+	.post-item{
+		margin-top: 6px;
+		padding: 9px 9px 0;
+	}
+
+	.post-content{
+		background-color: #fff;
+		padding: 4px 4px 2px;
+		border: 1px solid;
+		border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	}
+
+	.post-content ul{
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	.post-res{
+		text-align: center;
+		background-color: #e1e1e1;
+	}
+	.post-res-img{
+		max-width:100%;
+		max-height: 275px;
+	}
+	.post-quest{
+		margin-top: 4px;
+		min-height: 60px !important;
+	}
+	.post-view{ cursor: pointer; }
+
+	.post-source{
+		display: inline-block;
+		float: right;
+		margin-top: 3px;
+		line-height: 1.2;
+	}
+	.post-author{
+		font-size: 11px;
+		text-decoration: none;
+		color: #666;
+		margin-left: 4px;
+		vertical-align: super;
+	}
+
+	.post-footer{
+		padding: 3px 0 5px;
+		font-family: verdana;
+	}
+	.post-actions{ display: inline-block; }
+
+	.post-actions a{
+		text-decoration: none;
+		margin: 0;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 0.2px;
+	}
+	.vote-yes-btn{ 	color: #18BA18; }
+	.vote-yes-btn :hover{ color: #18BA18; }
+
+	.vote-no-btn{ color: #ED2B2B; }
+	.vote-no-btn :hover{ color: #ED2B2B; }
+	.voted { color: #999; }
+	.voted-yes{ color: #18BA18;}
+	.voted-no{ color: #ED2B2B;}
+
+	.vote-count{
+		display: inline-block;
+		width: 24px;
+		margin: 0 4px 0 2px;
+		font-size: 12px;
+		font-weight: bold;
+		letter-spacing: 0.5px;
+		color: #666;
+	}
+	.com-count{	font-size: 12px; }
+
+	.comments{
+		display: inline-block;
+		margin-left: 9%;
+	}
+
+	.comments a{
+		color: #666;
+	}
+
+	.comments span{
+		font-size:13px;
+		padding: 0 4px;
+	}
+</style>
+</head>
+<body>
+	<div class="email-template">
+		<div class="email-brand">
+			<div class="brand-bg">
+		      <a role="logo" class="brand-name" href="{{baseURL}}">Ynpole - <span style="font-size:14px;">Decision review network</span></a>
+		    </div>
+		</div>
+		<div class="invite-enroll">
+			<div class="invite-header"><h4>Hi buddy!</h4></div>
+			<div class="invite-body">
+				<div class="invite-avatar">
+					<img src="{{avatarURL}}" alt="" width="100px" height="100px">
+				</div>
+				<div class="invite-message">
+					<span>{{profileName}} invited you to Ynpole.</span>
+					<p>Sign up today to get your choices and decisions reviewed from your social networks.</p>
+				</div>
+				<div class="invite-action"><a href="{{urlInvite}}" class="ynpole-btn">Accept invite</a></div>
+			</div>
+		</div>
+
+		{{#each posts}}
+			<div class="post-item post">
+				<div class="post-content">
+					<ul>
+						<li class="post-res post-view">
+							{{#if img_fsid}}
+							{{#with image}}
+								<img src="{{baseURL}}{{this.url}}" class="post-res-img">
+							{{/with}}
+							{{/if}}
+						</li>
+						<li class="post-quest post-view">
+							{{question}}
+						</li>
+					</ul>
+				</div>
+				<div class="post-footer">
+					<div class="post-actions">
+						<a role="button" class="vote-yes-btn {{voteyClass}}"><span><i class="fa fa-thumbs-up"></i> YES </span></a>
+						<div class="vote-count">{{yes_votes}}</div>
+						<a role="button" class="vote-no-btn {{votenClass}}"><span><i class="fa fa-thumbs-down"></i> NO </span></a>
+						<div class="vote-count">{{no_votes}}</div>
+					</div>
+					<div class="comments">
+						<a role="button" class="comments-icon"><i class="fa fa-comments-o"></i><span>Comments</span></a>
+						<div class="vote-count">{{commentsCount}}</div>
+					</div>
+				<!--	<div class="polarity"><i class="fa fa-signal"></i>&nbsp;{{polarity}}</div> -->
+					<div class="post-source">
+						<div style="display: inline-block;" class="pop-user" uid="{{source_id}}">
+							<a href="{{pathFor 'profile' _id=source_id}}"><img src="{{../avatarURL}}" width="14px" height="14px"></a>
+							<a href="{{pathFor 'profile' _id=source_id}}" class="post-author"><span>{{asked_by}}</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+</body>
+</html>

@@ -101,11 +101,6 @@ Accounts.onCreateUser(function (options, user){
             var existingFacebookUser = Meteor.users.findOne({'services.facebook.email': email});
             var doesntExist = !existingGitHubUser && !existingGoogleUser && !existingTwitterUser && !existingFacebookUser;
             if (doesntExist) {
-                if(service == "password"){
-                    Meteor.setTimeout(function(){
-                        Accounts.sendVerificationEmail(user._id);
-                    }, 2 * 1000);
-                }
                 // return the user as it came, because there he doesn't exist in the DB yet
                 return user;
             } else {
@@ -114,11 +109,6 @@ Accounts.onCreateUser(function (options, user){
                     if (user.emails) {
                         // user is signing in by email, we need to set it to the existing user
                         existingUser.emails = user.emails;
-                        if(service == "password"){
-                            Meteor.setTimeout(function(){
-                                Accounts.sendVerificationEmail(user._id);
-                            }, 2 * 1000);
-                        }
                     }
                 }
             }
