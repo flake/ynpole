@@ -10,6 +10,12 @@ Meteor.startup(function() {
 		document.title = Session.get("DocumentTitle");
 	});
 
+	FlashMessages.configure({
+		autoHide: true,
+		hideDelay: 5000,
+		autoScroll: false
+	});
+
 /*  Uploader.finished = function(index, fileInfo, templateContext){
   	Session.set('srv_img', fileInfo.name);
   	alert("init session set "+ fileInfo.name);

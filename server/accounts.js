@@ -17,7 +17,7 @@ Meteor.methods({
 		userAvatar = sender.avatarUrl;
 
 		if(!validateEmail(email))
-			throw new Error(403, "Email not valid");
+			throw new Error(403, "Not a valid Email");
 
 		userId = Accounts.createUser({
 			email: email,

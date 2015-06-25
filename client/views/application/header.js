@@ -24,7 +24,7 @@ Template.ynheader.events({
 		var top = pos.top + 18;
 
 		Blaze.renderWithData(Template.userMenu, {}, $('.nav-dropdown')[0]);
-		$('.pop-nav-dropdown').css({'top':top,'left':left, 'position':'absolute', 'transform': 'translate(43%, 0)'});
+		$('.pop-nav-dropdown').css({'top':top,'left':left, 'position':'absolute', 'transform': 'translate(27%, 0)'});
 		$('.pop-nav-dropdown').show();
 	},
 	'mouseleave .pop-nav-dropdown': function(event, template){

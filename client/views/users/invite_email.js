@@ -26,8 +26,8 @@ Template.inviteEmail.events({
 				if(error){
 					console.log("invite error: " + error);
 				}else{
-					console.log("user created: " + userId);
 					$('#email-invite-input').val('');
+					FlashMessages.sendSuccess('Email invitation has been sent.');
 				}
 			});
 		}

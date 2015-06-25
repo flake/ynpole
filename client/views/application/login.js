@@ -80,6 +80,10 @@ Template.login.events({
 			$(event.currentTarget).css("border", "1px solid #D0D1D5");
 			$(event.currentTarget).siblings(".errspan").css("visibility", "hidden");
 		}
+	},
+
+	'click #forgot-passwd': function(event, template){
+		event.preventDefault();
 	}
 });
 

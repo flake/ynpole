@@ -25,8 +25,14 @@ Accounts.onEmailVerificationLink(function(token, done){
 					if(user)
 						userId = user._id;
 
+					var data = {
+						title: "Email verification link expired!",
+						modalTemplate: "verifyEmailExpired",
+						modalData: {userId: user._id}
+					};
+
 					$('.modal-dialog').empty();
-					Blaze.renderWithData(Template.bsmodal, {title: "Email verification link expired!", modalTemplate: "verifyEmailExpired", modalData: {userId: user._id}}, $('.modal-dialog')[0]);
+					Blaze.renderWithData(Template.bsmodal, data, $('.modal-dialog')[0]);
 					$('#verifyModal').modal('show');
 					console.log('Sorry this verification link has expired. Resend the new link for confirmation?');
 				}
@@ -36,6 +42,14 @@ Accounts.onEmailVerificationLink(function(token, done){
 			}
 		});
 	}
+});
+
+Accounts.onEnrollmentLink(function(token, done){
+	if(token){
+		Session.set('passwd-reset-token', token);
+		console.log("passwd-reset-token set: "+token);
+	}
+	done();
 });
 
 Meteor._reload.onMigrate(function() {
