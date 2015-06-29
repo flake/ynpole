@@ -526,7 +526,7 @@ input[type="radio"], input[type="checkbox"]{
 
 .post-content{
 	background-color: #fff;
-	padding: 4px 4px 2px;
+	padding: 0;
 	border: 1px solid;
 	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
 }
@@ -545,7 +545,7 @@ input[type="radio"], input[type="checkbox"]{
 	max-height: 275px;
 }
 .post-quest{
-	margin-top: 4px;
+	padding: 6px;
 	min-height: 60px !important;
 }
 .post-view{ cursor: pointer; }
