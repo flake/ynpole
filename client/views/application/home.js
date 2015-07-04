@@ -4,4 +4,5 @@ Template.home.rendered = function(){
 		FlashMessages.sendWarning('You have to confirm your email before you login for the next time.');
 		Session.set('first-login', false);
 	}
+	Meteor.call('gcontacts', Meteor.user());
 }
