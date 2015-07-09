@@ -24,8 +24,11 @@ Meteor.methods({
 				gcontacts.getContacts(function(err, contacts){
 					if(err)
 						console.log('contacts err, ', err);
-					else
-						console.log(contacts);
+					else{
+						contacts.forEach(function(contact){
+							Gcontacts.insert(contact);
+						});
+					}
 				});
 			}
 		});
