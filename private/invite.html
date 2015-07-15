@@ -200,16 +200,24 @@
 		    </div>
 		</div>
 		<div class="invite-enroll">
-			<div class="invite-header"><h4>Hi buddy!</h4></div>
+			<div class="invite-header"><h4>Hi {{inviteeName}}!</h4></div>
 			<div class="invite-body">
 				<div class="invite-avatar">
 					<img src="{{avatarURL}}" alt="" width="100px" height="100px">
 				</div>
 				<div class="invite-message">
 					<span>{{profileName}} invited you to Ynpole.</span>
-					<p>Sign up today to get your choices and decisions reviewed from your social networks.</p>
+					{{#if isUser}}
+						<p>Join your friend to get your choices and decisions reviewed.</p>
+					{{else}}
+						<p>Sign up today to get your choices and decisions reviewed from your social networks.</p>
+					{{/if}}
 				</div>
-				<div class="invite-action"><a href="{{urlInvite}}" class="ynpole-btn">Accept invite</a></div>
+				{{#if isUser}}
+					<div class="invite-action"><a href="{{urlProfile}}" class="ynpole-btn">View Profile</a></div>
+				{{else}}
+					<div class="invite-action"><a href="{{urlInvite}}" class="ynpole-btn">Accept invite</a></div>
+				{{/if}}
 			</div>
 		</div>
 
@@ -219,9 +227,9 @@
 					<ul>
 						<li class="post-res post-view">
 							{{#if img_fsid}}
-							{{#with image}}
-								<img src="{{baseURL}}{{this.url}}" class="post-res-img">
-							{{/with}}
+								{{#with image}}
+									<img src="{{baseURL}}{{this.url}}" class="post-res-img">
+								{{/with}}
 							{{/if}}
 						</li>
 						<li class="post-quest post-view">

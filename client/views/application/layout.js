@@ -2,7 +2,7 @@ Template.layout.events({
 	'mouseenter .pop-user': function(event, template){
 		$('.pop-content').empty();
 		var pos = $(event.currentTarget).position();
-		var left = pos.left +226; //event.pageX -45
+		var left = pos.left +240; //event.pageX -45
 		var top = pos.top -72; //event.pageY -120
 
 		if(top < 10)

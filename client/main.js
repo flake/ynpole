@@ -2,18 +2,10 @@ Meteor.subscribe("posts");
 Meteor.subscribe("comments");
 Meteor.subscribe('activities');
 Meteor.subscribe('follows');
-
 Meteor.subscribe('profiles');
-
 Meteor.subscribe('images');
-
 Meteor.subscribe('notifications');
-
-//cloudinary config
-/*
-$.cloudinary.config({
-	cloud_name: 'rajcynosure'
-}); */
+Meteor.subscribe('gcontacts', Meteor.userId());
 
 Accounts.onEmailVerificationLink(function(token, done){
 	if(token){

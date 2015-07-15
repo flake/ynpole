@@ -1,0 +1,29 @@
+<template name="_googleContacts">
+{{#if gcount}}
+	<div class="item item-checkbox checkbox-positive">
+		<div>{{gcount}} contacts <span style="float:right;margin-right:36px;">Invite all</span></div>
+		<label class="checkbox">
+			<input type="checkbox" id="check-all">
+		</label>
+	</div>
+	<div class="ynlist">
+		{{#each gContacts}}
+			<div class="item item-avatar item-checkbox checkbox-positive">
+				<img src="/img/default_user.png" alt="hi">
+				<h2>{{name}}</h2>
+				<p>{{email}}</p>
+				<label class="checkbox">
+					<input type="checkbox" class="check-contact" value="{{email}}">
+				</label>
+			</div>
+		{{/each}}
+	</div>
+{{else}}
+	<div class="import-contacts">
+		<a role="button" id="google-login" class="oauth-btn">
+			<div class="oauth-idiv"><i class="fa fa-google-plus-square fa-2x"></i></div>
+			<div class="oauth-tdiv"><span class="oauth-text">&nbsp;&nbsp;Import Google Contacts</span></div>
+		</a>
+	</div>
+{{/if}}
+</template>

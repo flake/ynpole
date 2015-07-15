@@ -1,3 +1,7 @@
+html{
+	overflow: auto !important;
+}
+
 .box-size{
 	box-sizing: border-box; /* css3 rec */
     -moz-box-sizing: border-box; /* ff2 */
@@ -193,6 +197,10 @@ input[type="radio"], input[type="checkbox"]{
 }
 .signup-field a:hover{
 	color: #f1f1f1;
+}
+
+.import-contacts a:hover{
+	color: #fff;
 }
 
 .oauth-btn{
@@ -723,7 +731,7 @@ input[type="radio"], input[type="checkbox"]{
 .question-plus{
 	display: block;
 	position: fixed;
-	top: 90%;
+	top: 600px;
 	left: 90%;
 	background-color: #ed2b2b;
 	border: 1px solid #E31E1E;
@@ -734,11 +742,12 @@ input[type="radio"], input[type="checkbox"]{
 	color: #fff;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
 	cursor: pointer;
+	z-index: 1001;
 }
 .question-plus i{
 	position: relative;
-	top: 45%;
-	left: 51%;
+	top: 48%;
+	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
@@ -1165,4 +1174,54 @@ input[type="radio"], input[type="checkbox"]{
 #email-invite-btn{
 	border-radius: 0 3px 3px 0;
 	padding: 6px 10px;
+}
+
+.ynlist{
+	height: 500px;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+.item {
+  border-color: #ddd;
+  background-color: #fff;
+  color: #444;
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: -1px;
+  padding: 16px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.item-checkbox{
+	padding-left: 60px;
+}
+.item-avatar > img:first-child{
+	position: absolute;
+  top: 16px;
+  left: 16px;
+  max-width: 40px;
+  max-height: 40px;
+  width: 100%;
+  border-radius: 50%;
+}
+label.checkbox{
+	position: absolute;
+  top: 12px;
+  right: 9px;
+}
+.item h2{
+	overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.2;
 }

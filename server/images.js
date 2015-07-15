@@ -32,3 +32,35 @@ Images.allow({
     return true;
   }
 });
+
+var googleAvatars = new FS.Store.S3("gavatars", {
+  accessKeyId: "AKIAJ7635KVQWPPWGN3Q",
+  secretAccessKey: "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",
+  bucket: "ynpole",
+  folder: "gavatar",
+  maxTries: 2
+});
+
+Gavatars = new FS.Collection("gavatars", {
+  stores: [googleAvatars],
+  filter: {
+    allow: {
+      contentTypes: ['image/*']
+    }
+  }
+});
+
+Gavatars.allow({
+  insert:function(userId,project){
+    return true;
+  },
+  update:function(userId,project,fields,modifier){
+   return true;
+  },
+  remove:function(userId,project){
+    return true;
+  },
+  download:function(){
+    return true;
+  }
+});

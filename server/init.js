@@ -1,5 +1,7 @@
 Meteor.startup(function(){
 
+	Future = Npm.require('fibers/future');
+
 	// Accounts email config
 	Accounts.emailTemplates.from = 'Ynpole <rajasekhar@ynpole.com>';
 	Accounts.emailTemplates.siteName = 'Ynpole';
@@ -19,17 +21,28 @@ Meteor.startup(function(){
 	Accounts.emailTemplates.enrollAccount.subject = function(user){
 		return "Join me on Ynpole";
 	}
-/*	Accounts.emailTemplates.enrollAccount.text = function(user, url){
-		return "Your friend has invited you to join him on Ynpole. To activate your account click the link below "+url;
-	} */
 
 	Accounts.emailTemplates.enrollAccount.html = function(user, url){
+		var sender = Meteor.user();
+		var invite = Invites.find({invitee: user._id, expired: false});
+		var html = '';
+		var isUser = true;
+		if(invite)
+			isUser = false;
+		var inviteeName = user.profile.name;
+
+		if(!inviteeName)
+			inviteeName = "buddy";
+
 		var data = {
+			inviteeName: inviteeName,
 			urlInvite: url,
-			avatarURL: userAvatar
+			avatarURL: sender.profile.avatar,
+			urlProfile: process.env.ROOT_URL+'profile/'+sender._id,
+			isUser: isUser
 		};
-		var html = SSR.render('inviteTemplate', data);
-		
+		html = SSR.render('inviteTemplate', data);
+
 		return html;
 	}
 });

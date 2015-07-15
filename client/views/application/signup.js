@@ -9,7 +9,10 @@ Template.signup.events({
 	},
 
 	'click #google-login': function(event, template){
-		Meteor.loginWithGoogle({ requestPermissions: ['email', 'profile'], requestOfflineToken: true},
+		Meteor.loginWithGoogle({
+			requestPermissions: ['email', 'profile', 'https://www.google.com/m8/feeds'],
+			requestOfflineToken: true,
+			forceApprovalPrompt: true },
 			function(err){
 				if(err)
 					return console.log(err);

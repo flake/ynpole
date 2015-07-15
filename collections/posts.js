@@ -1,10 +1,56 @@
 Posts = new Meteor.Collection('posts');
-
-/*Posts.allow({
-	insert: function(userId, doc){
-		return !! userId;
+/*
+var Schema = {};
+Schema.Post = new SimpleSchema({
+	question:{
+		type: String
+	},
+	tags:{
+		type: [String],
+		optional: true,
+		blackbox: true
+	},
+	img_fsid: {
+		type: String,
+		optional: true
+	},
+	source_id: {
+		type: String
+	},
+	asked_by: {
+		type: String
+	},
+	polarity: {
+		type: Number,
+		defaultValue: 0
+	},
+	reviews: {
+		type: [Object],
+		optional: true
+	},
+	"reviews.$.user_id": {
+		type: String
+	},
+	"reviews.$.user_name": {
+		type: String
+	},
+	"reviews.$.vote":{
+		type: String,
+		allowedValues: ['YES', 'NO']
+	},
+	yes_votes: {
+		type: Number,
+		defaultValue: 0
+	},
+	no_votes: {
+		type: Number,
+		defaultValue: 0
+	},
+	created_at: {
+		type: Date,
+		defaultValue: new Date().getTime()
 	}
-});*/
+}); */
 
 Meteor.methods({
 	post: function(postAttr){
@@ -16,7 +62,7 @@ Meteor.methods({
 		if(!postAttr.question)
 			throw new Meteor.Error(422, "Please add a question");
 
-		var post = _.extend(_.pick(postAttr, 'question', 'topic', 'img_fsid'), {
+		var post = _.extend(_.pick(postAttr, 'question', 'tags', 'img_fsid'), {
 			source_id: user._id,
 			asked_by: user.profile.name,
 			polarity: 0,
@@ -38,6 +84,7 @@ Meteor.methods({
 	yesvote: function(postId){
 		var user = Meteor.user();
 		var inc_no = 0;
+		var review = findReview(postId, user._id);
 
 		if(!user)
 			throw new Meteor.Error(401, "You need to login to review");
@@ -46,10 +93,10 @@ Meteor.methods({
 		if(!post)
 			throw new Meteor.Error(422, "Invalid Post");
 
-		if(Posts.find({$and: [{_id: postId}, {"yes_voters.voter_id":user._id}]}).count())
+		if(review === "YES")
 			throw new Meteor.Error(422, "Already reviewed 'Yes' to this question");
 
-		if(Posts.find({$and: [{_id: postId}, {"no_voters.voter_id":user._id}]}).count())
+		if(review === "NO")
 			inc_no = -1;
 
 		Posts.update(post._id, {
@@ -58,10 +105,10 @@ Meteor.methods({
 			$pull: {no_voters: {voter_id: user._id}}
 		});
 
-		Comments.update({userId: user._id, postId: postId, vote: 'y'}, {$set: {expired: false}}, {multi: true});
+		Comments.update({userId: user._id, postId: postId, vote: 'YES'}, {$set: {expired: false}}, {multi: true});
 
 		if(inc_no == -1)
-			Comments.update({userId: user._id, postId: postId, vote: 'n'}, {$set: {expired: true}}, {multi: true});
+			Comments.update({userId: user._id, postId: postId, vote: 'NO'}, {$set: {expired: true}}, {multi: true});
 
 		createActivity({'type': "reviewed", 'sourceId': postId});
 
@@ -71,6 +118,7 @@ Meteor.methods({
 	novote: function(postId){
 		var user = Meteor.user();
 		var inc_yes = 0;
+		var review = findReview(postId, user._id);
 
 		if(!user)
 			throw new Meteor.Error(401, "You need to login to review");
@@ -79,10 +127,10 @@ Meteor.methods({
 		if(!post)
 			throw new Meteor.Error(422, "Invalid Post");
 
-		if(Posts.find({$and: [{_id: postId}, {"no_voters.voter_id":user._id}]}).count())
+		if(review === "NO")
 			throw new Meteor.Error(422, "Already reviewed 'No' to this question");
 
-		if(Posts.find({$and: [{_id: postId}, {"yes_voters.voter_id":user._id}]}).count())
+		if(review === "YES")
 			inc_yes = -1;
 
 		Posts.update(post._id, {
@@ -101,12 +149,3 @@ Meteor.methods({
 		createReviewNotification({userId: post.source_id, objId: postId});
 	}
 });
-
-findReview = function(postId, userId){
-	if(Posts.find({$and: [{_id: postId}, {"no_voters.voter_id":userId}]}).count())
-		return "N";
-	if(Posts.find({$and: [{_id: postId}, {"yes_voters.voter_id":userId}]}).count())
-		return "Y";
-	else
-		return false;
-}

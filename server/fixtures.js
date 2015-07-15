@@ -1,4 +1,6 @@
-if (Posts.find().count() == 0){
+var fix = false; //(Posts.find().count() == 0);
+
+if (fix){
 	var now = new Date().getTime();
 
 	var samId = Meteor.users.insert({

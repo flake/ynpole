@@ -41,10 +41,6 @@ Template.inviteTemplate.helpers({
 		return "";
 	},
 
-	author: function(){
-		return Meteor.users.findOne({_id: this.source_id});
-	},
-
 	commentsCount: function(){
 		return Comments.find({postId: this._id, expired: false}).count();
 	},

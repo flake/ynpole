@@ -86,6 +86,13 @@ Accounts.onCreateUser(function (options, user){
             // if email is not set, there is no way to link it with other accounts
             return user;
         }
+
+        // Avatar from services
+            user.profile.avatar = "/img/default_user.png";
+        if(user.services.google !== undefined)
+            user.profile.avatar = user.services.google.picture;
+        if(user.services.facebook !== undefined)
+            user.profile.avatar = "https://graph.facebook.com/"+user.services.facebook.id+"/picture?type=large";
         
         // see if any existing user has this email address, otherwise create new
         var existingUser = Meteor.users.findOne({'emails.address': email});
@@ -113,7 +120,7 @@ Accounts.onCreateUser(function (options, user){
                 }
             }
         }
- 
+
         // precaution, these will exist from accounts-password if used
         if (!existingUser.services) {
             existingUser.services = { resume: { loginTokens: [] }};

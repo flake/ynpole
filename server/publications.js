@@ -30,6 +30,10 @@ Meteor.publish('notifications', function(){
 	return Notifications.find({userId: this.userId});
 });
 
+Meteor.publish('gcontacts', function(userId){
+	return Gcontacts.find({user_id: this.userId});
+});
+
 /*
 Meteor.publish('userInfo', function(userId){
 	Meteor.publishWithRelations({

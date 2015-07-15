@@ -10,9 +10,6 @@ Meteor.methods({
 		if(!followAttr.following_id)
 			throw new Meteor.Error(422, "Invalid following user");
 
-		if(followAttr.following_id === user._id)
-			throw new Meteor.Error(403, "You can not follow yourself.");
-
 		var follow = _.extend(_.pick(followAttr, 'following_id', 'following_name'), {
 			follower_id: user._id,
 			follower_name: user.profile.name,

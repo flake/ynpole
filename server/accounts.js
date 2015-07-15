@@ -12,21 +12,43 @@ Meteor.methods({
 		Accounts.sendVerificationEmail(userId);
 	},
 
-	'email-invite': function(email, profile, sender){
+	'email-invite': function(email, profile){
+		var user = Meteor.user();
 		var userId;
-		userAvatar = sender.avatarUrl;
 
-		if(!validateEmail(email))
+		if(!validateEmail(email)){
+			console.log("Invalid email: ", email);
 			throw new Error(403, "Not a valid Email");
+		}
 
-		userId = Accounts.createUser({
-			email: email,
-			password: 'something',
-			profile: profile
-		});
+		var existingUser = Meteor.users.findOne({'emails.address': email});
+
+		if(existingUser){
+			userId = existingUser._id;
+			Meteor.call('follow', {'following_id': userId, 'following_name': existingUser.profile.name}, function(err){
+				console.log("email invite error: ", err);
+			});
+		}
+		else{
+			userId = Accounts.createUser({
+				email: email,
+				password: Random.secret(16),
+				profile: _.extend(profile, {active: false})
+			});
+
+			var invitation = {
+				inviter: user._id,
+				inviter_name: user.profile.name,
+				invitee: userId,
+				invitee_name: profile.name,
+				expired: false,
+				created_at: new Date().getTime()
+			}
+
+			Invites.insert(invitation);
+		}
 
 		Accounts.sendEnrollmentEmail(userId);
-
 		return userId;
 	}
 });
