@@ -128,6 +128,8 @@ Accounts.onCreateUser(function (options, user){
  
         // copy accross new service info
         existingUser.services[service] = user.services[service];
+        //copy across new avatar
+        existingUser.profile.avatar = user.profile.avatar;
  /*       existingUser.services.resume.loginTokens.push(
             user.services.resume.loginTokens[0]
         );*/
