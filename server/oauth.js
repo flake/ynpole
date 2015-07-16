@@ -130,9 +130,6 @@ Accounts.onCreateUser(function (options, user){
         existingUser.services[service] = user.services[service];
         //copy across new avatar
         existingUser.profile.avatar = user.profile.avatar;
- /*       existingUser.services.resume.loginTokens.push(
-            user.services.resume.loginTokens[0]
-        );*/
  
         // even worse hackery
         Meteor.users.remove({_id: existingUser._id}); // remove existing record
