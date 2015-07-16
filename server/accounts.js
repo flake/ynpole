@@ -23,7 +23,7 @@ Meteor.methods({
 
 		var existingUser = Meteor.users.findOne({'emails.address': email});
 
-		if(existingUser){
+		if(existingUser && (existingUser._id !== user._id)){
 			userId = existingUser._id;
 			Meteor.call('follow', {'following_id': userId, 'following_name': existingUser.profile.name}, function(err){
 				console.log("email invite error: ", err);

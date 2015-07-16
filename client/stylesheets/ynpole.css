@@ -1228,3 +1228,13 @@ label.checkbox{
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.2;
 }
+.android-dlink{
+	position: absolute;
+	top: 200px;
+	left: 10%;
+}
+.android-dlink img{
+	width: 160px;
+	height: 63px;
+	border-radius: 6px;
+}
