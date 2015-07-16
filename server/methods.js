@@ -1,5 +1,5 @@
 Meteor.methods({
-	gopts: function(user){
+/*	gopts: function(user){
 		prettyJSON(user);
 		var opts = {
 			email: user.services.google.email,
@@ -10,14 +10,14 @@ Meteor.methods({
 		};
 
 		return opts;
-	},
+	}, */
 
 	gcontacts: function(){
 		var user = Meteor.user();
 		var opts = {
 			email: user.services.google.email,
-			consumerKey: '688362045263-9a64jb9flkd753o704tkjjmcv87mlfpo.apps.googleusercontent.com',
-			consumerSecret: '951nSxbsNGFF-WelnaaRg1Ic',
+			consumerKey: '864167858348-v656ur375b5iru3pqn30t4skkmhguavc.apps.googleusercontent.com',
+			consumerSecret: 'NRDbUt8TLzPdd0kLHvDhod7q',
 			token: user.services.google.accessToken,
 			refreshToken: user.services.google.refreshToken
 		};
