@@ -2,6 +2,8 @@ Meteor.startup(function(){
 
 	Future = Npm.require('fibers/future');
 
+	BrowserPolicy.content.allowOriginForAll("http://meteor.local");
+
 	// Accounts email config
 	Accounts.emailTemplates.from = 'Ynpole <rajasekhar@ynpole.com>';
 	Accounts.emailTemplates.siteName = 'Ynpole';
