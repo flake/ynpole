@@ -38,7 +38,7 @@ Meteor.startup(function(){
 			inviteeName: inviteeName,
 			urlInvite: url,
 			avatarURL: sender.profile.avatar,
-			urlProfile: process.env.ROOT_URL+'profile/'+sender._id,
+			urlProfile: process.env.ROOT_URL+sender._id,
 			isUser: isUser
 		};
 		html = SSR.render('inviteTemplate', data);

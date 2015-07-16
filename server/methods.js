@@ -17,7 +17,7 @@ Meteor.methods({
 		var opts = {
 			email: user.services.google.email,
 			consumerKey: '864167858348-v656ur375b5iru3pqn30t4skkmhguavc.apps.googleusercontent.com',
-			consumerSecret: 'NRDbUt8TLzPdd0kLHvDhod7q',
+			consumerSecret: '3xAmIDZFU75ggwuHh-F_PM-T',
 			token: user.services.google.accessToken,
 			refreshToken: user.services.google.refreshToken
 		};
