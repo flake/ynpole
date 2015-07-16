@@ -24,7 +24,6 @@ cfs:filesystem
 lookback:tooltips
 jagi:reactive-map
 email
-houston:admin
 meteorhacks:ssr
 mrt:flash-messages
 long:google-contacts
