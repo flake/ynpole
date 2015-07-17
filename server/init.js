@@ -5,7 +5,8 @@ Meteor.startup(function(){
 	BrowserPolicy.content.allowOriginForAll("http://meteor.local");
 	
 	BrowserPolicy.content.allowImageOrigin("graph.facebook.com");
-	BrowserPolicy.content.allowImageOrigin("*.*");
+	BrowserPolicy.content.allowImageOrigin("fbcdn-profile-a.*");
+	BrowserPolicy.content.allowImageOrigin("*.gravatar.com");
 	BrowserPolicy.content.allowImageOrigin("*.googleusercontent.com");
 
 	// Accounts email config
