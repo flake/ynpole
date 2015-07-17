@@ -3,9 +3,10 @@ Meteor.startup(function(){
 	Future = Npm.require('fibers/future');
 
 	BrowserPolicy.content.allowOriginForAll("http://meteor.local");
-	BrowserPolicy.content.allowImageOrigin("*");
-	//BrowserPolicy.content.allowImageOrigin("https://graph.facebook.com");
-	//BrowserPolicy.content.allowImageOrigin("https://lh4.googleusercontent.com");
+	
+	BrowserPolicy.content.allowImageOrigin("graph.facebook.com");
+	BrowserPolicy.content.allowImageOrigin("*.*");
+	BrowserPolicy.content.allowImageOrigin("*.googleusercontent.com");
 
 	// Accounts email config
 	Accounts.emailTemplates.from = 'Ynpole <rajasekhar@ynpole.com>';
