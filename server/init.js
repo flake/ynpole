@@ -9,6 +9,8 @@ Meteor.startup(function(){
 	BrowserPolicy.content.allowImageOrigin("*.gravatar.com");
 	BrowserPolicy.content.allowImageOrigin("*.googleusercontent.com");
 
+	BrowserPolicy.content.allowFontOrigin("fonts.googleapis.com");
+
 	// Accounts email config
 	Accounts.emailTemplates.from = 'Ynpole <rajasekhar@ynpole.com>';
 	Accounts.emailTemplates.siteName = 'Ynpole';
