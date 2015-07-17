@@ -1,12 +1,12 @@
 <template name="inviteEmail">
 	<div class="post email-invite">
-		<div class="app-title side-menu-title">Invite friends</div>
+		<div class="app-title side-menu-title">Invite friends
+			<button class="ynpole-btn {{btnDisabled}}" id="email-invite-btn">Invite</button>
+		</div>
 		<div class="invite-envelope"><i class="fa fa-envelope"></i></div>
-		<div class="input-group">
+		<div class="">
 			<input type="text" class="ynpole-input" id="email-invite-input" placeholder="Friend's Email">
-			<span class="input-group-btn">
-				<a role="button" class="ynpole-btn {{btnDisabled}}" id="email-invite-btn">Invite</a>
-			</span>
+			<span class="fa fa-search input-right-icon"></span>
 		</div>
 	</div>
 

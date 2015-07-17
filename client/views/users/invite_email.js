@@ -31,6 +31,17 @@ Template.inviteEmail.events({
 				}
 			});
 		}
+
+		$('.check-contact:checked').each(function(index, element){
+			var name = $(element).parent().siblings("h2").text();
+			console.log("element value: ", element.value);
+			console.log("element name: ", name);
+
+			Meteor.call('email-invite', element.value, {name: name}, function(error, userId){});
+		});
+		$('.check-contact').prop("checked", false);
+		$('#check-all').prop("checked", false);
+		Session.set('invite-email-valid', false);
 	}
 });
 

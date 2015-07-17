@@ -805,7 +805,6 @@ input[type="radio"], input[type="checkbox"]{
 .ynpole-btn :hover{ color: #fff; }
 
 .disabled-btn{
-	width: 100%;
 	padding: 4px 10px;
 	text-shadow: 0 -1px rgba(0, 0, 0, 0.11);
 	border-radius: 3px;
@@ -1166,10 +1165,11 @@ input[type="radio"], input[type="checkbox"]{
 #email-invite-input{
 	border-radius: 3px 0 0 3px;
 }
-
 #email-invite-btn{
-	border-radius: 0 3px 3px 0;
-	padding: 6px 10px;
+	margin-top: -6px;
+	font-weight: bold;
+	width: inherit;
+	float: right;
 }
 
 .import-contacts{
