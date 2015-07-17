@@ -139,7 +139,7 @@ Template.profile.events({
 			event.preventDefault();
 			var titleVal = template.find('#add-title').value;
 
-			updateUser({'profile.title': titleVal});
+			Meteor.call('updateProfile', {'profile.title': titleVal});
 
 			Session.set('edit_title', false);
 		}
@@ -155,7 +155,7 @@ Template.profile.events({
 
 			var aboutVal = template.find('#add-about').value;
 
-			updateUser({'profile.about': aboutVal});
+			Meteor.call('updateProfile', {'profile.about': aboutVal});
 
 			Session.set('edit_about', false);
 		}
