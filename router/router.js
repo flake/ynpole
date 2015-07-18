@@ -89,7 +89,7 @@ OnBeforeActions = {
     		this.layout('landing');
     		this.render('resetPassword');
     	}else{
-    		if(!Meteor.user()){
+    		if(!Meteor.user() && !Meteor.loggingIn()){
 	    		this.layout('landing');
 	    		this.render('signup');
 	    		this.render('login', {to: 'loginTemplate'});
